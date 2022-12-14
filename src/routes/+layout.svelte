@@ -1,6 +1,6 @@
 <script>
 	import '../app.postcss';
-	import Background from '../components/background.svelte';
+	import Background from '../lib/components/background.svelte';
 </script>
 
 <Background />
