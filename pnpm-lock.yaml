@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@dimforge/rapier3d-compat': ^0.10.0
   '@sveltejs/adapter-auto': next
+  '@sveltejs/adapter-static': ^1.0.5
   '@sveltejs/kit': next
   '@theatre/core': ^0.5.0
   '@theatre/studio': ^0.5.0
@@ -33,14 +34,16 @@ specifiers:
   tslib: ^2.4.1
   typescript: ^4.9.3
   vite: ^4.0.0
+  vite-plugin-glsl: ^1.0.1
 
 dependencies:
   object-hash: 3.0.0
 
 devDependencies:
   '@dimforge/rapier3d-compat': 0.10.0
-  '@sveltejs/adapter-auto': 1.0.0-next.90
-  '@sveltejs/kit': 1.0.0-next.586_svelte@3.55.0+vite@4.0.1
+  '@sveltejs/adapter-auto': 1.0.0-next.91_l5ueyfihz3gpzzvvyo2ean5u3e
+  '@sveltejs/adapter-static': 1.0.5_l5ueyfihz3gpzzvvyo2ean5u3e
+  '@sveltejs/kit': 1.0.0-next.589_svelte@3.55.0+vite@4.0.1
   '@theatre/core': 0.5.0
   '@theatre/studio': 0.5.0_@theatre+core@0.5.0
   '@threlte/core': 5.0.7
@@ -69,6 +72,7 @@ devDependencies:
   tslib: 2.4.1
   typescript: 4.9.4
   vite: 4.0.1
+  vite-plugin-glsl: 1.0.1_vite@4.0.1
 
 packages:
 
@@ -352,14 +356,39 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@sveltejs/adapter-auto/1.0.0-next.90:
-    resolution: {integrity: sha512-qxH46Oqqn40998wTmnbffONI0HcW/kiZ3OIjZoysjONne+LU4uEsG425MZ2RHDxmR04zxhsdjCAsn6B4du8D7w==}
+  /@rollup/pluginutils/5.0.2:
+    resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
     dependencies:
+      '@types/estree': 1.0.0
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+    dev: true
+
+  /@sveltejs/adapter-auto/1.0.0-next.91_l5ueyfihz3gpzzvvyo2ean5u3e:
+    resolution: {integrity: sha512-U57tQdzTfFINim8tzZSARC9ztWPzwOoHwNOpGdb2o6XrD0mEQwU9DsII7dBblvzg+xCnmd0pw7PDtXz5c5t96w==}
+    peerDependencies:
+      '@sveltejs/kit': ^1.0.0-next.587
+    dependencies:
+      '@sveltejs/kit': 1.0.0-next.589_svelte@3.55.0+vite@4.0.1
       import-meta-resolve: 2.2.0
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.586_svelte@3.55.0+vite@4.0.1:
-    resolution: {integrity: sha512-lTYWy4voh/r4jz8qnurIATyrH2ZgHPUswYQ9KauyASSjQGYeB1TPDgwcafM/LtgMxpcvFgWsx2KeflykSHXKxg==}
+  /@sveltejs/adapter-static/1.0.5_l5ueyfihz3gpzzvvyo2ean5u3e:
+    resolution: {integrity: sha512-W5jbgvy9sbYEHs27NQOSFEun+zQwdcL4kpk5qc2kSHl8cKsP5wfXuWDTDRmD1Co40aFcesi5Az5ZzdnPI8KCVg==}
+    peerDependencies:
+      '@sveltejs/kit': ^1.0.0
+    dependencies:
+      '@sveltejs/kit': 1.0.0-next.589_svelte@3.55.0+vite@4.0.1
+    dev: true
+
+  /@sveltejs/kit/1.0.0-next.589_svelte@3.55.0+vite@4.0.1:
+    resolution: {integrity: sha512-5ABRw46z9B+cCe/YWhcx+I/azNZg1NCDEkVJifZn8ToFoJ3a1eP0OexNIrvMEWpllMbNMPcJm2TC9tnz9oPfWQ==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -452,6 +481,10 @@ packages:
 
   /@types/cookie/0.5.1:
     resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
+    dev: true
+
+  /@types/estree/1.0.0:
+    resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: true
 
   /@types/json-schema/7.0.11:
@@ -1085,6 +1118,10 @@ packages:
   /estraverse/5.3.0:
     resolution: {integrity: sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==}
     engines: {node: '>=4.0'}
+    dev: true
+
+  /estree-walker/2.0.2:
+    resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
     dev: true
 
   /esutils/2.0.3:
@@ -2111,6 +2148,18 @@ packages:
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+    dev: true
+
+  /vite-plugin-glsl/1.0.1_vite@4.0.1:
+    resolution: {integrity: sha512-mEwarIBeQCqgakn1r4B2Gja8QbrC2pjd/CezIudTMNXn5BR44gphQElMjzxoJgsBX7z/T5ROT8YvQifdpwXY3g==}
+    engines: {node: '>= 16.15.1', npm: '>= 8.11.0'}
+    peerDependencies:
+      vite: ^3.0.0 || ^4.0.0
+    dependencies:
+      '@rollup/pluginutils': 5.0.2
+      vite: 4.0.1
+    transitivePeerDependencies:
+      - rollup
     dev: true
 
   /vite/4.0.1:
