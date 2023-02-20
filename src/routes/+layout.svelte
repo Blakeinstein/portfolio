@@ -1,4 +1,5 @@
 <script>
+	export const prerender = true;
 	import '../app.postcss';
 	import Background from '../lib/components/Background/background.svelte';
 </script>
