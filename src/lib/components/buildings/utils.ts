@@ -1,5 +1,5 @@
 import { Group, Material, type Object3D, Mesh } from 'three';
-import { CITYSCAPE_CONFIG } from '../../config/scene';
+import { CITYSCAPE_CONFIG } from '$lib/config/scene';
 
 export const lerp = (a: number, b: number, n: number) => (1 - n) * a + n * b;
 
