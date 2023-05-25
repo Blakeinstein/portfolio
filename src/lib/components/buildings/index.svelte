@@ -1,8 +1,18 @@
-<script>
-	import { Canvas } from "@threlte/core";
+<script lang="ts">
+	import { Canvas, useThrelte } from "@threlte/core";
 	import Scene from "./scene.svelte";
+  import { mousePos } from "./context";
+
+  const handleMousemove = (e: MouseEvent) => {
+    mousePos.set({
+      x: e.clientX,
+      y: e.clientY
+    });
+  }
 </script>
 
-<Canvas rendererParameters={{ alpha: true }}>
-  <Scene />
-</Canvas>
+<div class="h-full w-full" on:mousemove={handleMousemove}>
+  <Canvas rendererParameters={{ alpha: true }}>
+    <Scene />
+  </Canvas>
+</div>
