@@ -4,8 +4,7 @@ const website = {
 	siteLanguage: 'en-US',
 	siteTitle: 'Portfolio',
 	siteShortTitle: 'Portfolio',
-	description:
-		'Landing page',
+	description: 'Landing page',
 	siteUrl: 'https://blaine.is-a.dev',
 	backgroundColor: '#1b4079',
 	themeColor: '#d62828',
@@ -13,7 +12,7 @@ const website = {
 	githubPage: 'Blakeinstein',
 	linkedinProfile: 'blakeinstein',
 	twitterUsername: 'BlaineSensei',
-	twitterUserId: 'BlaineSensei',
+	twitterUserId: 'BlaineSensei'
 };
 
 export { website as default };

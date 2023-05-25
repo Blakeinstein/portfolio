@@ -1,6 +1,5 @@
 <script lang="ts">
-	import type { ImageResource, Optional } from "$lib/types/data";
-
+	import type { ImageResource, Optional } from '$lib/types/data';
 
 	export let article = false;
 	export let datePublished: string;

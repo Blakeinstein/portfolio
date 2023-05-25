@@ -14,5 +14,5 @@
 <Camera />
 <Lights />
 <Fog />
-<Floor  />
-<Buildings  />
+<Floor />
+<Buildings />

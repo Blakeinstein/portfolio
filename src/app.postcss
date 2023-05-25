@@ -4,15 +4,16 @@
 @tailwind utilities;
 
 @layer base {
-  .h-dyn-screen {
-    height: 100dvh;
-  }
+	.h-dyn-screen {
+		height: 100dvh;
+	}
 
-  .w-dyn-screen {
-    width: 100dvw;
-  }
+	.w-dyn-screen {
+		width: 100dvw;
+	}
 }
 
-html, body {
-  @apply dark:bg-black dark:text-white w-dyn-screen min-h-fit;
+html,
+body {
+	@apply dark:bg-black dark:text-white w-dyn-screen min-h-fit;
 }

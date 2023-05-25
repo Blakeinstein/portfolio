@@ -20,7 +20,7 @@
 		siteUrl,
 		githubPage,
 		linkedinProfile,
-		twitterUsername,
+		twitterUsername
 	} = website;
 
 	export let article = false;
@@ -28,32 +28,31 @@
 	export let entityMeta = null;
 	export let lastUpdated: string = Date.now().toString();
 	export let datePublished: string = Date.now().toString();
-	export let metadescription: string = "Portfolio";
+	export let metadescription = 'Portfolio';
 	export let slug: string;
 	export let timeToRead = 0;
 	export let title: string = siteTitle;
 
-	const defaultAlt =
-		'some unoriginal picture';
+	const defaultAlt = 'some unoriginal picture';
 
 	export let featuredImage: ImageResource = {
 		url: featuredImageSrc,
 		alt: defaultAlt,
 		width: 672,
 		height: 448,
-		caption: 'Home page',
+		caption: 'Home page'
 	};
 	export let ogImage: ImageResource = {
 		url: ogImageSrc,
-		alt: defaultAlt,
+		alt: defaultAlt
 	};
 	export let ogSquareImage: ImageResource = {
 		url: ogSquareImageSrc,
-		alt: defaultAlt,
+		alt: defaultAlt
 	};
 	export let twitterImage: ImageResource = {
 		url: twitterImageSrc,
-		alt: defaultAlt,
+		alt: defaultAlt
 	};
 	const url = `${siteUrl}/${slug}`;
 	const pageTitle = `${siteTitle} ${VERTICAL_LINE_ENTITY} ${title}`;
@@ -68,7 +67,7 @@
 		pageTitle,
 		siteTitle,
 		url,
-		...(article ? { datePublished, lastUpdated } : {}),
+		...(article ? { datePublished, lastUpdated } : {})
 	};
 	const schemaOrgProps = {
 		article,
@@ -88,14 +87,14 @@
 		url,
 		githubPage,
 		linkedinProfile,
-		twitterUsername,
+		twitterUsername
 	};
 	const twitterProps = {
 		article,
 		author,
 		twitterUsername,
 		image: twitterImage,
-		timeToRead,
+		timeToRead
 	};
 </script>
 

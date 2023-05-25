@@ -38,16 +38,16 @@
 						url: entityMeta.url,
 						width: entityMeta.faviconWidth,
 						height: entityMeta.faviconHeight,
-						caption: author,
+						caption: author
 					},
 					logo: {
-						'@id': `${siteUrl}/#personlogo`,
+						'@id': `${siteUrl}/#personlogo`
 					},
 					sameAs: [
 						`https://twitter.com/${twitterUsername}`,
 						`https://github.com/${githubPage}`,
-						`https://linkedin.com/in/${linkedinProfile}`,
-					],
+						`https://linkedin.com/in/${linkedinProfile}`
+					]
 			  }
 			: null;
 
@@ -58,16 +58,16 @@
 		name: siteTitle,
 		description: siteTitleAlt,
 		publisher: {
-			'@id': `${siteUrl}/#/schema/person/${entityHash}`,
+			'@id': `${siteUrl}/#/schema/person/${entityHash}`
 		},
 		potentialAction: [
 			{
 				'@type': 'SearchAction',
 				target: `${siteUrl}/?s={search_term_string}`,
-				'query-input': 'required name=search_term_string',
-			},
+				'query-input': 'required name=search_term_string'
+			}
 		],
-		inLanguage: siteLanguage,
+		inLanguage: siteLanguage
 	};
 
 	const schemaOrgImageObject = {
@@ -78,7 +78,7 @@
 		contentUrl: featuredImage.url,
 		width: featuredImage.width,
 		height: featuredImage.height,
-		caption: featuredImage.caption,
+		caption: featuredImage.caption
 	};
 
 	const schemaOrgBreadcrumbList = {
@@ -91,9 +91,9 @@
 				'@type': 'WebPage',
 				'@id': `${siteUrl}/${element.slug}`,
 				url: `${siteUrl}/${element.slug}`,
-				name: element.name,
-			},
-		})),
+				name: element.name
+			}
+		}))
 	};
 
 	const schemaOrgWebPage = {
@@ -102,27 +102,27 @@
 		url,
 		name: title,
 		isPartOf: {
-			'@id': `${siteUrl}/#website`,
+			'@id': `${siteUrl}/#website`
 		},
 		primaryImageOfPage: {
-			'@id': `${url}#primaryimage`,
+			'@id': `${url}#primaryimage`
 		},
 		datePublished,
 		dateModified: lastUpdated,
 		author: {
-			'@id': `${siteUrl}/#/schema/person/${entityHash}`,
+			'@id': `${siteUrl}/#/schema/person/${entityHash}`
 		},
 		description: metadescription,
 		breadcrumb: {
-			'@id': `${url}#breadcrumb`,
+			'@id': `${url}#breadcrumb`
 		},
 		inLanguage: siteLanguage,
 		potentialAction: [
 			{
 				'@type': 'ReadAction',
-				target: [url],
-			},
-		],
+				target: [url]
+			}
+		]
 	};
 
 	let schemaOrgArticle = null;
@@ -131,25 +131,25 @@
 			'@type': 'Article',
 			'@id': `${url}#article`,
 			isPartOf: {
-				'@id': `${url}#webpage`,
+				'@id': `${url}#webpage`
 			},
 			author: {
-				'@id': `${siteUrl}/#/schema/person/${entityHash}`,
+				'@id': `${siteUrl}/#/schema/person/${entityHash}`
 			},
 			headline: title,
 			datePublished,
 			dateModified: lastUpdated,
 			mainEntityOfPage: {
-				'@id': `${url}#webpage`,
+				'@id': `${url}#webpage`
 			},
 			publisher: {
-				'@id': `${siteUrl}/#/schema/person/${entityHash}`,
+				'@id': `${siteUrl}/#/schema/person/${entityHash}`
 			},
 			image: {
-				'@id': `${url}#primaryimage`,
+				'@id': `${url}#primaryimage`
 			},
 			articleSection: ['blog'],
-			inLanguage: siteLanguage,
+			inLanguage: siteLanguage
 		};
 	}
 
@@ -168,13 +168,13 @@
 			caption: entity
 		},
 		logo: {
-			'@id': `${siteUrl}/#personlogo`,
+			'@id': `${siteUrl}/#personlogo`
 		},
 		sameAs: [
 			`https://twitter.com/${twitterUsername}`,
 			`https://github.com/${githubPage}`,
 			`https://linkedin.com/in/${linkedinProfile}`
-		],
+		]
 	};
 
 	const schemaOrgArray = [
@@ -184,11 +184,11 @@
 		schemaOrgWebPage,
 		schemaOrgBreadcrumbList,
 		...(article ? [schemaOrgArticle] : []),
-		schemaOrgPublisher,
+		schemaOrgPublisher
 	];
 	const schemaOrgObject = {
 		'@context': 'https://schema.org',
-		'@graph': schemaOrgArray,
+		'@graph': schemaOrgArray
 	};
 	let jsonLdString = JSON.stringify(schemaOrgObject);
 	let jsonLdScript = `
