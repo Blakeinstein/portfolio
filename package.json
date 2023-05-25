@@ -46,6 +46,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@svelte-drama/suspense": "^0.4.0",
 		"object-hash": "^3.0.0"
 	}
 }
