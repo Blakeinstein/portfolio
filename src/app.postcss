@@ -3,6 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .h-dyn-screen {
+    height: 100dvh;
+  }
+
+  .w-dyn-screen {
+    width: 100dvw;
+  }
+}
+
 html, body {
-  @apply dark:bg-black dark:text-white h-screen w-screen;
+  @apply dark:bg-black dark:text-white w-dyn-screen min-h-fit;
 }

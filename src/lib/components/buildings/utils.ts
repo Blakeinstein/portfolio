@@ -1,5 +1,5 @@
 import { Group, Material, type Object3D, Mesh } from "three";
-import { CITYSCAPE_CONFIG } from "./config";
+import { CITYSCAPE_CONFIG } from "../../config/scene";
 import type { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 
 export const lerp = (
@@ -15,15 +15,6 @@ export const lineEq = (
   x2:number,
   currentVal: number
 ) => (y1 - y2) / (x1 - x2) * (currentVal - x2) + y2;
-
-export const loadBuildingModels = (loader: OBJLoader): Promise<Object3D[]> => new Promise((res, rej) => {
-    loader.load(
-      '/models/buildings.obj',
-      obj => res(obj.children),
-      undefined,
-      rej
-    );
-})
 
 export const makeCityScape = (material: Material, models: Object3D[]): Group => {
   const group = new Group();

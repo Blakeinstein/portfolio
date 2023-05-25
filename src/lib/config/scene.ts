@@ -2,7 +2,8 @@ import { Vector3, type MeshPhysicalMaterialParameters } from "three";
 
 export const LIGHT_CONFIG = {
   ambient: {
-    color: '#fff'
+    color: '#fff',
+    intensity: 10
   },
   spotlight: {
     color: '#4d2e6b',
@@ -32,12 +33,6 @@ export const LIGHT_CONFIG = {
   ]
 };
 
-export const FOG_CONFIG = {
-  color: '#1a1f26',
-  near: 1,
-  far: 208
-}
-
 type MeshParams = {
   geometryArgs: [
     width?: number | undefined,
@@ -55,15 +50,6 @@ export const FLOOR_CONFIG: MeshParams = {
     metalness: 0,
     emissive: '#000',
     roughness: 0,
-  }
-}
-
-export const BACKGROUND_CONFIG: MeshParams = {
-  geometryArgs: [600, 100],
-  material: {
-    color: window.getComputedStyle(document.body, null).getPropertyValue('background-color') || '#000',
-    lightMapIntensity: 0,
-    metalness: 1,
   }
 }
 
