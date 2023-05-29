@@ -12,6 +12,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@studio-freight/lenis": "^1.0.13",
 		"@sveltejs/adapter-auto": "latest",
 		"@sveltejs/adapter-static": "latest",
 		"@sveltejs/kit": "latest",
@@ -29,6 +30,7 @@
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"object-hash": "^3.0.0",
 		"postcss": "^8.4.14",
 		"postcss-load-config": "^4.0.1",
 		"prettier": "^2.8.0",
@@ -44,9 +46,5 @@
 		"vite": "^4.0.0",
 		"vite-plugin-glsl": "^1.0.1"
 	},
-	"type": "module",
-	"dependencies": {
-		"@svelte-drama/suspense": "^0.4.0",
-		"object-hash": "^3.0.0"
-	}
+	"type": "module"
 }

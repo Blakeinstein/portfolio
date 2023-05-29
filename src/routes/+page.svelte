@@ -1,7 +1,10 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import SEO from '$lib/components/SEO/index.svelte';
-	import BuildingScene from '$lib/components/buildings/index.svelte';
+	import MainLayout from '$lib/layouts/main.svelte';
 	import Section from '$lib/layouts/section.svelte';
+	import Lenis from '@studio-freight/lenis'
+
 
 	let seoProps = {
 		breadcrumbs: [
@@ -13,11 +16,38 @@
 		title: 'Home',
 		slug: ''
 	};
+
+	let lenis: Lenis | null;
+
+
+	if (browser) {
+		lenis = new Lenis();
+		const fn = (time: number) => {
+			lenis?.raf(time);
+			requestAnimationFrame(fn);
+		}
+		requestAnimationFrame(fn);
+	}
 </script>
 
 <SEO {...seoProps} />
 
-<Section>
-	<BuildingScene slot="background" />
-	<h1 class="text-2xl">This is some overlay text</h1>
-</Section>
+{#await import('$lib/components/buildings/index.svelte').then(i => i.default)}
+	<MainLayout>
+		<p>Loading..</p>
+	</MainLayout>
+{:then BuildingScene}
+	<MainLayout>
+		<BuildingScene slot="background"/>
+		<Section>
+			<h1 class="text-2xl">This is some overlay text</h1>
+		</Section>
+		<Section>
+			<h1 class="text-2xl">This is some overlay text 2</h1>
+		</Section>
+		<Section>
+			<h1 class="text-2xl">This is some overlay text 3</h1>
+		</Section>
+	</MainLayout>
+
+{/await}

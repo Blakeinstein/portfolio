@@ -1,8 +1,4 @@
 <script lang="ts">
-	import ogSquareImageSrc from '$lib/assets/home/home-open-graph-square.jpg';
-	import ogImageSrc from '$lib/assets/home/home-open-graph.jpg';
-	import twitterImageSrc from '$lib/assets/home/home-twitter.jpg';
-	import featuredImageSrc from '$lib/assets/home/home.jpg';
 	import website from '$lib/config/website';
 	import { VERTICAL_LINE_ENTITY } from '$lib/constants/entities';
 	import type { ImageResource } from '$lib/types/data';
@@ -32,6 +28,14 @@
 	export let slug: string;
 	export let timeToRead = 0;
 	export let title: string = siteTitle;
+	// export let ogSquareImageSrc = '$lib/assets/home/home-open-graph-square.jpg';
+	export let ogSquareImageSrc = '/logo.svg';
+	// export let ogImageSrc = '$lib/assets/home/home-open-graph.jpg';
+	export let ogImageSrc = '/logo.svg';
+	// export let twitterImageSrc = '$lib/assets/home/home-twitter.jpg';
+	export let twitterImageSrc = '/logo.svg';
+	// export let featuredImageSrc = '$lib/assets/home/home.jpg';
+	export let featuredImageSrc = '/logo.svg';
 
 	const defaultAlt = 'some unoriginal picture';
 

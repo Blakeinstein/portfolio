@@ -4,6 +4,9 @@
 @tailwind utilities;
 
 @layer base {
+	.min-h-dyn {
+		min-height: 100dvh;
+	}
 	.h-dyn-screen {
 		height: 100dvh;
 	}
@@ -16,4 +19,8 @@
 html,
 body {
 	@apply dark:bg-black dark:text-white w-dyn-screen min-h-fit;
+}
+
+.section {
+	@apply flex flex-col items-center justify-center w-full h-dyn-screen;
 }
