@@ -1,10 +1,11 @@
 <script lang="ts">
+	import Lenis from '@studio-freight/lenis';
+
 	import { browser } from '$app/environment';
 	import SEO from '$lib/components/SEO/index.svelte';
 	import MainLayout from '$lib/layouts/main.svelte';
 	import Section from '$lib/layouts/section.svelte';
-	import Lenis from '@studio-freight/lenis'
-
+	import Fade from '$lib/animations/fade.svelte';
 
 	let seoProps = {
 		breadcrumbs: [
@@ -40,13 +41,19 @@
 	<MainLayout>
 		<BuildingScene slot="background"/>
 		<Section>
-			<h1 class="text-2xl">This is some overlay text</h1>
+			<Fade>
+				<h1 class="text-2xl">This is some overlay text</h1>
+			</Fade>
 		</Section>
 		<Section>
-			<h1 class="text-2xl">This is some overlay text 2</h1>
+			<Fade>
+				<h1 class="text-2xl">This is some overlay text 2</h1>
+			</Fade>
 		</Section>
 		<Section>
-			<h1 class="text-2xl">This is some overlay text 3</h1>
+			<Fade>
+				<h1 class="text-2xl">This is some overlay text 3</h1>
+			</Fade>
 		</Section>
 	</MainLayout>
 
