@@ -6,7 +6,7 @@ const config = {
 	plugins: [
 		sveltekit(),
 		glsl({
-			compress: true
+			compress: false
 		})
 	]
 };

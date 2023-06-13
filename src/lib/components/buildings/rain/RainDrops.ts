@@ -441,7 +441,7 @@ export default class RainRenderer {
 		this.clearCanvas();
 
 		const now = Date.now();
-		if (this.lastRender == null) {
+		if (this.lastRender < 0) {
 			this.lastRender = now;
 		}
 		const deltaT = now - this.lastRender;
@@ -453,8 +453,6 @@ export default class RainRenderer {
 		this.lastRender = now;
 
 		this.updateDrops(timeScale);
-
-		requestAnimationFrame(this.update.bind(this));
 	}
 
 	dispose() {

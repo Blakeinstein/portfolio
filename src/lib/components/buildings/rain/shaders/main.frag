@@ -3,25 +3,25 @@
 precision mediump float;
 
 // textures
-uniform sampler2D u_waterMap;
-uniform sampler2D u_textureShine;
-uniform sampler2D u_textureFg;
-uniform sampler2D u_textureBg;
+uniform sampler2D waterMap;
+uniform sampler2D textureShine;
+uniform sampler2D textureFg;
+uniform sampler2D textureBg;
 
 // the texCoords passed in from the vertex shader.
 varying vec2 v_texCoord;
-uniform vec2 u_resolution;
-uniform vec2 u_parallax;
-uniform float u_parallaxFg;
-uniform float u_parallaxBg;
-uniform float u_textureRatio;
-uniform bool u_renderShine;
-uniform bool u_renderShadow;
-uniform float u_minRefraction;
-uniform float u_refractionDelta;
-uniform float u_brightness;
-uniform float u_alphaMultiply;
-uniform float u_alphaSubtract;
+uniform vec2 resolution;
+uniform vec2 parallax;
+uniform float parallaxFg;
+uniform float parallaxBg;
+uniform float textureRatio;
+uniform bool renderShine;
+uniform bool renderShadow;
+uniform float minRefraction;
+uniform float refractionDelta;
+uniform float brightness;
+uniform float alphaMultiply;
+uniform float alphaSubtract;
 
 // alpha-blends two colors
 vec4 blend(vec4 bg,vec4 fg){
@@ -39,23 +39,23 @@ vec4 blend(vec4 bg,vec4 fg){
 }
 
 vec2 pixel(){
-  return vec2(1.0,1.0)/u_resolution;
+  return vec2(1.0,1.0)/resolution;
 }
 
-vec2 parallax(float v){
-  return u_parallax*pixel()*v;
+vec2 parallax_val(float v){
+  return parallax*pixel()*v;
 }
 
 vec2 texCoord(){
-  return vec2(gl_FragCoord.x, u_resolution.y-gl_FragCoord.y)/u_resolution;
+  return vec2(gl_FragCoord.x, resolution.y-gl_FragCoord.y)/resolution;
 }
 
 // scales the bg up and proportionally to fill the container
 vec2 scaledTexCoord(){
-  float ratio=u_resolution.x/u_resolution.y;
+  float ratio=resolution.x/resolution.y;
   vec2 scale=vec2(1.0,1.0);
   vec2 offset=vec2(0.0,0.0);
-  float ratioDelta=ratio-u_textureRatio;
+  float ratioDelta=ratio-textureRatio;
   if(ratioDelta>=0.0){
     scale.y=(1.0+ratioDelta);
     offset.y=ratioDelta/2.0;
@@ -68,10 +68,10 @@ vec2 scaledTexCoord(){
 
 // get color from fg
 vec4 fgColor(float x, float y){
-  float p2=u_parallaxFg*2.0;
+  float p2=parallaxFg*2.0;
   vec2 scale=vec2(
-    (u_resolution.x+p2)/u_resolution.x,
-    (u_resolution.y+p2)/u_resolution.y
+    (resolution.x+p2)/resolution.x,
+    (resolution.y+p2)/resolution.y
   );
 
   vec2 scaledTexCoord=texCoord()/scale;
@@ -80,13 +80,13 @@ vec4 fgColor(float x, float y){
     (1.0-(1.0/scale.y))/2.0
   );
 
-  return texture2D(u_waterMap,
-    (scaledTexCoord+offset)+(pixel()*vec2(x,y))+parallax(u_parallaxFg)
+  return texture2D(waterMap,
+    (scaledTexCoord+offset)+(pixel()*vec2(x,y))+parallax_val(parallaxFg)
   );
 }
 
 void main() {
-  vec4 bg=texture2D(u_textureBg,scaledTexCoord()+parallax(u_parallaxBg));
+  vec4 bg=texture2D(textureBg,scaledTexCoord()+parallax_val(parallaxBg));
 
   vec4 cur = fgColor(0.0,0.0);
 
@@ -94,29 +94,29 @@ void main() {
   float x=cur.g;
   float y=cur.r;
 
-  float a=clamp(cur.a*u_alphaMultiply-u_alphaSubtract, 0.0,1.0);
+  float a=clamp(cur.a*alphaMultiply-alphaSubtract, 0.0,1.0);
 
   vec2 refraction = (vec2(x,y)-0.5)*2.0;
-  vec2 refractionParallax=parallax(u_parallaxBg-u_parallaxFg);
+  vec2 refractionParallax=parallax_val(parallaxBg-parallaxFg);
   vec2 refractionPos = scaledTexCoord()
-    + (pixel()*refraction*(u_minRefraction+(d*u_refractionDelta)))
+    + (pixel()*refraction*(minRefraction+(d*refractionDelta)))
     + refractionParallax;
 
-  vec4 tex=texture2D(u_textureFg,refractionPos);
+  vec4 tex=texture2D(textureFg,refractionPos);
 
-  if(u_renderShine){
+  if(renderShine){
     float maxShine=490.0;
     float minShine=maxShine*0.18;
     vec2 shinePos=vec2(0.5,0.5) + ((1.0/512.0)*refraction)* -(minShine+((maxShine-minShine)*d));
-    vec4 shine=texture2D(u_textureShine,shinePos);
+    vec4 shine=texture2D(textureShine,shinePos);
     tex=blend(tex,shine);
   }
 
-  vec4 fg=vec4(tex.rgb*u_brightness,a);
+  vec4 fg=vec4(tex.rgb*brightness,a);
 
-  if(u_renderShadow){
+  if(renderShadow){
     float borderAlpha = fgColor(0.,0.-(d*6.0)).a;
-    borderAlpha=borderAlpha*u_alphaMultiply-(u_alphaSubtract+0.5);
+    borderAlpha=borderAlpha*alphaMultiply-(alphaSubtract+0.5);
     borderAlpha=clamp(borderAlpha,0.,1.);
     borderAlpha*=0.2;
     vec4 border=vec4(0.,0.,0.,borderAlpha);
@@ -124,4 +124,5 @@ void main() {
   }
 
   gl_FragColor = blend(bg,fg);
+  // gl_FragColor = vec4(1.);
 }

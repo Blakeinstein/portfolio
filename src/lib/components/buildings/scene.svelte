@@ -17,16 +17,19 @@
 	const { scene, renderer, camera } = useThrelte();
 	// To use the EffectComposer we need to pass arguments to the
 	// default WebGLRenderer: https://github.com/pmndrs/postprocessing#usage
+
+	let pass: RainPass | null = null;
 	const composer = new EffectComposer(renderer);
 	const setupEffectComposer = (camera: ThreeCamera) => {
-		composer.removeAllPasses();
-		composer.addPass(new RenderPass(scene, camera));
-		composer.addPass(
-			new RainPass({
+		if (!pass) {
+			pass = new RainPass({
 				height: renderer?.domElement.height || 1920,
 				width: renderer?.domElement.width || 1080
-			})
-		);
+			});
+		}
+		composer.removeAllPasses();
+		composer.addPass(new RenderPass(scene, camera));
+		composer.addPass(pass);
 	};
 	// We need to set up the passes according to the camera in use
 	$: setupEffectComposer($camera);

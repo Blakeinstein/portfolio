@@ -7,7 +7,8 @@ import {
 	type IUniform,
 	Vector2,
 	Texture,
-	MeshBasicMaterial
+	MeshBasicMaterial,
+	CanvasTexture,
 } from 'three';
 import FullScreenQuad from './FSQuad';
 import RainRenderer from './RainDrops';
@@ -20,9 +21,7 @@ export default class RainPass extends Pass {
 	rainQuad: FullScreenQuad;
 	clear = false;
 	rainRenderer: RainRenderer;
-	comp: WebGLRenderTarget;
-	mainTexture: MeshBasicMaterial;
-	mainQuad: FullScreenQuad;
+	rainTexture: CanvasTexture;
 
 	constructor({ height, width }: { height: number; width: number }) {
 		super();
@@ -81,32 +80,29 @@ export default class RainPass extends Pass {
 			fragmentShader
 		});
 		this.rainQuad = new FullScreenQuad(this.fsMaterial);
-		this.comp = new WebGLRenderTarget(window.innerWidth, window.innerHeight);
-		this.mainTexture = new MeshBasicMaterial();
-		this.mainQuad = new FullScreenQuad(this.mainTexture);
 		this.rainRenderer = new RainRenderer({
-			height: height * 2,
-			width: width * 2,
-			scale: 2
+			height: height,
+			width: width,
+			scale: 1
 		});
+
+		this.rainTexture = new CanvasTexture(this.rainRenderer.texture);
 	}
 
 	render(renderer: WebGLRenderer, readBuffer: WebGLRenderTarget, writeBuffer: WebGLRenderTarget) {
+		this.rainRenderer.update();
+		this.rainTexture.needsUpdate = true;
 		this.uniforms['textureFg'].value = readBuffer.texture;
 		this.uniforms['textureBg'].value = readBuffer.texture;
-		this.uniforms['waterMap'].value = new Texture(this.rainRenderer.texture);
+		this.uniforms['waterMap'].value = this.rainTexture;
 
-		renderer.setRenderTarget(this.comp);
-		this.rainQuad.render(renderer);
-
-		this.mainQuad.material.map = this.comp.texture;
 		if (this.renderToScreen) {
 			renderer.setRenderTarget(null);
-			this.mainQuad.render(renderer);
+			this.rainQuad.render(renderer);
 		} else {
 			renderer.setRenderTarget(writeBuffer);
 			if (this.clear) renderer.clear();
-			this.mainQuad.render(renderer);
+			this.rainQuad.render(renderer);
 		}
 	}
 
