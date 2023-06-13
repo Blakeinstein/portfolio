@@ -20,26 +20,25 @@
 
 	let lenis: Lenis | null;
 
-
 	if (browser) {
 		lenis = new Lenis();
 		const fn = (time: number) => {
 			lenis?.raf(time);
 			requestAnimationFrame(fn);
-		}
+		};
 		requestAnimationFrame(fn);
 	}
 </script>
 
 <SEO {...seoProps} />
 
-{#await import('$lib/components/buildings/index.svelte').then(i => i.default)}
+{#await import('$lib/components/buildings/index.svelte').then((i) => i.default)}
 	<MainLayout>
 		<p>Loading..</p>
 	</MainLayout>
 {:then BuildingScene}
 	<MainLayout>
-		<BuildingScene slot="background"/>
+		<BuildingScene slot="background" />
 		<Section>
 			<Fade>
 				<h1 class="text-2xl">This is some overlay text</h1>
@@ -56,5 +55,4 @@
 			</Fade>
 		</Section>
 	</MainLayout>
-
 {/await}

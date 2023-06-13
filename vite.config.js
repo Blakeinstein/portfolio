@@ -3,9 +3,12 @@ import glsl from 'vite-plugin-glsl';
 
 /** @type {import('vite').UserConfig} */
 const config = {
-	plugins: [sveltekit(), glsl({
-		compress: true
-	})],
+	plugins: [
+		sveltekit(),
+		glsl({
+			compress: true
+		})
+	]
 };
 
 export default config;

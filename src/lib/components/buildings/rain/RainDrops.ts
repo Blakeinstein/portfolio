@@ -74,11 +74,7 @@ export default class RainRenderer {
 		collisionBoost: 1
 	};
 
-	constructor(props: {
-		width: number;
-		height: number;
-		scale: number;
-	}) {
+	constructor(props: { width: number; height: number; scale: number }) {
 		this.width = props.width;
 		this.height = props.height;
 		this.scale = props.scale;
@@ -95,15 +91,12 @@ export default class RainRenderer {
 		// create circle that will be used as a brush to remove droplets
 		this.clearDropletsGfx = createCanvas(128, 128);
 
-		Promise.all([
-			loadImage("/drop-alpha.png"),
-			loadImage("/drop-color.png"),
-		]).then((imgs) => {
+		Promise.all([loadImage('/drop-alpha.png'), loadImage('/drop-color.png')]).then((imgs) => {
 			this.dropAlpha = imgs[0];
 			this.dropColor = imgs[1];
 			this.renderDropsGfx();
 			this.update();
-		})
+		});
 	}
 
 	get deltaR() {
@@ -186,7 +179,7 @@ export default class RainRenderer {
 			ctx.globalAlpha = 1;
 			ctx.globalCompositeOperation = 'source-over';
 
-			d = Math.floor(d * (this.dropsGfx.length - 1));	
+			d = Math.floor(d * (this.dropsGfx.length - 1));
 			ctx.drawImage(
 				this.dropsGfx[d],
 				(x - r * scaleX * (spreadX + 1)) * this.scale,
@@ -463,7 +456,6 @@ export default class RainRenderer {
 
 		requestAnimationFrame(this.update.bind(this));
 	}
-  
 
 	dispose() {
 		this.canvas.remove();

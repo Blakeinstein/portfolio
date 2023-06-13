@@ -1,10 +1,18 @@
 import { Pass } from 'postprocessing';
-import { ShaderMaterial, WebGLRenderTarget, WebGLRenderer, UniformsUtils, type IUniform, Vector2, Texture, MeshBasicMaterial} from 'three';
+import {
+	ShaderMaterial,
+	WebGLRenderTarget,
+	WebGLRenderer,
+	UniformsUtils,
+	type IUniform,
+	Vector2,
+	Texture,
+	MeshBasicMaterial
+} from 'three';
 import FullScreenQuad from './FSQuad';
 import RainRenderer from './RainDrops';
 import vertexShader from './shaders/main.vert';
 import fragmentShader from './shaders/main.frag';
-
 
 export default class RainPass extends Pass {
 	uniforms: Record<string, IUniform>;
@@ -16,60 +24,54 @@ export default class RainPass extends Pass {
 	mainTexture: MeshBasicMaterial;
 	mainQuad: FullScreenQuad;
 
-	constructor({
-		height,
-		width
-	}: {
-		height: number,
-		width: number
-	}) {
+	constructor({ height, width }: { height: number; width: number }) {
 		super();
 
 		this.uniforms = UniformsUtils.clone({
-			"resolution": {
+			resolution: {
 				value: new Vector2(width, height)
 			},
-			"textureRatio": {
+			textureRatio: {
 				value: width / height
 			},
-			"renderShine": {
+			renderShine: {
 				value: false
 			},
-			"renderShadow": {
+			renderShadow: {
 				value: true
 			},
-			"minRefraction": {
+			minRefraction: {
 				value: 256.0
 			},
-			"refractionDelta": {
+			refractionDelta: {
 				value: 256.0
 			},
-			"brightness": {
+			brightness: {
 				value: 1.0
 			},
-			"alphaMultiply": {
+			alphaMultiply: {
 				value: 20.0
 			},
-			"alphaSubtract": {
+			alphaSubtract: {
 				value: 5.0
 			},
-			"parallaxBg": {
+			parallaxBg: {
 				value: 5.0
 			},
-			"parallaxFg": {
+			parallaxFg: {
 				value: 20.0
 			},
-			"waterMap": {
-				value: new Texture(),
-			},
-			"textureShine": {
+			waterMap: {
 				value: new Texture()
 			},
-			"textureFg": {
-				value: new Texture(),
+			textureShine: {
+				value: new Texture()
 			},
-			"textureBg": {
-				value: new Texture(),
+			textureFg: {
+				value: new Texture()
+			},
+			textureBg: {
+				value: new Texture()
 			}
 		});
 
@@ -79,7 +81,7 @@ export default class RainPass extends Pass {
 			fragmentShader
 		});
 		this.rainQuad = new FullScreenQuad(this.fsMaterial);
-		this.comp = new WebGLRenderTarget( window.innerWidth, window.innerHeight);
+		this.comp = new WebGLRenderTarget(window.innerWidth, window.innerHeight);
 		this.mainTexture = new MeshBasicMaterial();
 		this.mainQuad = new FullScreenQuad(this.mainTexture);
 		this.rainRenderer = new RainRenderer({
@@ -89,7 +91,7 @@ export default class RainPass extends Pass {
 		});
 	}
 
-	render(renderer: WebGLRenderer, readBuffer: WebGLRenderTarget, writeBuffer: WebGLRenderTarget ) {
+	render(renderer: WebGLRenderer, readBuffer: WebGLRenderTarget, writeBuffer: WebGLRenderTarget) {
 		this.uniforms['textureFg'].value = readBuffer.texture;
 		this.uniforms['textureBg'].value = readBuffer.texture;
 		this.uniforms['waterMap'].value = new Texture(this.rainRenderer.texture);
@@ -98,17 +100,17 @@ export default class RainPass extends Pass {
 		this.rainQuad.render(renderer);
 
 		this.mainQuad.material.map = this.comp.texture;
-		if ( this.renderToScreen ) {
-			renderer.setRenderTarget( null );
-			this.mainQuad.render( renderer );
+		if (this.renderToScreen) {
+			renderer.setRenderTarget(null);
+			this.mainQuad.render(renderer);
 		} else {
-			renderer.setRenderTarget( writeBuffer );
-			if ( this.clear ) renderer.clear();
-			this.mainQuad.render( renderer );
+			renderer.setRenderTarget(writeBuffer);
+			if (this.clear) renderer.clear();
+			this.mainQuad.render(renderer);
 		}
 	}
 
-	setSize( width: number, height: number ) {
+	setSize(width: number, height: number) {
 		this.uniforms['resolution'].value = new Vector2(width, height);
 		this.uniforms['textureRatio'].value = width / height;
 	}

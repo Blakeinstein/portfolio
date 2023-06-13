@@ -1,14 +1,9 @@
 <script lang="ts">
-	import { useThrelte, useRender } from '@threlte/core'
-  import {
-    EffectComposer,
-    EffectPass,
-    RenderPass,
-    SMAAEffect,
-    SMAAPreset,
-    BloomEffect,
-    KernelSize
-  } from 'postprocessing';
+	import { useThrelte, useRender } from '@threlte/core';
+	import {
+		EffectComposer,
+		RenderPass,
+	} from 'postprocessing';
 	import type { Camera as ThreeCamera } from 'three';
 
 	import { CITYSCAPE_CONFIG } from '$lib/config/scene';
@@ -23,24 +18,25 @@
 
 	offsetSize.set((CITYSCAPE_CONFIG.dimensions[1] - 1) * CITYSCAPE_CONFIG.boxSize);
 
-	
-  const { scene, renderer, camera } = useThrelte();
-  // To use the EffectComposer we need to pass arguments to the
-  // default WebGLRenderer: https://github.com/pmndrs/postprocessing#usage
-  const composer = new EffectComposer(renderer);
-  const setupEffectComposer = (camera: ThreeCamera) => {
-    composer.removeAllPasses();
-    composer.addPass(new RenderPass(scene, camera));
-    composer.addPass(new RainPass({
-      height: renderer?.domElement.height || 1920, 
-      width: renderer?.domElement.width || 1080
-    }));
-  };
-  // We need to set up the passes according to the camera in use
-  $: setupEffectComposer($camera);
-  useRender((_, delta) => {
-    composer.render(delta);
-  });
+	const { scene, renderer, camera } = useThrelte();
+	// To use the EffectComposer we need to pass arguments to the
+	// default WebGLRenderer: https://github.com/pmndrs/postprocessing#usage
+	const composer = new EffectComposer(renderer);
+	const setupEffectComposer = (camera: ThreeCamera) => {
+		composer.removeAllPasses();
+		composer.addPass(new RenderPass(scene, camera));
+		composer.addPass(
+			new RainPass({
+				height: renderer?.domElement.height || 1920,
+				width: renderer?.domElement.width || 1080
+			})
+		);
+	};
+	// We need to set up the passes according to the camera in use
+	$: setupEffectComposer($camera);
+	useRender((_, delta) => {
+		composer.render(delta);
+	});
 </script>
 
 <Camera />
