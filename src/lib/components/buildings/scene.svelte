@@ -19,6 +19,7 @@
 	import Buildings from './elements/buildings.svelte';
 	import { offsetSize } from './context';
 	import RainShader from './rain';
+	import RainPass from './rain';
 
 	offsetSize.set((CITYSCAPE_CONFIG.dimensions[1] - 1) * CITYSCAPE_CONFIG.boxSize);
 
@@ -30,7 +31,10 @@
   const setupEffectComposer = (camera: ThreeCamera) => {
     composer.removeAllPasses();
     composer.addPass(new RenderPass(scene, camera));
-    
+    composer.addPass(new RainPass({
+      height: renderer?.domElement.height || 1920, 
+      width: renderer?.domElement.width || 1080
+    }));
   };
   // We need to set up the passes according to the camera in use
   $: setupEffectComposer($camera);
