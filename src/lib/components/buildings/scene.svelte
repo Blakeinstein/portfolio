@@ -1,9 +1,6 @@
 <script lang="ts">
 	import { useThrelte, useRender } from '@threlte/core';
-	import {
-		EffectComposer,
-		RenderPass,
-	} from 'postprocessing';
+	import { EffectComposer, RenderPass } from 'postprocessing';
 	import type { Camera as ThreeCamera } from 'three';
 
 	import { CITYSCAPE_CONFIG } from '$lib/config/scene';
@@ -13,7 +10,6 @@
 	import Floor from './elements/floor.svelte';
 	import Buildings from './elements/buildings.svelte';
 	import { offsetSize } from './context';
-	import RainShader from './rain';
 	import RainPass from './rain';
 
 	offsetSize.set((CITYSCAPE_CONFIG.dimensions[1] - 1) * CITYSCAPE_CONFIG.boxSize);
