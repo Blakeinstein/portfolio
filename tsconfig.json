@@ -12,7 +12,10 @@
 		"paths": {
 			"$lib": ["./src/lib"],
 			"$lib/*": ["./src/lib/*"]
-		}
+		},
+		"types": [
+      "vite-plugin-glsl/ext"
+    ]
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//

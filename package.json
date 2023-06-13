@@ -33,6 +33,7 @@
 		"object-hash": "^3.0.0",
 		"postcss": "^8.4.14",
 		"postcss-load-config": "^4.0.1",
+		"postprocessing": "^6.31.0",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
 		"svelte": "^3.59.1",
