@@ -1,7 +1,7 @@
 import { Pass } from 'postprocessing';
 import { ShaderMaterial, WebGLRenderTarget, WebGLRenderer, UniformsUtils, type IUniform, Vector2, Texture, MeshBasicMaterial, Mesh } from 'three';
 import FullScreenQuad from './FSQuad';
-import RainRenderer from './RainRenderer';
+import RainRenderer from './RainDrops';
 import vertexShader from './shaders/main.vert';
 import fragmentShader from './shaders/main.frag';
 
