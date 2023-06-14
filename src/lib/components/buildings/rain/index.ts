@@ -7,8 +7,6 @@ import {
 	type IUniform,
 	Vector2,
 	Texture,
-	MeshBasicMaterial,
-	CanvasTexture,
 } from 'three';
 import FullScreenQuad from './FSQuad';
 import RainRenderer from './RainDrops';
@@ -21,7 +19,7 @@ export default class RainPass extends Pass {
 	rainQuad: FullScreenQuad;
 	clear = false;
 	rainRenderer: RainRenderer;
-	rainTexture: CanvasTexture;
+	rainTexture: Texture;
 
 	constructor({ height, width }: { height: number; width: number }) {
 		super();
@@ -61,16 +59,16 @@ export default class RainPass extends Pass {
 				value: 20.0
 			},
 			waterMap: {
-				value: new Texture()
+				value: null
 			},
 			textureShine: {
-				value: new Texture()
+				value: null
 			},
 			textureFg: {
-				value: new Texture()
+				value: null
 			},
 			textureBg: {
-				value: new Texture()
+				value: null
 			}
 		});
 
@@ -86,7 +84,7 @@ export default class RainPass extends Pass {
 			scale: 1
 		});
 
-		this.rainTexture = new CanvasTexture(this.rainRenderer.texture);
+		this.rainTexture = new Texture(this.rainRenderer.texture);
 	}
 
 	render(renderer: WebGLRenderer, readBuffer: WebGLRenderTarget, writeBuffer: WebGLRenderTarget) {
