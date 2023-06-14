@@ -11,8 +11,8 @@
 	};
 </script>
 
-<div class="h-full w-full" on:mousemove={handleMousemove}>
-	<Canvas rendererParameters={{ alpha: true }}>
+<div class="h-full w-full scene rotate-180" on:mousemove={handleMousemove}>
+	<Canvas >
 		<Scene />
 	</Canvas>
 </div>

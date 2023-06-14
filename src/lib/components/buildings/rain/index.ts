@@ -69,6 +69,9 @@ export default class RainPass extends Pass {
 			},
 			textureBg: {
 				value: null
+			},
+			parallax: {
+				value: new Vector2(0, 0)
 			}
 		});
 
