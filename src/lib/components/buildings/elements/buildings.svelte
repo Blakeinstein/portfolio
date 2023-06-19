@@ -45,7 +45,7 @@
 	castShadow
 	receiveShadow
 	url={'/models/scene.gltf'}
-	position={[0, 0, 0]}
+	position={[10, -10, 0]}
 	scale={20}
 	rotation={[0, rotation, 0]}
 />

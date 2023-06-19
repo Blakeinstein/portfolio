@@ -5,12 +5,12 @@
 
 	const { size } = useThrelte();
 
-	let lastPos: [number, number, number] = [1, 40, 100];
+	let lastPos: [number, number, number] = [0, 30, 130];
 
-	mousePos.subscribe((pos) => {
-		lastPos[0] = lerp(lastPos[0], lineEq(0, 6, $size.width, 0, pos.x), 0.05);
-		lastPos[1] = lerp(lastPos[1], lineEq(22, 38, $size.height, 0, pos.y), 0.05);
-	});
+	// mousePos.subscribe((pos) => {
+	// 	lastPos[0] = lerp(lastPos[0], lineEq(0, 6, $size.width, 0, pos.x), 0.05);
+	// 	lastPos[1] = lerp(lastPos[1], lineEq(22, 38, $size.height, 0, pos.y), 0.05);
+	// });
 </script>
 
 <T.PerspectiveCamera
