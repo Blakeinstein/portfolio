@@ -455,6 +455,11 @@ export default class RainRenderer {
 		this.updateDrops(timeScale);
 	}
 
+
+	resize(width: number, height: number) {
+		console.log(width, height);
+	}
+
 	dispose() {
 		this.canvas.remove();
 	}

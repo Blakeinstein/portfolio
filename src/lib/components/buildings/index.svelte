@@ -11,7 +11,7 @@
 	};
 </script>
 
-<div class="h-full w-full scene rotate-180" on:mousemove={handleMousemove}>
+<div class="h-full w-full scene" on:mousemove={handleMousemove}>
 	<Canvas >
 		<Scene />
 	</Canvas>

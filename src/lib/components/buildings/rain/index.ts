@@ -64,10 +64,7 @@ export default class RainPass extends Pass {
 			textureShine: {
 				value: null
 			},
-			textureFg: {
-				value: null
-			},
-			textureBg: {
+			screenTexture: {
 				value: null
 			},
 			parallax: {
@@ -88,14 +85,16 @@ export default class RainPass extends Pass {
 		});
 
 		this.rainTexture = new Texture(this.rainRenderer.texture);
+		this.uniforms['waterMap'].value = this.rainTexture;
 	}
 
 	render(renderer: WebGLRenderer, readBuffer: WebGLRenderTarget, writeBuffer: WebGLRenderTarget) {
 		this.rainRenderer.update();
 		this.rainTexture.needsUpdate = true;
-		this.uniforms['textureFg'].value = readBuffer.texture;
-		this.uniforms['textureBg'].value = readBuffer.texture;
-		this.uniforms['waterMap'].value = this.rainTexture;
+		const texture = readBuffer.texture;
+		texture.flipY = false;
+		this.uniforms['screenTexture'].value = texture;
+		
 
 		if (this.renderToScreen) {
 			renderer.setRenderTarget(null);
@@ -110,6 +109,7 @@ export default class RainPass extends Pass {
 	setSize(width: number, height: number) {
 		this.uniforms['resolution'].value = new Vector2(width, height);
 		this.uniforms['textureRatio'].value = width / height;
+		this.rainRenderer.resize(width, height);
 	}
 
 	dispose() {

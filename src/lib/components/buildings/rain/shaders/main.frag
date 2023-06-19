@@ -5,11 +5,10 @@ precision mediump float;
 // textures
 uniform sampler2D waterMap;
 uniform sampler2D textureShine;
-uniform sampler2D textureFg;
-uniform sampler2D textureBg;
+uniform sampler2D screenTexture;
 
 // the texCoords passed in from the vertex shader.
-varying vec2 v_texCoord;
+uniform vec2 texCoord;
 uniform vec2 resolution;
 uniform vec2 parallax;
 uniform float parallaxFg;
@@ -46,8 +45,8 @@ vec2 parallax_val(float v){
   return parallax*pixel()*v;
 }
 
-vec2 texCoord(){
-  return vec2(gl_FragCoord.x, resolution.y-gl_FragCoord.y)/resolution;
+vec2 texCoord_fn(){
+  return vec2(gl_FragCoord.x, gl_FragCoord.y)/resolution;
 }
 
 // scales the bg up and proportionally to fill the container
@@ -63,7 +62,7 @@ vec2 scaledTexCoord(){
     scale.x=(1.0-ratioDelta);
     offset.x=-ratioDelta/2.0;
   }
-  return (texCoord()+offset)/scale;
+  return (texCoord_fn()+offset)/scale;
 }
 
 // get color from fg
@@ -74,7 +73,7 @@ vec4 fgColor(float x, float y){
     (resolution.y+p2)/resolution.y
   );
 
-  vec2 scaledTexCoord=texCoord()/scale;
+  vec2 scaledTexCoord=texCoord_fn()/scale;
   vec2 offset=vec2(
     (1.0-(1.0/scale.x))/2.0,
     (1.0-(1.0/scale.y))/2.0
@@ -86,7 +85,7 @@ vec4 fgColor(float x, float y){
 }
 
 void main() {
-  vec4 bg=texture2D(textureBg,scaledTexCoord()+parallax_val(parallaxBg));
+  vec4 bg=texture2D(screenTexture,scaledTexCoord()+parallax_val(parallaxBg));
 
   vec4 cur = fgColor(0.0,0.0);
 
@@ -102,7 +101,7 @@ void main() {
     + (pixel()*refraction*(minRefraction+(d*refractionDelta)))
     + refractionParallax;
 
-  vec4 tex=texture2D(textureFg,refractionPos);
+  vec4 tex=texture2D(screenTexture,refractionPos);
 
   if(renderShine){
     float maxShine=490.0;
@@ -123,5 +122,5 @@ void main() {
     fg=blend(border,fg);
   }
 
-  gl_FragColor = blend(bg,fg);
+  gl_FragColor = blend(bg, fg);
 }
