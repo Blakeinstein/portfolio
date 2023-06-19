@@ -3,7 +3,7 @@
 	import { FLOOR_CONFIG } from '$lib/config/scene';
 </script>
 
-<T.Mesh>
+<!-- <T.Mesh>
 	<T.PlaneGeometry args={FLOOR_CONFIG.geometryArgs} />
 	<T.MeshPhysicalMaterial args={[FLOOR_CONFIG.material]} />
-</T.Mesh>
+</T.Mesh> -->

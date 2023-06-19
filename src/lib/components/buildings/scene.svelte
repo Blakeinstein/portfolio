@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { useThrelte, useRender } from '@threlte/core';
-	import { EffectComposer, RenderPass } from 'postprocessing';
+	import { BloomEffect, EffectComposer, EffectPass, RenderPass } from 'postprocessing';
 	import type { Camera as ThreeCamera } from 'three';
 	import { tweened } from 'svelte/motion';
 	import { quintOut } from 'svelte/easing'; 
@@ -38,11 +38,13 @@
 		}
 		composer.removeAllPasses();
 		composer.addPass(new RenderPass(scene, camera));
+		// composer.addPass(new EffectPass(camera, new BloomEffect()));
 		composer.addPass(pass);
 	};
 	// We need to set up the passes according to the camera in use
 	$: setupEffectComposer($camera);
 	useRender((_, delta) => {
+		console.log("Here");
 		if (pass) {
 			pass.uniforms['parallax'].value.x = $px;
 			pass.uniforms['parallax'].value.y = $py;

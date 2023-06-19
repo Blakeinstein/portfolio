@@ -3,33 +3,39 @@ import { Vector3, type MeshPhysicalMaterialParameters } from 'three';
 export const LIGHT_CONFIG = {
 	ambient: {
 		color: '#fff',
-		intensity: 10
+		intensity: 0.2
 	},
 	spotlight: {
 		color: '#4d2e6b',
 		position: new Vector3(100, 150, 100)
 	},
 	pointLights: [
+		
 		{
-			color: '#a728d7',
-			intensity: 6.4,
+			color: '#61629e',
+			intensity: 2.4,
 			position: new Vector3(-15, 29, 43)
 		},
-		{
-			color: '#601635',
-			intensity: 2,
-			position: new Vector3(-7, 100, -100)
-		},
-		{
-			color: '#0f2438',
-			intensity: 4.8,
-			position: new Vector3(-30, -20, -51)
-		},
-		{
-			color: '#391e75',
-			intensity: 2,
-			position: new Vector3(5, 53, -13)
-		}
+		// {
+		// 	color: '#a728d7',
+		// 	intensity: 6.4,
+		// 	position: new Vector3(-15, 29, 43)
+		// },
+		// {
+		// 	color: '#601635',
+		// 	intensity: 2,
+		// 	position: new Vector3(-7, 100, -100)
+		// },
+		// {
+		// 	color: '#0f2438',
+		// 	intensity: 4.8,
+		// 	position: new Vector3(-30, -20, -51)
+		// },
+		// {
+		// 	color: '#391e75',
+		// 	intensity: 2,
+		// 	position: new Vector3(5, 53, -13)
+		// }
 	]
 };
 

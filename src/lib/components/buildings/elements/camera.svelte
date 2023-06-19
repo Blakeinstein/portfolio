@@ -5,7 +5,7 @@
 
 	const { size } = useThrelte();
 
-	let lastPos: [number, number, number] = [1, 30, $offsetSize * 1.2];
+	let lastPos: [number, number, number] = [1, 40, 100];
 
 	mousePos.subscribe((pos) => {
 		lastPos[0] = lerp(lastPos[0], lineEq(0, 6, $size.width, 0, pos.x), 0.05);
@@ -21,7 +21,7 @@
 	far={1000}
 	on:create={({ ref }) => {
 		ref.lookAt(0, 0, 0);
-		ref.rotateX(-0.25);
+		// ref.rotateX(-0.25);
 	}}
 	{...$$restProps}
 />
