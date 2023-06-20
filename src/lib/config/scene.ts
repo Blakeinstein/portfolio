@@ -11,7 +11,7 @@ export const LIGHT_CONFIG = {
 	},
 	pointLights: [
 		{
-			color: '#1c8275',
+			color: '#a728d7',
 			intensity: 6.4,
 			position: new Vector3(-15, 29, 43)
 		},
