@@ -6,6 +6,7 @@
 	import MainLayout from '$lib/layouts/main.svelte';
 	import Section from '$lib/layouts/section.svelte';
 	import Fade from '$lib/animations/fade.svelte';
+	import Hero from '$lib/components/hero/index.svelte';
 
 	let seoProps = {
 		breadcrumbs: [
@@ -32,18 +33,15 @@
 
 <SEO {...seoProps} />
 
-{#await import('$lib/components/buildings/index.svelte').then((i) => i.default)}
+<!-- {#await import('$lib/components/buildings/index.svelte').then((i) => i.default)}
 	<MainLayout>
 		<p>Loading..</p>
 	</MainLayout>
-{:then BuildingScene}
+{:then BuildingScene} -->
 	<MainLayout>
-		<BuildingScene slot="background" />
-		<Section>
-			<Fade>
-				<h1 class="text-2xl">This is some overlay text</h1>
-			</Fade>
-		</Section>
+		<!-- <BuildingScene slot="background" /> -->
+		<!-- HERO -->
+		<Hero />
 		<Section>
 			<Fade>
 				<h1 class="text-2xl">This is some overlay text 2</h1>
@@ -55,4 +53,4 @@
 			</Fade>
 		</Section>
 	</MainLayout>
-{/await}
+<!-- {/await} -->

@@ -1,0 +1,14 @@
+<nav class="flex justify-between px-12 h-12 items-center my-4">
+  <a class="" href="/">
+    <span class="text-2xl font-black">
+      Blaine
+    </span>
+    <span>
+      .is-a.dev
+    </span>
+  </a>
+  <div class="flex gap-4">
+    <span>Hello</span>
+    <span>World</span>
+  </div>
+</nav>

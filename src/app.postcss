@@ -1,3 +1,5 @@
+@import url("https://api.fontshare.com/v2/css?f[]=red-hat-display@401,800,900,901,301,300,801,400,500,600&display=swap");
+
 /* Write your global styles here, in PostCSS syntax */
 @tailwind base;
 @tailwind components;
@@ -20,7 +22,22 @@ html,
 body {
 	@apply dark:bg-black dark:text-white w-dyn-screen min-h-fit;
 }
+.scroll-indicator {
+	@apply animate-pulse flex flex-col gap-2 items-center;
+	
+	&:after {
+		@apply bg-white transition-all delay-300;
+		content: "";
+		height: 3em;
+		width: 2%;
+	}
+}
 
-.section {
-	@apply flex flex-col items-center justify-center w-full h-dyn-screen;
+.lenis-scrolling .scroll-indicator {
+	@apply animate-none;
+
+	&:after {
+		@apply delay-0;
+		height: 1em;
+	}
 }
