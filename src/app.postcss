@@ -20,8 +20,29 @@
 
 html,
 body {
-	@apply dark:bg-black dark:text-white w-dyn-screen min-h-fit;
+	@apply dark:bg-black dark:text-white;
 }
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 .scroll-indicator {
 	@apply animate-pulse flex flex-col gap-2 items-center;
 	

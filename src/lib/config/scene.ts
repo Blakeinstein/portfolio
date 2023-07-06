@@ -3,14 +3,13 @@ import { Vector3, type MeshPhysicalMaterialParameters } from 'three';
 export const LIGHT_CONFIG = {
 	ambient: {
 		color: '#fff',
-		intensity: 0.2
+		intensity: 0.2	
 	},
 	spotlight: {
-		color: '#4d2e6b',
+		color: '#fff',
 		position: new Vector3(100, 150, 100)
 	},
 	pointLights: [
-		
 		{
 			color: '#61629e',
 			intensity: 2.4,

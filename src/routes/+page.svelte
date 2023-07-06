@@ -7,6 +7,7 @@
 	import Section from '$lib/layouts/section.svelte';
 	import Fade from '$lib/animations/fade.svelte';
 	import Hero from '$lib/components/hero/index.svelte';
+	import { scrollVelocity } from '$lib/context';
 
 	let seoProps = {
 		breadcrumbs: [
@@ -28,6 +29,7 @@
 			requestAnimationFrame(fn);
 		};
 		requestAnimationFrame(fn);
+		lenis.on("scroll", (e: Lenis) => scrollVelocity.set(e.velocity));
 	}
 </script>
 
