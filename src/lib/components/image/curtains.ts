@@ -1,7 +1,14 @@
 import { Curtains } from 'curtainsjs';
 
-const curtains = new Curtains({
-  container: "canvas"
-});
+let curtains: Curtains | null = null;
 
-export default curtains;
+const getCurtainsObject = () => {
+  if (!curtains) {
+    curtains = new Curtains({
+      container: "canvas"
+    });
+  }
+  return curtains;
+};
+
+export default getCurtainsObject;

@@ -22,6 +22,7 @@
 		"@threlte/extras": "next",
 		"@threlte/preprocess": "^0.0.2",
 		"@threlte/theatre": "next",
+		"@types/curtainsjs": "^8.1.0",
 		"@types/object-hash": "^3.0.1",
 		"@types/three": "^0.152.0",
 		"@typescript-eslint/eslint-plugin": "^5.46.1",
