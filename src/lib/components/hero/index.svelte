@@ -1,6 +1,6 @@
 <script>
 	import { fade } from "svelte/transition";
-  import Image from '$lib/components/image/index.svelte';
+  import Image from '$lib/components/image/Elastic.svelte';
   import Section from "$lib/layouts/section.svelte";
 </script>
 <Section class="flex flex-col lg:flex-row justify-around gap-4">
