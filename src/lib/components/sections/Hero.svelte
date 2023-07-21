@@ -1,13 +1,13 @@
 <script>
-	import { fade } from "svelte/transition";
-  import Image from '$lib/components/image/Elastic.svelte';
+  import Image from '$lib/components/elements/image/Elastic.svelte';
   import Section from "$lib/layouts/section.svelte";
+	import Title from "../elements/Title.svelte";
 </script>
 <Section class="flex flex-col lg:flex-row justify-around gap-4">
   <div class="flex flex-col gap-4">
-    <h1 out:fade class="text-5xl lg:text-9xl font-black">
+    <Title noArrow>
       Hey all!
-    </h1>
+    </Title>
     <p class="text-lg prose max-w-lg lg:pr-20">
       I'm Rishikesh "Blaine" Anand, a developer, software engineer and a tech enthusiast.
       I love architecting solutions to real life problems, and bringing them to life in a user-friendly way!

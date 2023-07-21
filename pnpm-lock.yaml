@@ -35,9 +35,6 @@ devDependencies:
   '@threlte/theatre':
     specifier: next
     version: 0.1.0-next.2
-  '@types/curtainsjs':
-    specifier: ^8.1.0
-    version: 8.1.0
   '@types/object-hash':
     specifier: ^3.0.1
     version: 3.0.1
@@ -53,9 +50,9 @@ devDependencies:
   autoprefixer:
     specifier: ^10.4.13
     version: 10.4.13(postcss@8.4.20)
-  curtainsjs:
-    specifier: ^8.1.4
-    version: 8.1.4
+  classnames:
+    specifier: ^2.3.2
+    version: 2.3.2
   eslint:
     specifier: ^8.29.0
     version: 8.29.0
@@ -364,7 +361,7 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/set-array': 1.1.2
-      '@jridgewell/sourcemap-codec': 1.4.14
+      '@jridgewell/sourcemap-codec': 1.4.15
       '@jridgewell/trace-mapping': 0.3.17
     dev: true
 
@@ -564,10 +561,6 @@ packages:
 
   /@types/cookie@0.5.1:
     resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
-    dev: true
-
-  /@types/curtainsjs@8.1.0:
-    resolution: {integrity: sha512-Vc5SfLSrlm7HMRhHO/dB10ASnMnRE3/NBeDRLB5qpu112ZcypQ6dD4RNlf+iSKqq15eS5/zuKK77d3sLHO5k/Q==}
     dev: true
 
   /@types/estree@1.0.0:
@@ -911,6 +904,10 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /classnames@2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: true
+
   /color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
     engines: {node: '>=7.0.0'}
@@ -949,10 +946,6 @@ packages:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
-    dev: true
-
-  /curtainsjs@8.1.4:
-    resolution: {integrity: sha512-HkvOhsWAabUtjFjQ8Sj/RZMO3PiT3FknrgnM7gpjr0RVr6cvXDPGroZnNUQXq+eVW4l5AI+RhnAcqUy1+xgWTQ==}
     dev: true
 
   /debug@4.3.4:

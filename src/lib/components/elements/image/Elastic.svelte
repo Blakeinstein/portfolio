@@ -13,4 +13,4 @@
   $: scrollProgress = elasticInOut($scrollVelocity) * $scrollVelocity ;
 </script>
 
-<img bind:this={el} src={src} alt={alt} class={`origin-top ${classes}`}  style:translate="0 {scrollProgress}px" />
+<img bind:this={el} src={src} alt={alt} class={`origin-top ${classes}`}  style:translate="0 {scrollProgress * 4}px" />

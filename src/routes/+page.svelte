@@ -6,8 +6,9 @@
 	import MainLayout from '$lib/layouts/main.svelte';
 	import Section from '$lib/layouts/section.svelte';
 	import Fade from '$lib/animations/fade.svelte';
-	import Hero from '$lib/components/hero/index.svelte';
+	import Hero from '$lib/components/sections/Hero.svelte';
 	import { scrollVelocity } from '$lib/context';
+	import Experience from '$lib/components/sections/experience/index.svelte';
 
 	let seoProps = {
 		breadcrumbs: [
@@ -44,11 +45,7 @@
 		<!-- <BuildingScene slot="background" /> -->
 		<!-- HERO -->
 		<Hero />
-		<Section>
-			<Fade>
-				<h1 class="text-2xl">This is some overlay text 2</h1>
-			</Fade>
-		</Section>
+		<Experience />
 		<Section>
 			<Fade>
 				<h1 class="text-2xl">This is some overlay text 3</h1>
