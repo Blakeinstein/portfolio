@@ -10,7 +10,7 @@
 
   export { classes as class };
 
-  $: scrollProgress = elasticInOut($scrollVelocity) * $scrollVelocity ;
+  $: scrollProgress = elasticInOut($scrollVelocity) * $scrollVelocity * 2 ;
 </script>
 
-<img bind:this={el} src={src} alt={alt} class={`origin-top ${classes}`}  style:translate="0 {scrollProgress * 4}px" />
+<img bind:this={el} src={src} alt={alt} class={`origin-top ${classes}`}  style:translate="0 {scrollProgress}px" />

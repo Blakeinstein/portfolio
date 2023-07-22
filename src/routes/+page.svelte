@@ -4,8 +4,7 @@
 	import { browser } from '$app/environment';
 	import SEO from '$lib/components/SEO/index.svelte';
 	import MainLayout from '$lib/layouts/main.svelte';
-	import Section from '$lib/layouts/section.svelte';
-	import Fade from '$lib/animations/fade.svelte';
+	import Backdrop from '$lib/components/elements/backdrop/index.svelte';
 	import Hero from '$lib/components/sections/Hero.svelte';
 	import { scrollVelocity } from '$lib/context';
 	import Experience from '$lib/components/sections/experience/index.svelte';
@@ -35,21 +34,9 @@
 </script>
 
 <SEO {...seoProps} />
+<MainLayout>
+	<Backdrop slot="background" />
+	<Hero />
+	<Experience />
+</MainLayout>
 
-<!-- {#await import('$lib/components/buildings/index.svelte').then((i) => i.default)}
-	<MainLayout>
-		<p>Loading..</p>
-	</MainLayout>
-{:then BuildingScene} -->
-	<MainLayout>
-		<!-- <BuildingScene slot="background" /> -->
-		<!-- HERO -->
-		<Hero />
-		<Experience />
-		<Section>
-			<Fade>
-				<h1 class="text-2xl">This is some overlay text 3</h1>
-			</Fade>
-		</Section>
-	</MainLayout>
-<!-- {/await} -->

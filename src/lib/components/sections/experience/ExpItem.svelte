@@ -8,14 +8,16 @@
 </script>
 
 <div class={classNames("px-px pb-4 border-black", { "border-b-[1px]": !last})}>
-  <h2 class="text-3xl">
-    {skill}
+  <span class="lg:flex items-end gap-2">
+    <h2 class="text-3xl">
+      {skill}
+    </h2>
     {#if note}
       <span class="text-xl opacity-75 italic">
         ({note})
       </span>
     {/if}
-  </h2>
+  </span>
   <div class="flex justify-between items-end">
     {#if $$slots.default}
     <p class="text-slate-500 italic">
