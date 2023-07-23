@@ -3,9 +3,11 @@
   
 </script>
 
-<Line top="6%" />
+
+<Line top="4rem" />
 <Line top="40%" />
 <Line top="85%" />
 
-<Line top="6%" left="4rem" vertical />
-<Line top="6%" left="calc(100% - 4rem)" vertical />
+<Line top="4rem" left="4rem" vertical />
+<Line top="4rem" left="calc(100% - 4rem)" vertical />
+

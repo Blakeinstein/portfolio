@@ -35,7 +35,6 @@
 
 <SEO {...seoProps} />
 <MainLayout>
-	<Backdrop slot="background" />
 	<Hero />
 	<Experience />
 </MainLayout>
