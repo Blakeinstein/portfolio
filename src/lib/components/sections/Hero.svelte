@@ -1,7 +1,7 @@
 <script>
-  import Image from '$lib/components/elements/image/Elastic.svelte';
+  import Image from '$lib/components/elements/atoms/image/Elastic.svelte';
   import Section from "$lib/layouts/section.svelte";
-	import Title from "../elements/Title.svelte";
+	import Title from "../elements/atoms/Title.svelte";
 </script>
 <Section class="flex flex-col lg:flex-row justify-around gap-4">
   <div class="flex flex-col gap-4">

@@ -5,7 +5,7 @@
 
 <Navbar />
 <main class="section gap-4 relative">
-	<background class="fixed h-screen inset-0">
+	<background class="absolute h-screen inset-0">
 		<slot name="background" />
 	</background>
 	<container class="relative min-h-dyn">

@@ -8,7 +8,6 @@
     </span>
   </a>
   <div class="flex gap-4">
-    <span>Hello</span>
-    <span>World</span>
+    <a href="/contact">Contact</a>
   </div>
 </nav>

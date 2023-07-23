@@ -1,6 +1,6 @@
 <script lang="ts">
 import Fade from "$lib/animations/fade.svelte";
-import Title from "$lib/components/elements/Title.svelte";
+import Title from "$lib/components/elements/atoms/Title.svelte";
 import Section from "$lib/layouts/section.svelte";
 import ExpItem from "./ExpItem.svelte";
 	import WorkItem from "./WorkItem.svelte";
