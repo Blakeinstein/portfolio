@@ -12,6 +12,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@iconify/svelte": "^3.1.4",
 		"@studio-freight/lenis": "^1.0.13",
 		"@sveltejs/adapter-auto": "latest",
 		"@sveltejs/adapter-static": "latest",
