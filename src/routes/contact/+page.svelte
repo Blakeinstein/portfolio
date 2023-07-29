@@ -5,7 +5,7 @@
 </script>
 
 <MainLayout>
-  <Socials />
   <Form />
+  <Socials />
 </MainLayout>
 

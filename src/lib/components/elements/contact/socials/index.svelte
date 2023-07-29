@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Section from "$lib/layouts/section.svelte";
+	import Title from "../../atoms/Title.svelte";
 	import Goo from "./Goo.svelte";
   import Link from './SocialLink.svelte'
 
@@ -129,6 +130,7 @@
   }
 </script>
 <Section>
+  <Title noArrow size="sm" class="mb-4">Find me on:</Title>
   <ul class="flex justify-evenly content-evenly w-full h-full" >
     {#each Object.entries(socials) as [group, links]}
       <li class="flex flex-col flex-nowrap place-items-center w-1/2 goo">

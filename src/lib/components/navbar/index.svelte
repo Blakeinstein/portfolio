@@ -1,6 +1,6 @@
-<nav class="flex justify-between px-12 h-12 items-center py-8">
+<nav class="flex justify-between px-12 h-12 items-center py-10">
   <a class="" href="/">
-    <span class="text-2xl font-black">
+    <span class="text-3xl font-black">
       Blaine
     </span>
     <span>

@@ -6,12 +6,12 @@ import Title from "../atoms/Title.svelte";
 let submitted = false;
 </script>
 <Section>
-  <div class="flex flex-col lg:flex-row gap-12 items-center justify-around">
+  <div class="flex flex-col lg:flex-row gap-12 items-center justify-around mx-16">
     <div class="">
       <Title noArrow>MAKE CONTACT</Title>
       <span class="lg:text-4xl text-2xl">Send me a message, regarding anything!</span>
     </div>
-    <div class="flex items-center lg:min-h-screen lg:basis-2/3">
+    <div class="flex items-center lg:min-h-screen lg:basis-2/3 w-full">
       {#if submitted}
         <div class="">
           <div class="">
@@ -20,8 +20,8 @@ let submitted = false;
           </div>
         </div>
       {:else}
-        <form class="flex flex-col gap-4">
-          <div class="flex gap-2">
+        <form class="flex flex-col gap-4 w-full">
+          <div class="grid grid-flow-col gap-2">
             <label>
                 Name
                 <input type="text" name="name" required placeholder="Your Name">

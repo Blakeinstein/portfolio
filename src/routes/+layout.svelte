@@ -29,6 +29,8 @@
 			focusableElements: 'h1, a, a svg, label.checkbox, button, input, textarea, select, .swup-transition-link',
 			mode: 'slow',
 		});
+
+		blobity['canvas'].style.zIndex = 0;
 	}
 </script>
 

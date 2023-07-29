@@ -24,6 +24,6 @@
       <slot />
     </p>
     {/if}
-    <h1 class="text-xl grow shrink-0">{years} years</h1>
+    <h1 class="text-xl shrink-0">{years} years</h1>
   </div>
 </div>
