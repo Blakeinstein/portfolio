@@ -27,5 +27,9 @@
       box-shadow: 0 0 5px theme('colors.zinc.800'), 0 0 25px theme('colors.zinc.800'),
         0 0 50px theme('colors.zinc.800'), 0 0 100px theme('colors.zinc.800');
     }
+
+    &:active {
+      scale: 0.9;
+    }
   }
 </style>

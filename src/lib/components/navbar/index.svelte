@@ -1,4 +1,4 @@
-<nav class="flex justify-between px-12 h-12 items-center my-4 z-10">
+<nav class="flex justify-between px-12 h-12 items-center py-8">
   <a class="" href="/">
     <span class="text-2xl font-black">
       Blaine
