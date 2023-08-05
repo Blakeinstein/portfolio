@@ -1,5 +1,10 @@
+<script>
+
+	import Link from "./Link.svelte";
+
+</script>
 <nav class="flex justify-between px-12 h-12 items-center py-10">
-  <a class="" href="/">
+  <a class="px-2 py-1" href="/">
     <span class="text-3xl font-black">
       Blaine
     </span>
@@ -8,6 +13,6 @@
     </span>
   </a>
   <div class="flex gap-4">
-    <a href="/contact">Contact</a>
+    <Link href="/contact" class="px-2 py-1">Contact</Link>
   </div>
 </nav>
