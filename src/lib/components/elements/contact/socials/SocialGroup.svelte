@@ -13,7 +13,7 @@
     class={
       classNames(
         "absolute top-1/2 -z-10 p-6 -translate-y-1/2",
-        "bg-slate-300 bg-opacity-60 text-black font-black text-lg rounded-full",
+        "bg-slate-500 bg-opacity-60 text-white font-black text-lg rounded-full",
         idx & 1 ? "left-full" : "right-full"
       )
     }
