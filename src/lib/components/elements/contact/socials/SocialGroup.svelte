@@ -8,18 +8,18 @@
   export let idx = 0;
 </script>
 
-<div class="flex -my-2 relative">
-  <span
+<div class="flex -my-1 relative">
+  <div
     class={
       classNames(
         "absolute top-1/2 -z-10 p-6 -translate-y-1/2",
-        "bg-gray-300 bg-opacity-60 text-black font-black text-lg rounded-full",
+        "bg-slate-300 bg-opacity-60 text-black font-black text-lg rounded-full",
         idx & 1 ? "left-full" : "right-full"
       )
     }
   >
-    {groupName}
-  </span>
+    <h1>{groupName}</h1>
+  </div>
   {#each socials as social}
     <Link
       tooltipContent={social.name}
