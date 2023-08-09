@@ -5,6 +5,7 @@
 	import { browser } from '$app/environment';
 	import { scrollVelocity } from '$lib/context';
 	import '../app.postcss';
+	import PartyTown from '$lib/components/SEO/PartyTown.svelte';
 
 	let lenis: Lenis | null;
 	let blobity: Blobity | null;
@@ -26,7 +27,7 @@
 			dotColor: '#333333',
 			font: 'Red Hat Display',
 			fontSize: 28,
-			focusableElements: 'h1, a, label.checkbox, button, input, textarea, select, .swup-transition-link',
+			focusableElements: 'h1, a, label.checkbox, button, input, textarea, select, .header',
 			mode: 'slow',
 		});
 
@@ -34,4 +35,5 @@
 	}
 </script>
 
+<PartyTown />
 <slot />
