@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Section from "$lib/layouts/section.svelte";
-	import Title from "../../atoms/Title.svelte";
+	import Title from "../../../elements/atoms/Title.svelte";
 	import Goo from "./Goo.svelte";
   import { SocialData } from "./SocialData";
 	import SocialGroup from "./SocialGroup.svelte";

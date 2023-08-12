@@ -13,6 +13,7 @@
     </span>
   </a>
   <div class="flex gap-4">
-    <Link href="/contact" class="px-2 py-1">Contact</Link>
+    <Link href="/contact">Contact</Link>
+    <Link href="/about">About</Link>
   </div>
 </nav>
