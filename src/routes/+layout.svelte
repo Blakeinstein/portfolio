@@ -22,12 +22,14 @@
 		blobity = new Blobity({
 			licenseKey: "GPLv3",
 			color: '#0c0400',
-			opacity: 0.2,
+			opacity: 0.35,
+			tooltipPadding: 10,
 			size: 28,
 			dotColor: '#333333',
 			font: 'Red Hat Display',
+			fontColor: '#ffffff',
 			fontSize: 28,
-			focusableElements: 'h1, a, label.checkbox, button, input, textarea, select, .header',
+			focusableElements: 'h1, a, label.checkbox, button, input, textarea, select, .header, .ellipses-orbit',
 			mode: 'slow',
 		});
 
