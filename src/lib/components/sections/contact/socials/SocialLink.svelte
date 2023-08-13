@@ -12,6 +12,7 @@
 <a
   class="w-32 h-32 transition-all social-icon grid place-items-center rounded-full p-8 text-white"
   data-blobity-tooltip={tooltipContent}
+  data-blobity-radius="16"
   href={href}
   target="_blank"
   rel="noopener noreferrer"

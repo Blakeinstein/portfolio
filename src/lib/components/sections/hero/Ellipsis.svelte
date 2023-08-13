@@ -1,7 +1,7 @@
 <div class="container">
   <h2 class="greeting absolute ">Hello from outerspace</h2>
   <div class="ellipses ellipses-outer-thin">
-    <div class="ellipses ellipses-orbit"></div>
+    <div class="ellipses ellipses-orbit" data-blobity-radius="50"></div>
   </div>
   <div class="ellipses ellipses-outer-thick"></div>
 </div>
