@@ -8,17 +8,14 @@
   })
 </script>
 
-<label class="focus:font-semibold relative cursor-pointer checkbox">
+<label class="active:font-semibold relative cursor-pointer checkbox p-2">
   <input type="checkbox" name="confidence" id="noSpam" required bind:this={input}>
-  <span>I solemnly swear I am not a troll...</span>
+  <span class="ml-2">I solemnly swear I am not a troll...</span>
 </label>
 
 
 <style lang="postcss">
   .checkbox {
-    display: block;
-    margin-left: calc(10% + .5rem);
-    margin-bottom: .5rem;
 
     &:before,
     &:after {
@@ -40,9 +37,11 @@
     }
 
     &:after {
-      content: "✌";
+      content: "✦";
+      color: white;
       text-align: center;
       line-height: 2em;
+      font-size: 1.5em;
       font-weight: bolder;
       overflow: hidden;
       opacity: 0;
@@ -50,6 +49,7 @@
     }
 
     &:has(input:checked) {
+      @apply font-semibold;
       &:before {
         border-width: 1em;
         box-shadow: 0 0 5px currentColor, 0 0 25px currentColor,

@@ -10,7 +10,7 @@
 
 
 <a
-  class="w-32 h-32 transition-all social-icon grid place-items-center rounded-full p-8 text-white"
+  class="w-24 h-24 transition-all social-icon grid place-items-center rounded-full p-6 text-white"
   data-blobity-tooltip={tooltipContent}
   data-blobity-radius="16"
   href={href}

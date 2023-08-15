@@ -15,10 +15,10 @@
   href="{href}"
   class={
     classNames(
-      "px-2 py-1",
+      "px-2 py-1 rounded-md hover:bg-slate-800 hover:text-white",
       classes,
       {
-        "underline": path === href,
+        "px-2 bg-slate-800 text-white bg-opacity-80": path === href,
       }
     )
   }

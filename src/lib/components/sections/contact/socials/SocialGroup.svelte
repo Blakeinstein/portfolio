@@ -5,21 +5,9 @@
 
   export let socials: SocialInfo[];
   export let groupName: string;
-  export let idx = 0;
 </script>
 
-<div class="flex -my-1 relative">
-  <div
-    class={
-      classNames(
-        "absolute top-1/2 -z-10 p-6 -translate-y-1/2",
-        "bg-slate-500 bg-opacity-60 text-white font-black text-lg rounded-full",
-        idx & 1 ? "left-full" : "right-full"
-      )
-    }
-  >
-    <h1>{groupName}</h1>
-  </div>
+<div class="flex flex-wrap-reverse justify-center -my-1 ${groupName}">
   {#each socials as social}
     <Link
       tooltipContent={social.name}

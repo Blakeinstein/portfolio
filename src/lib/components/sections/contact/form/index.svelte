@@ -28,8 +28,8 @@
     }
   }
 </script>
-<Section>
-  <div class="flex flex-col lg:flex-row gap-12 items-center justify-around mx-16">
+<Section class="grid place-items-center">
+  <div class="flex flex-col lg:flex-row gap-12 items-center justify-around mx-6 lg:mx-16">
     <div class="flex flex-col items-center">
       <Title noArrow>MAKE CONTACT</Title>
       <span class="lg:text-4xl text-2xl">Send me a message, regarding anything!</span>
@@ -53,7 +53,9 @@
           </div>
           <Input name="Subject" placeholder="Choose Subject" type="text"/>
           <Input name="message" placeholder="Start typing here" type="TextArea" />
-          <Oath />
+          <div class="mb-1 ml-10">
+            <Oath />
+          </div>
           <div>
             <Button buttonType="submit" class="text-lg italic tracking-widest uppercase">
               <svg
@@ -77,4 +79,3 @@
     </div>
   </div>
 </Section>
-
