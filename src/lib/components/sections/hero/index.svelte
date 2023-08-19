@@ -13,7 +13,9 @@
     word-spacing: 0.5rem;
   }
   .gradient-text {
-    background: url(https://media3.giphy.com/media/3ohhwNqFMnb7wZgNnq/200w.webp?cid=ecf05e47d997p21ocdhmsygyroh5htnsovwf7hl7k22blb0q&rid=200w.webp&ct=g);
+    background: url(
+      https://media1.giphy.com/media/jaOXKCxtBPLieRLI0c/giphy.gif?cid=ecf05e4751fqcqga4vivc5a9mohakfnsodtsu1oew67k5n1a&ep=v1_gifs_search&rid=giphy.gif&ct=g
+    );
     background-position-x: 0%;
     background-position-y: 0%;
     background-clip: border-box;

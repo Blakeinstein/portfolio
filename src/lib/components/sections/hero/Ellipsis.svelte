@@ -34,14 +34,14 @@
   width: 100%;
   height: 100%;
   border-width: 1px;
-  border-color: rgba(9, 56, 62, 0.1);
+  border-color: rgba(40, 33, 81, 0.1);
   animation: ellipsesOrbit 15s ease-in-out infinite;
 }
 
 .ellipses-outer-thick {
   width: 100%;
   height: 100%;
-  border-color: #09383E transparent;
+  border-color: rgb(40, 33, 81) transparent;
   border-width: 0.5rem;
   animation: ellipsesRotate 15s ease-in-out infinite;
 }
@@ -50,7 +50,7 @@
   width: 2.5rem;
   height: 2.5rem;
   border-width: 2px;
-  border-color: #09383E;
+  border-color: rgb(40, 33, 81);
   left: 50%;
   translate: 50% -50%;
   z-index: 1;
@@ -61,7 +61,7 @@
     height: 0.7rem;
     border-radius: 50%;
     display: inline-block;
-    background-color: #09383E;
+    background-color: rgb(40, 33, 81);
     margin: 0 auto;
     left: 0;
     right: 0;
