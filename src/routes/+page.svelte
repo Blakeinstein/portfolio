@@ -1,6 +1,5 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO/index.svelte';
-	import MainLayout from '$lib/layouts/main.svelte';
 	import Hero from '$lib/components/sections/hero/index.svelte';
 
 	let seoProps = {
@@ -16,7 +15,5 @@
 </script>
 
 <SEO {...seoProps} />
-<MainLayout>
-	<Hero />
-</MainLayout>
 
+<Hero />

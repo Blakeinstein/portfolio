@@ -4,7 +4,7 @@
   export let buttonType: HTMLButtonElement["type"] = "button";
   let classes = "";
   export { classes as class };
-  export let href: string;
+  export let href: string | undefined = undefined;
 </script>
 
 <svelte:element this={href ? 'a' : 'button'}

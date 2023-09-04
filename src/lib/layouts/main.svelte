@@ -11,8 +11,6 @@
 </background>
 <Navbar />
 <main class="section gap-4 relative">
-	<container class="relative min-h-dyn">
-		<slot />
-	</container>
+	<slot />
 </main>
 <ScrollIndicator class="fixed bottom-10 right-10" />

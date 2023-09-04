@@ -2,10 +2,15 @@
 	import Lenis from '@studio-freight/lenis';
 	import Blobity from 'blobity';
 
+	import { fly } from 'svelte/transition'
+	import { cubicOut, cubicIn } from 'svelte/easing';
+
 	import { browser } from '$app/environment';
 	import { scrollVelocity } from '$lib/context';
-	import '../app.postcss';
 	import PartyTown from '$lib/components/SEO/PartyTown.svelte';
+	import MainLayout from '$lib/layouts/main.svelte';
+
+	import '../app.postcss';
 
 	let lenis: Lenis | null;
 	let blobity: Blobity | null;
@@ -29,13 +34,30 @@
 			font: 'Red Hat Display',
 			fontColor: '#ffffff',
 			fontSize: 28,
-			focusableElements: 'h1, a:not(:has(svg)), a svg, .checkbox, input::before, button, input, textarea, select, .header, .ellipses-orbit',
+			focusableElements: 'h1, a, .checkbox, input::before, button, input, textarea, select, .header, .ellipses-orbit',
 			mode: 'slow',
 		});
 
 		blobity['canvas'].style.zIndex = 0;
 	}
+
+  export let data;
+
+	const duration = 300
+	const delay = duration + 100
+	const x = 300
+
+	const transitionIn = { easing: cubicOut, x, duration, delay }
+	const transitionOut = { easing: cubicIn, x: -x, duration }
+
 </script>
 
 <PartyTown />
-<slot />
+
+<MainLayout>
+	{#key data.path}
+		<container in:fly={transitionIn} out:fly={transitionOut} class="relative min-h-dyn">
+			<slot />
+		</container>
+	{/key}
+</MainLayout>
