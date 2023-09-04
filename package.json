@@ -41,6 +41,7 @@
 		"postprocessing": "^6.31.0",
 		"prettier": "^2.8.1",
 		"prettier-plugin-svelte": "^2.9.0",
+		"sass": "^1.66.1",
 		"svelte": "^3.59.1",
 		"svelte-check": "^2.10.2",
 		"svelte-inview": "^4.0.0",

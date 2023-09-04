@@ -1,20 +1,30 @@
-<div class="container">
-  <h2 class="greeting absolute ">Hello from outerspace</h2>
-  <div class="ellipses ellipses-outer-thin">
-    <div class="ellipses ellipses-orbit" data-blobity-radius="50"></div>
+<script>
+
+	import Section from "$lib/layouts/section.svelte";
+
+</script>
+<Section>
+  <div class="container greeting-root">
+    <div class="greeting absolute z-10">
+      <slot />
+    </div>
+    <div class="ellipses ellipses-outer-thin pointer-events-none">
+      <div class="ellipses ellipses-orbit" data-blobity-radius="50"></div>
+    </div>
+    <div class="ellipses ellipses-outer-thick"></div>
   </div>
-  <div class="ellipses ellipses-outer-thick"></div>
-</div>
+</Section>
 <!-- </Section> -->
 
 <style lang="postcss">
 .container {
-  --size: calc(min(80vw, 80vh));
+  @apply mt-[10vh] mx-auto lg:mt-[3vh];
+  --size: min(80vw, 80vh);
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
   position: relative;
-  margin: 0 auto;
+  overflow: visible;
 
   .greeting {
     top: 10%;
@@ -52,13 +62,13 @@
   border-width: 2px;
   border-color: rgb(40, 33, 81);
   left: 50%;
-  translate: 50% -50%;
+  translate: 50% -45%;
   z-index: 1;
 
   &:before {
     content: '';
-    width: 0.7rem;
-    height: 0.7rem;
+    width: 0.4rem;
+    height: 0.4rem;
     border-radius: 50%;
     display: inline-block;
     background-color: rgb(40, 33, 81);

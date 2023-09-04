@@ -35,9 +35,9 @@
 
 <style lang="postcss">
   .social-icon {
-    @apply w-36 h-36 lg:w-96 lg:h-96 text-lg lg:text-5xl grid place-items-center rounded-lg;
+    @apply w-36 h-36 lg:w-80 lg:h-80 text-lg lg:text-5xl grid place-items-center rounded-lg;
     &:is(a):hover {
-      scale: 1.15;
+      scale: 1.1;
       z-index: 10;
     }
   }

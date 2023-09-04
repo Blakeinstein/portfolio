@@ -59,7 +59,6 @@
           <div>
             <Button buttonType="submit" class="text-lg italic tracking-widest uppercase">
               <svg
-                slot="icon"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"

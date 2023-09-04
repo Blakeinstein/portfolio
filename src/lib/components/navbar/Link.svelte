@@ -15,7 +15,7 @@
   href="{href}"
   class={
     classNames(
-      "px-2 py-1 rounded-md hover:bg-slate-800 hover:text-white",
+      "px-4 py-1 rounded-md hover:bg-slate-800 hover:text-white",
       classes,
       {
         "px-2 bg-slate-800 text-white bg-opacity-80": path === href,

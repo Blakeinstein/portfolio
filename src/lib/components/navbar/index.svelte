@@ -12,7 +12,7 @@ import Link from "./Link.svelte";
       .is-a.dev
     </span>
   </a>
-  <div class="flex gap-2 items-center">
+  <div class="flex gap-4 items-center">
     <Link href="/contact">Contact</Link>
     <Link href="/about">About</Link>
     <a

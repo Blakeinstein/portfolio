@@ -4,9 +4,10 @@
   export let buttonType: HTMLButtonElement["type"] = "button";
   let classes = "";
   export { classes as class };
+  export let href: string;
 </script>
 
-<button
+<svelte:element this={href ? 'a' : 'button'}
   type={buttonType}
   class={
     classNames(
@@ -16,10 +17,10 @@
       classes
     )
   }
+  {href}
 >
-  <slot name="icon" />
   <slot/>
-</button> 
+</svelte:element> 
 
 <style lang="postcss">
   .ghost-button {
