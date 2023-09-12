@@ -2,7 +2,7 @@
 	import Section from "$lib/layouts/section.svelte";
 	import Title from "../../../elements/atoms/Title.svelte";
 	import Goo from "./Goo.svelte";
-  import { SocialData } from "./SocialData";
+  import { SocialData } from "$lib/data/SocialData";
 	import SocialGroup from "./SocialGroup.svelte";
 
 </script>

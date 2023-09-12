@@ -1,6 +1,5 @@
 <script lang="ts">
-	import classNames from "classnames";
-  import type { SocialInfo } from "./SocialData";
+  import type { SocialInfo } from "../../../../data/SocialData";
 	import Link from "./SocialLink.svelte";
 
   export let socials: SocialInfo[];

@@ -29,7 +29,7 @@
   }
 </script>
 <Section class="grid place-items-center">
-  <div class="flex flex-col lg:flex-row gap-12 items-center justify-around mx-2 lg:mx-16">
+  <div class="flex flex-col lg:flex-row w-full lg:w-auto gap-12 items-center justify-around mx-2 lg:mx-16">
     <div class="flex flex-col items-center">
       <Title noArrow>MAKE CONTACT</Title>
       <span class="lg:text-4xl text-2xl">Send me a message, regarding anything!</span>

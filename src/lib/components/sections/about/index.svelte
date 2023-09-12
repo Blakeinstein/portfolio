@@ -22,5 +22,5 @@
       is <strong>Rust</strong>, no matter how much <strong>TypeScript/JavaScript</strong> I have written in my life. 
     </p>
   </div>
-  <Image src="https://http.dog/static/codes/dogs/medium/301.avif" alt="hero image" class="min-w-[12rem] m-4 grow"/>
+  <Image src="https://http.dog/204.avif" alt="hero image" class="min-w-[12rem] m-4 grow"/>
 </Section>
