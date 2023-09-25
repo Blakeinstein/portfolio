@@ -6,7 +6,7 @@
 </script>
 
 <a
-  class="flex flex-col lg:grid place-items-center relative project-item rounded-md"
+  class="flex lg:grid place-items-center relative project-item rounded-md"
   href="/projects/{projectName}"
   style:grid-column={projectData.col}
   style:grid-row={projectData.row}
@@ -26,7 +26,7 @@
   .project-item {
     --padding: 0px;
     flex-basis: 45%;
-    max-height: 35vh;
+    max-height: 45vh;
   }
 
   .img-wrapper {
