@@ -25,6 +25,10 @@ body {
 
 html.lenis {
   height: auto;
+	width: 100dvw;
+	overflow-x: hidden;
+	scrollbar-gutter: stable;
+	scrollbar-color: #6969dd #e5e5e5;
 }
 
 .lenis.lenis-smooth {
@@ -64,17 +68,31 @@ html.lenis {
 }
 
 .gradient-text {
-    background: url(
-      https://media1.giphy.com/media/jaOXKCxtBPLieRLI0c/giphy.gif?cid=ecf05e4751fqcqga4vivc5a9mohakfnsodtsu1oew67k5n1a&ep=v1_gifs_search&rid=giphy.gif&ct=g
-    );
-    background-position-x: 0%;
-    background-position-y: 0%;
-    background-clip: border-box;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: rgba(40, 33, 81, 0.333);
-    background-position: center;
-    text-shadow: 0 0 20px #5315bf75;
-  }
+	background: url(
+		https://media1.giphy.com/media/jaOXKCxtBPLieRLI0c/giphy.gif?cid=ecf05e4751fqcqga4vivc5a9mohakfnsodtsu1oew67k5n1a&ep=v1_gifs_search&rid=giphy.gif&ct=g
+	);
+	background-position-x: 0%;
+	background-position-y: 0%;
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: rgba(40, 33, 81, 0.333);
+	background-position: center;
+	text-shadow: 0 0 20px #5315bf75;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background-image: url('/noise.svg');
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-slate-700 rounded-lg bg-opacity-50;
+}
+
+
