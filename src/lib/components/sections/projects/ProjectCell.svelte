@@ -6,13 +6,13 @@
 </script>
 
 <a
-  class="flex lg:grid place-items-center relative project-item rounded-md"
+  class="flex lg:grid lg:place-items-center relative project-item rounded-md gap-2"
   href="/projects/{projectName}"
   style:grid-column={projectData.col}
   style:grid-row={projectData.row}
   data-no-blobity
 >
-  <div class="img-wrapper relative overflow-hidden">
+  <div class="img-wrapper relative overflow-hidden shrink-0 grow-0">
     <img src={projectData.thumbnail} alt={projectName} class="absolute object-cover" />
   </div>
   <div class="lg:absolute bottom-0 info lg:p-8 lg:text-white">
@@ -24,14 +24,12 @@
 
 <style lang="postcss">
   .project-item {
+    min-height: 20vh;
     --padding: 0px;
-    flex-basis: 45%;
-    max-height: 45vh;
   }
 
   .img-wrapper {
-    width: calc(100% - var(--padding) * 2);
-    height: calc(100% - var(--padding) * 2);
+    width: 45vw;
     > img {
       min-height: 100%;
     }
@@ -39,6 +37,10 @@
 
   @media (min-width: 1024px) {
     .project-item {
+      .img-wrapper {
+        width: calc(100% - var(--padding) * 2);
+        height: calc(100% - var(--padding) * 2);
+      }
 
       padding: var(--padding);
       * {
