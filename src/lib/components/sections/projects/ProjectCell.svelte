@@ -1,22 +1,22 @@
 <script lang="ts">
 	import type { ProjectData } from "$lib/data/ProjectData";
 
-  export let projectName: string;
+  export let projectKey: string;
   export let projectData: ProjectData;
 </script>
 
 <a
   class="flex lg:grid lg:place-items-center relative project-item rounded-md gap-2"
-  href="/projects/{projectName}"
+  href="/projects/{projectKey}"
   style:grid-column={projectData.col}
   style:grid-row={projectData.row}
   data-no-blobity
 >
   <div class="img-wrapper relative overflow-hidden shrink-0 grow-0">
-    <img src={projectData.thumbnail} alt={projectName} class="absolute object-cover" />
+    <img src={projectData.thumbnail} alt={projectKey} class="absolute object-cover" style={`view-transition-name': 'project-${projectKey}-img`} />
   </div>
   <div class="lg:absolute bottom-0 info lg:p-8 lg:text-white">
-    <h2 class="font-semibold text-2xl">{projectName}</h2>
+    <h2 class="font-semibold text-2xl">{projectData.name}</h2>
     <p class="italic text-sm">{projectData.description}</p>
     <span>Click to read more</span>
   </div>

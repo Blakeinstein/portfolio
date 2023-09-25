@@ -4,7 +4,7 @@
   export let skill: string;
   export let years: number;
   export let note: string | undefined = undefined;
-  export let last: boolean = false;
+  export let last = false;
 </script>
 
 <div class={classNames("px-px pb-4 border-black", { "border-b-[1px]": !last})}>

@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { fly } from 'svelte/transition'
-	import { cubicOut, cubicIn } from 'svelte/easing';
+	import { onNavigate } from '$app/navigation'
 
 	import PartyTown from '$lib/components/SEO/PartyTown.svelte';
 	import MainLayout from '$lib/layouts/main.svelte';
@@ -9,15 +8,18 @@
 
 	import '../app.postcss';
 
-  export let data;
+	onNavigate((navigation) => {
+		// @ts-expect-error - Typescript doesn't know about startViewTransition
+		if (!document.startViewTransition) return
 
-	const duration = 300
-	const delay = duration + 100
-	const x = 300
-
-	const transitionIn = { easing: cubicOut, x, duration, delay }
-	const transitionOut = { easing: cubicIn, x: -x, duration }
-
+		return new Promise((resolve) => {
+			// @ts-expect-error - Typescript doesn't know about startViewTransition
+			document.startViewTransition(async () => {
+				resolve()
+				await navigation.complete
+			})
+		})
+	})
 </script>
 
 <Blobity />
@@ -25,9 +27,5 @@
 <PartyTown />
 
 <MainLayout>
-	{#key data.path}
-		<container in:fly={transitionIn} out:fly={transitionOut} class="relative min-h-dyn">
-			<slot />
-		</container>
-	{/key}
+		<slot />
 </MainLayout>

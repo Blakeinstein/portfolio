@@ -6,7 +6,7 @@
   let classes = "";
 
   export { classes as class };
-  let path: string = "";
+  let path = "";
 
   $: path = $page.url.pathname;
 </script>
@@ -18,10 +18,16 @@
       "px-4 py-1 rounded-md hover:bg-slate-800 hover:text-white",
       classes,
       {
-        "px-2 bg-slate-800 text-white bg-opacity-80": path === href,
+        "px-2 bg-slate-800 text-white bg-opacity-80 active-header": path === href,
       }
     )
   }
 >
   <slot />  
 </a>
+
+<style>
+.active-header {
+  view-transition-name: active-header-item;
+}
+</style>

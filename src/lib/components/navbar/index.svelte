@@ -3,7 +3,7 @@
 import Link from "./Link.svelte";
 </script>
 
-<nav class="flex justify-between px-6 lg:px-12 h-12 items-center py-10">
+<nav class="flex justify-between px-6 lg:px-12 h-12 items-center py-10 navbar">
   <a class="px-2 py-1" href="/">
     <span class="text-3xl font-black block lg:inline">
       Blaine
@@ -27,3 +27,9 @@ import Link from "./Link.svelte";
     </a>
   </div>
 </nav>
+
+<style>
+  .navbar{
+    view-transition-name: header;
+  }
+</style>

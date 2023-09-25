@@ -3,7 +3,7 @@
 
   export let top = "0%";
   export let left = "0%";
-  export let vertical: boolean = false;
+  export let vertical = false;
 </script>
 
 <hr

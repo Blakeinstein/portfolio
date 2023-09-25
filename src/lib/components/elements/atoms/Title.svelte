@@ -3,7 +3,7 @@
 
   let classes = "";
   export let size: "sm" | "md" | "lg" = "md";
-  export let noArrow: boolean = false;
+  export let noArrow = false;
   export { classes as class };
 
   $: classes = classnames('font-black flex gap-2 items-center mb-4 header', {

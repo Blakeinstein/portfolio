@@ -48,7 +48,7 @@
 						`https://github.com/${githubPage}`,
 						`https://linkedin.com/in/${linkedinProfile}`
 					]
-			  }
+      }
 			: null;
 
 	const schemaOrgWebsite = {

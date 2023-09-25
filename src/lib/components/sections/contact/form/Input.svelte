@@ -4,7 +4,7 @@ import type { HTMLInputTypeAttribute } from "svelte/elements";
 
   export let name: string;
   export let type: HTMLInputTypeAttribute | "TextArea";
-  export let placeholder: string = "";
+  export let placeholder = "";
   let classes = "";
   export { classes as class };
 </script>

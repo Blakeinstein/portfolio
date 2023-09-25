@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 
-  export let tooltipContent: string = "";
-  export let href: string = "";
-  export let icon: string = "";
+  export let tooltipContent = "";
+  export let href = "";
+  export let icon = "";
   export let custom: string | undefined = undefined;
-  export let background: string = "theme('colors.zinc.500')";
+  export let background = "theme('colors.zinc.500')";
   export let dummy = false;
 </script>
 
