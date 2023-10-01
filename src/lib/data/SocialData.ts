@@ -15,12 +15,6 @@ export const SocialData: Record<string, SocialInfo[]> = {
       background: "#0085AE"
     },
     {
-      name: "Twitter",
-      icon: "bi:twitter",
-      href: "https://twitter.com/BlaineSensei",
-      background: "#32CCFE"
-    },
-    {
       name: "Reddit",
       icon: "bi:reddit",
       href: "https://reddit.com/u/sigiz",

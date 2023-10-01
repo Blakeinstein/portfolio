@@ -18,7 +18,7 @@
 
 <style lang="postcss">
 .container {
-  @apply mt-[10vh] mx-auto lg:mt-[3vh];
+  @apply mt-[8vh] mx-auto lg:mt-[3vh];
   --size: min(80vw, 80vh);
   width: var(--size);
   height: var(--size);

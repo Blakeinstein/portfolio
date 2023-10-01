@@ -13,9 +13,9 @@ import Link from "./Link.svelte";
     </span>
   </a>
   <div class="flex gap-4 items-center">
-    <Link href="/contact">Contact</Link>
     <Link href="/about">About</Link>
     <Link href="/projects">Projects</Link>
+    <Link href="/contact">Contact</Link>
     <a
       class="p-2 rounded-md hover:bg-slate-800 hover:text-white"
       href="https://github.com/blakeinstein"

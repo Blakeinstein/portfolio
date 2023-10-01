@@ -16,10 +16,4 @@
     </div>
   </div>
 </Section>
-<Goo />
 
-<style>
-  .goo {
-    filter: url(#goo);
-  }
-</style>

@@ -3,6 +3,6 @@
 	export { classes as class };
 </script>
 
-<div class={`tracking-[.5em] text-xs scroll-indicator opacity-60 ${classes}`}>
+<div class={`tracking-[.4em] text-sm scroll-indicator opacity-60 ${classes}`}>
   <span>SCROLL</span>
 </div>

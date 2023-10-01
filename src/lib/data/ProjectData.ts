@@ -1,9 +1,16 @@
+export type ProjectLink = {
+  icon: string;
+  href: string;
+  type: string;
+};
+
 export type ProjectData = {
   name: string;
   description: string;
   thumbnail: string;
   col?: number;
   row?: number;
+  links: ProjectLink[]
 };
 
 export const ProjectData: Record<string, ProjectData> = {
@@ -13,6 +20,18 @@ export const ProjectData: Record<string, ProjectData> = {
     thumbnail: "https://http.dog/204.avif",
     col: 1,
     row: 1,
+    links: [
+      {
+        icon: '',
+        href: 'https://http.dog/404.avif',
+        type: 'Github' 
+      },
+      {
+        icon: '',
+        href: 'https://http.dog/404.avif',
+        type: 'Webpage' 
+      }
+    ]
   },
   "new-portfolio": {
     name: "New portfolio",
@@ -20,6 +39,18 @@ export const ProjectData: Record<string, ProjectData> = {
     thumbnail: "https://http.dog/204.avif",
     col: 1,
     row: 2,
+    links: [
+      {
+        icon: '',
+        href: 'https://http.dog/404.avif',
+        type: 'Github' 
+      },
+      {
+        icon: '',
+        href: 'https://http.dog/404.avif',
+        type: 'Webpage' 
+      }
+    ]
   },
   "bloop": {
     name: "Bloop",
@@ -27,6 +58,11 @@ export const ProjectData: Record<string, ProjectData> = {
     thumbnail: "https://http.dog/204.avif",
     col: 2,
     row: 3,
+    links: [{
+      icon: '',
+      href: 'https://http.dog/404.avif',
+      type: 'Github' 
+    }]
   },
   "chemical-pfd": {
     name: "Chemical-PFD",
@@ -34,6 +70,11 @@ export const ProjectData: Record<string, ProjectData> = {
     thumbnail: "https://http.dog/204.avif",
     col: 3,
     row: 1,
+    links: [{
+      icon: '',
+      href: 'https://http.dog/404.avif',
+      type: 'Github' 
+    }]
   },
   "remit-tracker": {
     name: "Remit-Tracker",
@@ -41,6 +82,18 @@ export const ProjectData: Record<string, ProjectData> = {
     thumbnail: "https://http.dog/204.avif",
     col: 3,
     row: 2,
+    links: [
+      {
+        icon: '',
+        href: 'https://http.dog/404.avif',
+        type: 'Github' 
+      },
+      {
+        icon: '',
+        href: 'https://http.dog/404.avif',
+        type: 'Webpage' 
+      }
+    ]
   },
   "fuse-rust": {
     name: "Fuse-Rust",
@@ -48,6 +101,11 @@ export const ProjectData: Record<string, ProjectData> = {
     thumbnail: "https://http.dog/204.avif",
     col: 4,
     row: 1,
+    links: [{
+      icon: '',
+      href: 'https://http.dog/404.avif',
+      type: 'Github' 
+    }]
   },
   "bro-lang": {
     name: "BroLang",
@@ -55,5 +113,10 @@ export const ProjectData: Record<string, ProjectData> = {
     thumbnail: "https://http.dog/204.avif",
     col: 4,
     row: 3,
+    links: [{
+      icon: '',
+      href: 'https://http.dog/404.avif',
+      type: 'Github' 
+    }]
   },
 };

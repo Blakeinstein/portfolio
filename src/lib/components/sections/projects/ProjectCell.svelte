@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { ProjectData } from "$lib/data/ProjectData";
+	import classNames from "classnames";
 
   export let projectKey: string;
   export let projectData: ProjectData;
@@ -12,19 +13,28 @@
   style:grid-row={projectData.row}
   data-no-blobity
 >
-  <div class="img-wrapper relative overflow-hidden shrink-0 grow-0">
-    <img src={projectData.thumbnail} alt={projectKey} class="absolute object-cover" style={`view-transition-name': 'project-${projectKey}-img`} />
+  <div
+    class="img-wrapper relative overflow-hidden shrink-0 grow-0 rounded-md"
+    style={`view-transition-name: project-${projectKey}-img`}
+  >
+    <img src={projectData.thumbnail} alt={projectKey} class="absolute object-cover" />
   </div>
-  <div class="lg:absolute bottom-0 info lg:p-8 lg:text-white">
+  <div class="lg:absolute bottom-0 info lg:p-8 lg:text-white w-full">
     <h2 class="font-semibold text-2xl">{projectData.name}</h2>
-    <p class="italic text-sm">{projectData.description}</p>
+    <p class="italic text-sm max-h-10 max-w-full overflow">{projectData.description}</p>
     <span>Click to read more</span>
   </div>
 </a>
 
 <style lang="postcss">
+  .overflow {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+  }
   .project-item {
-    min-height: 20vh;
     --padding: 0px;
   }
 

@@ -8,26 +8,32 @@
   export { classes as class };
   let path = "";
 
-  $: path = $page.url.pathname;
+  $: path = $page.url.pathname?.split("/")?.[1];
+  $: current = href.split("/")?.[1] === path;
 </script>
 
 <a
   href="{href}"
   class={
     classNames(
-      "px-4 py-1 rounded-md hover:bg-slate-800 hover:text-white",
+      "rounded-md relative p-2 py-1",
       classes,
-      {
-        "px-2 bg-slate-800 text-white bg-opacity-80 active-header": path === href,
-      }
     )
   }
+  aria-current={current ? "page" : undefined}
 >
   <slot />  
 </a>
 
-<style>
-.active-header {
+<style lang="postcss">
+  
+a[aria-current='page']::before {
+  @apply  bg-slate-800 absolute;
+  height: 1px;
+  bottom: 0.25em;
+  width: calc(100% - 1em);
+  content: '';
   view-transition-name: active-header-item;
 }
+
 </style>
