@@ -1,0 +1,16 @@
+---
+name: BroLang
+description: A toy programming language built as a part of a submission for SER 502
+  (Programming Paradigms) at ASU.
+thumbnail: https://http.dog/204.avif
+techs:
+- python
+col: 4
+row: 3
+links:
+- icon: entypo-social:github
+  href: https://http.dog/404.avif
+  type: Github
+---
+A toy programming language built as a part of a submission for SER
+  502 (Programming Paradigms) at ASU.

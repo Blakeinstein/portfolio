@@ -1,11 +1,15 @@
 <script lang="ts">
   import ProjectPage from "$lib/components/sections/projects/ProjectPage.svelte";
-  import type { ProjectData } from "$lib/data/ProjectData";
+  import type { ProjectMetaData } from "$lib/data/ProjectData";
+  import type { SvelteComponent } from "svelte";
 
   export let data: {
-    projectKey: string,
-    projectData: ProjectData
+    content: typeof SvelteComponent
+    projectData: ProjectMetaData
+    allProjects: ProjectMetaData[]
   };
 </script>
 
-<ProjectPage projectKey={data.projectKey} projectData={data.projectData} />
+<ProjectPage projectData={data.projectData} allProjects={data.allProjects}>
+  <svelte:component this={data.content} />
+</ProjectPage>

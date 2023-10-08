@@ -1,15 +1,14 @@
 <script lang="ts">
 	import classNames from "classnames";
-  import { page } from '$app/stores';
 
   export let href: string;
+  export let current: string;
+  export let highlightOn: string;
   let classes = "";
 
   export { classes as class };
-  let path = "";
 
-  $: path = $page.url.pathname?.split("/")?.[1];
-  $: current = href.split("/")?.[1] === path;
+  $: active = href.split("/")?.[1] === current;
 </script>
 
 <a
@@ -18,9 +17,12 @@
     classNames(
       "rounded-md relative p-2 py-1",
       classes,
+      {
+        "sparkles": current === highlightOn
+      }
     )
   }
-  aria-current={current ? "page" : undefined}
+  aria-current={active? "page" : undefined}
 >
   <slot />  
 </a>
@@ -36,4 +38,23 @@ a[aria-current='page']::before {
   view-transition-name: active-header-item;
 }
 
+
+.sparkles {
+  @apply relative font-bold;
+  z-index: 10;
+
+  &::before {
+    content: '';
+    @apply absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-image: url(/sparkle.png);
+    background-size: 100% 100%;
+    mix-blend-mode: overlay;
+    border-radius: 50%;
+    opacity: 20%;
+  }
+}
 </style>

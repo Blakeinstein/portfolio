@@ -1,6 +1,9 @@
 <script>
 	import Icon from "@iconify/svelte";
-import Link from "./Link.svelte";
+  import Link from "./Link.svelte";
+  import { page } from '$app/stores';
+  
+  $: current = $page.url.pathname?.split("/")?.[1];
 </script>
 
 <nav class="flex justify-between px-6 lg:px-12 h-12 items-center py-10 navbar">
@@ -13,9 +16,9 @@ import Link from "./Link.svelte";
     </span>
   </a>
   <div class="flex gap-4 items-center">
-    <Link href="/about">About</Link>
-    <Link href="/projects">Projects</Link>
-    <Link href="/contact">Contact</Link>
+    <Link href="/about" {current} highlightOn="">About</Link>
+    <Link href="/projects" {current} highlightOn="about">Projects</Link>
+    <Link href="/contact" {current} highlightOn="projects">Contact</Link>
     <a
       class="p-2 rounded-md hover:bg-slate-800 hover:text-white"
       href="https://github.com/blakeinstein"

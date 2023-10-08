@@ -1,0 +1,26 @@
+---
+name: Old Portfolio
+description: Originally built in Vanilla + LitElement, this was my first portfolio website. It was later rebuilt with Astro
+thumbnail: https://http.dog/204.avif
+techs:
+  - vanilla
+  - lit-element
+  - html
+  - css
+  - tailwindcss
+col: 1
+row: 1
+links:
+  - icon: entypo-social:github
+    href: https://github.com/Blakeinstein/Blakeinstein.github.io/
+    type: Github
+  - icon: mdi:web
+    href: https://old.blaine.vip
+    type: Webpage
+---
+
+## Design Ideas
+The design of the website was inspired by the album art for the track "[Light Mind](https://www.last.fm/music/Krosia/_/Light+Mind)" by [Krosia](https://www.last.fm/music/Krosia). I deeply adore the vastness of outer space, and spacewave has been my goto genre to achieve that state of mind. I found Krosia from his song [Sunlight](https://www.last.fm/music/Krosia/Sunlight), but the album art for Light Mind was what stayed with me. 
+
+## Implementation
+I originally built the website with Typescript, with Navigo used for routing and lit element for constructing page contents.

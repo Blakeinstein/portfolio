@@ -4,12 +4,20 @@ import adapter from '@sveltejs/adapter-static';
 import seqPreprocessor from 'svelte-sequential-preprocessor';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
+import { mdsvex } from 'mdsvex';
+
+/** @type {import('mdsvex').MdsvexOptions} */
+const mdsvexOptions = {
+	extensions: ['.svx'],
+}
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
+	extensions: ['.svelte', '.svx'],
 	preprocess: [
-		seqPreprocessor([vitePreprocess()]),
+		seqPreprocessor([vitePreprocess(), mdsvex(mdsvexOptions)]),
 		preprocess({
 			postcss: true
 		})

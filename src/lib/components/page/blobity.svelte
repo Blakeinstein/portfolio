@@ -15,7 +15,7 @@
 			font: 'Red Hat Display',
 			fontColor: '#ffffff',
 			fontSize: 28,
-			focusableElements: 'h1, a, .checkbox, input::before, button, input, textarea, select, .header, .ellipses-orbit',
+			focusableElements: 'h1, a, .checkbox, input::before, button, input, textarea, select, .header, .ellipses-orbit, [data-blobity-tooltip]',
 			mode: 'slow',
 		});
 		blobityInstance.set(blob);

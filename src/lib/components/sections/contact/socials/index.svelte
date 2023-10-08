@@ -9,7 +9,7 @@
 <Section>
   <Title noArrow size="sm" class="mb-4">Find me on:</Title>
   <div class="w-full h-full rounded-lg bg-slate-600 bg-opacity-10 py-12">
-    <div class="flex flex-wrap justify-center w-full h-full goo gap-0.5">
+    <div class="flex flex-wrap justify-center w-full h-full gap-0.5">
       {#each Object.entries(SocialData) as [groupName, socials]}
         <SocialGroup groupName={groupName} socials={socials} />
       {/each}

@@ -1,0 +1,22 @@
+---
+name: Remit-Tracker
+description: A simple remittance tracker built with the frontend built with NextJS
+  and DaisyUI and the data spider built with Python and Scrapy.
+thumbnail: https://http.dog/204.avif
+techs:
+- nextjs
+- daisyui
+- python
+- scrapy
+col: 3
+row: 2
+links:
+- icon: entypo-social:github
+  href: https://http.dog/404.avif
+  type: Github
+- icon: mdi:web
+  href: https://http.dog/404.avif
+  type: Webpage
+---
+A simple remittance tracker built with the frontend built with NextJS
+  and DaisyUI and the data spider built with Python and Scrapy.

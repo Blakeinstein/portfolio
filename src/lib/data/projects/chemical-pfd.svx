@@ -1,0 +1,17 @@
+---
+name: Chemical-PFD
+description: Part of my fellowship at Indian Institute of Technology, Bombay. A simple chemical process flow diagram builder built with PyQt5.
+thumbnail: https://http.dog/204.avif
+techs:
+  - python
+  - pyqt5
+col: 3
+row: 1
+links:
+  - icon: entypo-social:github
+    href: https://http.dog/404.avif
+    type: Github
+layout: false
+---
+Part of my fellowship at Indian Institute of Technology, Bombay.
+  A simple chemical process flow diagram builder built with PyQt5.

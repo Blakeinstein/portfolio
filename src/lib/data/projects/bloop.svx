@@ -1,0 +1,20 @@
+---
+name: Bloop
+description: A simple hackable scratchpad built originally using my own embedded WebView
+  (windows only) but later rebuilt with Tauri (Cross Platform).
+thumbnail: https://http.dog/204.avif
+techs:
+  - svelte
+  - typescript
+  - tauri
+  - tailwindcss
+col: 2
+row: 3
+links:
+  - icon: entypo-social:github
+    href: https://http.dog/404.avif
+    type: Github
+---
+
+A simple hackable scratchpad built originally using my own embedded
+  WebView (windows only) but later rebuilt with Tauri (Cross Platform).

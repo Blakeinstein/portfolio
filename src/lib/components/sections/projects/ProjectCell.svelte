@@ -1,23 +1,21 @@
 <script lang="ts">
-	import type { ProjectData } from "$lib/data/ProjectData";
-	import classNames from "classnames";
+	import type { ProjectMetaData } from "$lib/data/ProjectData";
 
-  export let projectKey: string;
-  export let projectData: ProjectData;
+  export let projectData: ProjectMetaData;
 </script>
 
 <a
   class="flex lg:grid lg:place-items-center relative project-item rounded-md gap-2"
-  href="/projects/{projectKey}"
+  href="/projects/{projectData.slug}"
   style:grid-column={projectData.col}
   style:grid-row={projectData.row}
   data-no-blobity
 >
   <div
     class="img-wrapper relative overflow-hidden shrink-0 grow-0 rounded-md"
-    style={`view-transition-name: project-${projectKey}-img`}
+    style={`view-transition-name: project-${projectData.slug}-img`}
   >
-    <img src={projectData.thumbnail} alt={projectKey} class="absolute object-cover" />
+    <img src={projectData.thumbnail} alt={projectData.slug} class="absolute object-cover" />
   </div>
   <div class="lg:absolute bottom-0 info lg:p-8 lg:text-white w-full">
     <h2 class="font-semibold text-2xl">{projectData.name}</h2>

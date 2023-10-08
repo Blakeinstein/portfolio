@@ -1,13 +1,18 @@
 import { error } from '@sveltejs/kit';
-import { ProjectData } from '$lib/data/ProjectData';
+import { getProjects, type ProjectMetaData } from '$lib/data/ProjectData.js';
 
-export function load({ params }) {
-  if (!ProjectData[params.projectName]) {
-    throw error(404, 'Project not found');
-  }
+export async function load({ params }) {
+  try {
+    const post = await import(`../../../lib/data/projects/${params.projectName}.svx`);
 
-  return {
-    projectKey: params.projectName,
-    projectData: ProjectData[params.projectName],
-  }
+    const allProjects = await getProjects();
+
+		return {
+			content: post.default,
+			projectData: post.metadata satisfies ProjectMetaData,
+      allProjects,
+		}
+	} catch (e) {
+		throw error(404, 'Project not found');
+	}
 }

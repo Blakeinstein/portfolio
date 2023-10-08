@@ -4,119 +4,114 @@ export type ProjectLink = {
   type: string;
 };
 
-export type ProjectData = {
+export type ProjectTech = {
+  name: string;
+  icon: string;
+  color: string;
+}
+
+export const TechConstants: Record<string, ProjectTech> = {
+  'svelte': {
+    name: 'Svelte',
+    icon: 'simple-icons:svelte',
+    color: '#ff3e00'
+  },
+  'sveltekit': {
+    name: 'SvelteKit',
+    icon: 'simple-icons:svelte',
+    color: '#ff3e00'
+  },
+  'typescript': {
+    name: 'TypeScript',
+    icon: 'simple-icons:typescript',
+    color: '#007acc'
+  },
+  'python': {
+    name: 'Python',
+    icon: 'simple-icons:python',
+    color: '#3776ab'
+  },
+  'rust': {
+    name: 'Rust',
+    icon: 'simple-icons:rust',
+    color: '#000000'
+  },
+  'nextjs': {
+    name: 'NextJS',
+    icon: 'simple-icons:next-dot-js',
+    color: '#000000'
+  },
+  'daisyui': {
+    name: 'DaisyUI',
+    icon: 'simple-icons:tailwindcss',
+    color: '#06b6d4'
+  },
+  'tauri': {
+    name: 'Tauri',
+    icon: 'simple-icons:tauri',
+    color: '#000000'
+  },
+  'pyqt5': {
+    name: 'PyQt5',
+    icon: 'simple-icons:qt',
+    color: '#41cd52'
+  },
+  'scrapy': {
+    name: 'Scrapy',
+    icon: 'simple-icons:scrapy',
+    color: '#000000'
+  },
+  'lit-element': {
+    name: 'LitElement',
+    icon: 'simple-icons:lit',
+    color: '#000000'
+  },
+  'vanilla': {
+    name: 'VanillaJS',
+    icon: 'simple-icons:javascript',
+    color: '#f7df1e'
+  },
+  'html': {
+    name: 'HTML',
+    icon: 'simple-icons:html5',
+    color: '#e34f26'
+  },
+  'css': {
+    name: 'CSS',
+    icon: 'simple-icons:css3',
+    color: '#1572b6'
+  },
+  'tailwindcss': {
+    name: 'TailwindCSS',
+    icon: 'simple-icons:tailwindcss',
+    color: '#06b6d4'
+  }
+}
+
+export type ProjectMetaData = {
   name: string;
   description: string;
   thumbnail: string;
+  techs: string[];
   col?: number;
   row?: number;
-  links: ProjectLink[]
+  links: ProjectLink[];
+  slug: string;
 };
 
-export const ProjectData: Record<string, ProjectData> = {
-  "old-portfolio": {
-    name: "Old portfolio",
-    description: "Originally built in Vanilla + LitElement, this was my first portfolio website. It was later rebuilt with Astro",
-    thumbnail: "https://http.dog/204.avif",
-    col: 1,
-    row: 1,
-    links: [
-      {
-        icon: '',
-        href: 'https://http.dog/404.avif',
-        type: 'Github' 
-      },
-      {
-        icon: '',
-        href: 'https://http.dog/404.avif',
-        type: 'Webpage' 
-      }
-    ]
-  },
-  "new-portfolio": {
-    name: "New portfolio",
-    description: "You are here! Built with SvelteKit, TailwindCSS, and TypeScript.",
-    thumbnail: "https://http.dog/204.avif",
-    col: 1,
-    row: 2,
-    links: [
-      {
-        icon: '',
-        href: 'https://http.dog/404.avif',
-        type: 'Github' 
-      },
-      {
-        icon: '',
-        href: 'https://http.dog/404.avif',
-        type: 'Webpage' 
-      }
-    ]
-  },
-  "bloop": {
-    name: "Bloop",
-    description: "A simple hackable scratchpad built originally using my own embedded WebView (windows only) but later rebuilt with Tauri (Cross Platform).",
-    thumbnail: "https://http.dog/204.avif",
-    col: 2,
-    row: 3,
-    links: [{
-      icon: '',
-      href: 'https://http.dog/404.avif',
-      type: 'Github' 
-    }]
-  },
-  "chemical-pfd": {
-    name: "Chemical-PFD",
-    description: "Part of my fellowship at Indian Institute of Technology, Bombay. A simple chemical process flow diagram builder built with PyQt5.",
-    thumbnail: "https://http.dog/204.avif",
-    col: 3,
-    row: 1,
-    links: [{
-      icon: '',
-      href: 'https://http.dog/404.avif',
-      type: 'Github' 
-    }]
-  },
-  "remit-tracker": {
-    name: "Remit-Tracker",
-    description: "A simple remittance tracker built with the frontend built with NextJS and DaisyUI and the data spider built with Python and Scrapy.",
-    thumbnail: "https://http.dog/204.avif",
-    col: 3,
-    row: 2,
-    links: [
-      {
-        icon: '',
-        href: 'https://http.dog/404.avif',
-        type: 'Github' 
-      },
-      {
-        icon: '',
-        href: 'https://http.dog/404.avif',
-        type: 'Webpage' 
-      }
-    ]
-  },
-  "fuse-rust": {
-    name: "Fuse-Rust",
-    description: "A fuzzy search library for the rust ecosystem, ideal for building friendly search bars.",
-    thumbnail: "https://http.dog/204.avif",
-    col: 4,
-    row: 1,
-    links: [{
-      icon: '',
-      href: 'https://http.dog/404.avif',
-      type: 'Github' 
-    }]
-  },
-  "bro-lang": {
-    name: "BroLang",
-    description: "A toy programming language built as a part of a submission for SER 502 (Programming Paradigms) at ASU.",
-    thumbnail: "https://http.dog/204.avif",
-    col: 4,
-    row: 3,
-    links: [{
-      icon: '',
-      href: 'https://http.dog/404.avif',
-      type: 'Github' 
-    }]
-  },
-};
+export const getProjects = async () => {
+  const projects: ProjectMetaData[] = [];
+  const paths = import.meta.glob('$lib/data/projects/*.svx', { eager: true });
+
+  for (const path in paths) {
+    const file = paths[path];
+    const slug = path.split('/').at(-1)?.replace('.svx', '');
+    if (file && typeof file === 'object' && 'metadata' in file && slug) {
+			const metadata = file.metadata as Omit<ProjectMetaData, 'slug'>
+			const post = { ...metadata, slug } satisfies ProjectMetaData
+			projects.push(post)
+		}
+  }
+
+	return projects;
+}

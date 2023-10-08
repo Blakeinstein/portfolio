@@ -1,0 +1,23 @@
+---
+name: New portfolio
+description: You are here! Built with SvelteKit, TailwindCSS, and TypeScript.
+longDescription: You are here! Built with SvelteKit, TailwindCSS, and TypeScript.
+thumbnail: https://http.dog/204.avif
+techs:
+  - sveltekit
+  - typescript
+  - tailwindcss
+col: 1
+row: 2
+links:
+  - icon: entypo-social:github
+    href: https://http.dog/404.avif
+    type: Github
+  - icon: mdi:web
+    href: https://http.dog/404.avif
+    type: Webpage
+---
+
+Learning from the mistakes I made in my old-portfolio, I started work on this. I had the opportunity to talk to alot of students in the UX department at Arizona State University and I also wanted to resolve the deep rooted navigational challenges I had with my old portfolio. Plus fireship had made a video on how to render a moon using ThreeJS. 
+
+Starfield came out around the time I was working on the portfolio and as such the site went through a complete overhaul. I dropped the idea of including a 3d scene, and instead switched focus to working on the one you see. Heck I even made Rain postprocess filter for ThreeJS based on shaders written by _ in their article on CoDrops. I wish I can find a use case for it some other time.

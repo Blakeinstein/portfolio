@@ -1,0 +1,16 @@
+---
+name: Fuse-Rust
+description: A fuzzy search library for the rust ecosystem, ideal for building friendly
+  search bars.
+thumbnail: https://http.dog/204.avif
+techs:
+- rust
+col: 4
+row: 1
+links:
+- icon: entypo-social:github
+  href: https://http.dog/404.avif
+  type: Github
+---
+A fuzzy search library for the rust ecosystem, ideal for building
+  friendly search bars.
