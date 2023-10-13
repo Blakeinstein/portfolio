@@ -1,22 +1,38 @@
 ---
 name: Remit-Tracker
+year: 2022
 description: A simple remittance tracker built with the frontend built with NextJS
   and DaisyUI and the data spider built with Python and Scrapy.
 thumbnail: https://http.dog/204.avif
 techs:
 - nextjs
-- daisyui
+- tailwindcss
 - python
-- scrapy
+- zyte
 col: 3
 row: 2
 links:
 - icon: entypo-social:github
-  href: https://http.dog/404.avif
+  href: https://remit.blaine.vip/
   type: Github
 - icon: mdi:web
-  href: https://http.dog/404.avif
+  href: https://remit.blaine.vip
   type: Webpage
 ---
-A simple remittance tracker built with the frontend built with NextJS
-  and DaisyUI and the data spider built with Python and Scrapy.
+
+# { name }
+
+## Inspiration
+I came to the US for my Master's degree and quickly realized that the fluctuating conversion rates / remittance cost for INR to
+USD is a big problem for students like me. I wanted to build a simple tool that would help me track the conversion rates across multiple
+proivders and have it maintain a history to help me make better decisions.
+
+## Implementation
+A simple remittance tracker built with the frontend built with NextJS and [DaisyUI](https://daisyui.com/) with the data spider built 
+using Python and Scrapy. The frontend caches requests for 1 hour to avoid having to hit my server too often.
+The data spider is hosted on [Zyte](https://www.zyte.com/) (formerly ScrapingHub) and runs every hour to update the data.
+
+## Fun Facts
+- I never came up with a LOGO for the project, I just ended up using the first svg result with RT.
+- I tried a bunch of charting library but ended up using [Chart.js](https://www.chartjs.org/).
+- I used [luxon](https://moment.github.io/luxon/#/) for parsing timestamps.

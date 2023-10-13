@@ -38,13 +38,8 @@ export const TechConstants: Record<string, ProjectTech> = {
   },
   'nextjs': {
     name: 'NextJS',
-    icon: 'simple-icons:next-dot-js',
+    icon: 'teenyicons:nextjs-outline',
     color: '#000000'
-  },
-  'daisyui': {
-    name: 'DaisyUI',
-    icon: 'simple-icons:tailwindcss',
-    color: '#06b6d4'
   },
   'tauri': {
     name: 'Tauri',
@@ -66,20 +61,10 @@ export const TechConstants: Record<string, ProjectTech> = {
     icon: 'simple-icons:lit',
     color: '#000000'
   },
-  'vanilla': {
-    name: 'VanillaJS',
-    icon: 'simple-icons:javascript',
-    color: '#f7df1e'
-  },
   'html': {
     name: 'HTML',
     icon: 'simple-icons:html5',
     color: '#e34f26'
-  },
-  'css': {
-    name: 'CSS',
-    icon: 'simple-icons:css3',
-    color: '#1572b6'
   },
   'tailwindcss': {
     name: 'TailwindCSS',
@@ -90,6 +75,26 @@ export const TechConstants: Record<string, ProjectTech> = {
     name: 'ANTLR4',
     icon: 'file-icons:antlr',
     color: '#e44a32'
+  },
+  'sass': {
+    name: 'Sass',
+    icon: 'simple-icons:sass',
+    color: '#cc6699'
+  },
+  'astro': {
+    name: 'Astro',
+    icon: 'simple-icons:astro',
+    color: '#000000'
+  },
+  'three': {
+    name: 'ThreeJS',
+    icon: 'logos:threejs',
+    color: '#000000'
+  },
+  'zyte': {
+    name: 'Zyte',
+    icon: 'simple-icons:zyte',
+    color: '#b02cce'
   },
 }
 

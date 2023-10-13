@@ -3,8 +3,6 @@
   import Icon from "@iconify/svelte";
 
   export let projectData: ProjectMetaData;
-
-  $: console.log(projectData);
 </script>
 
 

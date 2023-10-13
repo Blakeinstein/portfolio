@@ -1,13 +1,15 @@
 ---
 name: Old Portfolio
+year: 2019
 description: Originally built in Vanilla + LitElement, this was my first portfolio website. It was later rebuilt with Astro
 thumbnail: https://http.dog/204.avif
 techs:
-  - vanilla
+  - typescript
   - lit-element
   - html
-  - css
-  - tailwindcss
+  - astro
+  - sass
+  - three
 col: 1
 row: 1
 links:
@@ -19,8 +21,23 @@ links:
     type: Webpage
 ---
 
+# { name }
+
 ## Design Ideas
-The design of the website was inspired by the album art for the track "[Light Mind](https://www.last.fm/music/Krosia/_/Light+Mind)" by [Krosia](https://www.last.fm/music/Krosia). I deeply adore the vastness of outer space, and spacewave has been my goto genre to achieve that state of mind. I found Krosia from his song [Sunlight](https://www.last.fm/music/Krosia/Sunlight), but the album art for Light Mind was what stayed with me. 
+The design of the website was inspired by the album art for the track "[Light Mind](https://www.last.fm/music/Krosia/_/Light+Mind)" 
+by [Krosia](https://www.last.fm/music/Krosia). I deeply adore the vastness of outer space, and spacewave has been my 
+goto genre to achieve that state of mind. I found Krosia from his song [Sunlight](https://www.last.fm/music/Krosia/Sunlight), 
+but the album art for Light Mind was what lived in my head rent free. 
 
 ## Implementation
-I originally built the website with Typescript, with Navigo used for routing and lit element for constructing page contents.
+I originally built the website with just Typescript, ThreeJS and html, with [Navigo](https://github.com/krasimir/navigo) used for routing and lit element for constructing page contents.
+I later migrated to [Astro](https://astro.build/) for the sake of SEO and performance. I additionally used [SwupJS](https://swup.js.org/) to implement seamless page transitions due to the fact that I had
+a 3d scene used for the background. I am extremely proud of the micro-interactions I implemented, like the [gooey effect on the social links](https://old.blaine.vip/socials/), and the 
+contact form error messages. I also used blobity to implement the blob like cursor on desktop views. The website is hosted on Github Pages,
+and the source code is available on Github.
+
+## Fun Facts
+- It took me ages to settle on a design for the website. But once I found the album art for Light Mind, I knew I had to use it.
+- The overall website was built in a single day.
+- I never bothered to update the content of the website, the info was outdated the day I made it publically available.
+- I was able to obtain a free [`is-a.dev`](https://www.is-a.dev/) domain under my name, which I used for the website.

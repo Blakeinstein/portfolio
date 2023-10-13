@@ -1,5 +1,6 @@
 ---
 name: New portfolio
+year: 2023
 description: You are here! Built with SvelteKit, TailwindCSS, and TypeScript.
 longDescription: You are here! Built with SvelteKit, TailwindCSS, and TypeScript.
 thumbnail: https://http.dog/204.avif
@@ -11,13 +12,34 @@ col: 1
 row: 2
 links:
   - icon: entypo-social:github
-    href: https://http.dog/404.avif
+    href: https://github.com/Blakeinstein/portfolio
     type: Github
   - icon: mdi:web
-    href: https://http.dog/404.avif
+    href: https://blaine.is-a.dev
     type: Webpage
 ---
 
-Learning from the mistakes I made in my old-portfolio, I started work on this. I had the opportunity to talk to alot of students in the UX department at Arizona State University and I also wanted to resolve the deep rooted navigational challenges I had with my old portfolio. Plus fireship had made a video on how to render a moon using ThreeJS. 
+# {name}
 
-Starfield came out around the time I was working on the portfolio and as such the site went through a complete overhaul. I dropped the idea of including a 3d scene, and instead switched focus to working on the one you see. Heck I even made Rain postprocess filter for ThreeJS based on shaders written by _ in their article on CoDrops. I wish I can find a use case for it some other time.
+## Inspiration and Design
+Learning from the mistakes I made in my [old-portfolio](/projects/old-portfolio), I started working on a new one. 
+I had the opportunity to talk to alot of students in the UX department at Arizona State University and I also wanted 
+to resolve the deep rooted navigational challenges. Even worse fireship had made a video on [how to render a moon using ThreeJS](https://www.youtube.com/watch?v=Q7AOvWpIVHU).
+Which meant that my portfolio design was not unique anymore.
+
+Starfield came out around the time I was working on the portfolio and as such the site went through a complete overhaul. 
+I dropped the idea of including a 3d scene, and instead switched focus to working on the one you see. 
+Heck I even made Rain postprocess filter for ThreeJS based on shaders written by [Lucas Bebber in their article on CoDrops](https://tympanus.net/codrops/2015/11/04/rain-water-effect-experiments/). 
+I wish I can find a use case for it some other time.
+
+## Implementation
+I dropped Astro, even though its great I really wanted to implement simple page navigations. I switched to SvelteKit, although
+in hindsight since I picked up the [new transitions api for page transitions](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API),
+I doubt the switch gave me actual benefits apart from some small cases of site interactivity. Maybe I might migrate to Astro again in the future. 
+Learning Svelte and SvelteKit was a breeze, and I really enjoyed working with it (Thanks [JoyOfCode](https://joyofcode.xyz/)!). I also used TailwindCSS 
+for styling, moving away from much of the custom styles on my old website.
+
+## Fun Facts
+- Most of the images on the site were made when the work on the page was finished (even after I wrote this line, fingers crossed).
+- I used placeholder images from [http.dog](https://http.dog) for the thumbnails, particularly the [204 image](https://http.dog/204.avif).
+- The backdrop went through several iterations, and at one time featured a noise texture similar to the one used in [Arc.net](https://arc.net/).

@@ -1,5 +1,6 @@
 ---
 name: Fuse-Rust
+year: 2021
 description: A fuzzy search library for the rust ecosystem, ideal for building friendly
   search bars.
 thumbnail: https://http.dog/204.avif
@@ -9,8 +10,32 @@ col: 4
 row: 1
 links:
 - icon: entypo-social:github
-  href: https://http.dog/404.avif
+  href: https://github.com/Blakeinstein/fuse-rust
   type: Github
+- icon: vscode-icons:file-type-cargo
+  href: https://crates.io/crates/fuse-rust
+  type: Crates.io
+- icon: fluent-mdl2:documentation
+  href: https://docs.rs/fuse-rust/0.3.2/fuse_rust/
+  type: Docs
 ---
-A fuzzy search library for the rust ecosystem, ideal for building
-  friendly search bars.
+
+# {name}
+
+## Inspiration
+While working on [Bloop](/projects/bloop), I found out about [FuseJS](https://github.com/krisk/fuse) and 
+subsequently [fuse-swift](https://github.com/krisk/fuse-swift) both built by [krisk](https://github.com/krisk).
+I realized that there was no such library for the rust ecosystem and decided to build a similar one; feeling that
+it could suplement the use case for Rust in building desktop/native applications.
+
+## Implementation
+Fuse-Rust is built using the [bitap](https://en.wikipedia.org/wiki/Bitap_algorithm) algorithm for calculating text
+similarity. It also contains an opt-in multi-threaded implementation using [crossbeam](https://github.com/crossbeam-rs/crossbeam).
+
+Additionally I included an actual [GUI example](https://github.com/Blakeinstein/fuse-rust/tree/master/examples/search-bar) using 
+[iced-rs](https://github.com/iced-rs/iced).
+
+## Fun Facts
+- I learnt about multibyte characters for the first time here.
+- I learnt about the concept of graphemes in swift programming language.
+- I learnt about the bitap algorithm and how it can be used to calculate text similarity.
