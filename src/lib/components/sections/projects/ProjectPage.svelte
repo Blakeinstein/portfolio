@@ -29,11 +29,13 @@
         <ProjectMiniMap active={projectData.slug} {allProjects} />
       </div>
       <div
-        class="flex flex-col gap-4 desc-box"
+        class="flex flex-col gap-4 desc-box prose max-w-none"
         in:fly={{ y: 80, opacity: 0, duration: 1200, delay: 0, easing: expoInOut }}
       >
         <slot>
-          <p>{projectData.description}</p>
+          <p class="">
+            {projectData.description}
+          </p>
         </slot>
       </div>
       <div>
@@ -43,9 +45,8 @@
   </div>
 </Section>
 
-<style>
+<style lang="postcss">
   .desc-box {
     view-transition-name: project-desc;
-
   }
 </style>

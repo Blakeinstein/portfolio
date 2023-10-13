@@ -12,7 +12,7 @@
   <header>
     <div class="flex flex-col w-full">
       <hr class="w-full h-2 bg-black" />
-      <span class="project-date">{2017}</span>
+      <span class="project-date">{projectData.year || "20XX"}</span>
     </div>
     <h2 class="project-title">{projectData.name}</h2>
   </header>

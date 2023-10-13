@@ -85,11 +85,17 @@ export const TechConstants: Record<string, ProjectTech> = {
     name: 'TailwindCSS',
     icon: 'simple-icons:tailwindcss',
     color: '#06b6d4'
-  }
+  },
+  'antlr4': {
+    name: 'ANTLR4',
+    icon: 'file-icons:antlr',
+    color: '#e44a32'
+  },
 }
 
 export type ProjectMetaData = {
   name: string;
+  year: number;
   description: string;
   thumbnail: string;
   techs: string[];

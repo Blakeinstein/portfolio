@@ -1,5 +1,6 @@
 ---
 name: Chemical-PFD
+year: 2020
 description: Part of my fellowship at Indian Institute of Technology, Bombay. A simple chemical process flow diagram builder built with PyQt5.
 thumbnail: https://http.dog/204.avif
 techs:
@@ -9,9 +10,30 @@ col: 3
 row: 1
 links:
   - icon: entypo-social:github
-    href: https://http.dog/404.avif
+    href: https://github.com/FOSSEE/Chemical-PFD
     type: Github
+  - icon: ri:file-pdf-2-line
+    href: https://static.fossee.in/fossee/fellowship2020/Fellowship-Reports/Python/Python-Chemical/Python-Chemical-RishikeshAnand-FSF-2020.pdf
+    type: Report
 layout: false
 ---
-Part of my fellowship at Indian Institute of Technology, Bombay.
-  A simple chemical process flow diagram builder built with PyQt5.
+
+# {name}
+
+## Background and Reasoning
+Chemical PFD was the project I pursued during my fellowship at IIT Bombay, under their FOSSEE initiative.
+The project was to build a simple chemical process flow diagram tool to enable Chemical Engineering labs primarly at IIT
+Bombay to construct PFDs for their experiments. The future scope of the tool included the ability to simulate the PFDs 
+and determine various chemical process metrics.
+
+## Implementation
+The project initially started with a pre-lim requirement to build a [simple tool to draw a network of circles](https://github.com/Blakeinstein/Circle-Network)
+to demonstrate proficiency in PyQT.
+Like the pre-lim project, Chemical PFD was built using PyQt5 and Python. It also uses [FMan's Build System (FBS)](https://build-system.fman.io/) to enable
+faster iterations with a more robust build process. I worked in a team of 2 in a Pair Programming process, with me focusing on the GUI elements and my teammate
+focusing on the diagram engine. The project was built in a span of 2 months.
+
+## Fun Facts
+- Was coined the best software on the FOSSEE 2020 presentation panel.
+- The questions I wrote on StackOverflow while learning PyQt5 and FBS are my biggest contributors to my StackOverflow score.
+- This was my first professional experience, and it was paid 🎉.

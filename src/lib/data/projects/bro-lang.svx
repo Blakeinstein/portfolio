@@ -1,16 +1,55 @@
 ---
 name: BroLang
+year: 2023
 description: A toy programming language built as a part of a submission for SER 502
   (Programming Paradigms) at ASU.
 thumbnail: https://http.dog/204.avif
 techs:
 - python
+- antlr4
 col: 4
 row: 3
 links:
 - icon: entypo-social:github
-  href: https://http.dog/404.avif
+  href: https://github.com/Blakeinstein/BroLang
   type: Github
 ---
-A toy programming language built as a part of a submission for SER
-  502 (Programming Paradigms) at ASU.
+
+## Inspiration
+The final project of SER502 during my Masters at ASU was to build our own programming language.
+I had recently found out about [BhaiLang](https://bhailang.js.org/), a toy programming language 
+and decided to build a similar language.
+
+## Implementation
+The language was implemented using Antlr4 and Python. The language consists of a begin and end block,
+variables are declared in a similar style as JavaScript but are strongly typed like python. It consists
+of only two types, `float` and `string`. It supports both traditional style of loops `for` and `while`, and
+the `for` loop also supports the `in` keyword to iterate over a range of numbers. It supports printing multiple strings
+and variables with a single keyword. An example code in BroLang looks like this:
+
+```
+dawg
+  say "Hello World";
+ 
+  my g a = 3;
+  my g b = 0;
+
+  let him cook (b < 5) {
+    say b;
+
+    yolo (b == a) pls {
+      say "b is equal to a";
+    } sus {
+      say "b is not equal to a";
+    }
+
+    b = b + 1;
+  }
+
+gg
+```
+
+## Fun Facts
+- I single handedly built the language and the interpreter for it.
+- The language was built in a span of 2 weeks.
+- The lexer for the language was heavily inspired by the [C example](https://github.com/antlr/grammars-v4/blob/master/c/C.g4) for Antlr4.
