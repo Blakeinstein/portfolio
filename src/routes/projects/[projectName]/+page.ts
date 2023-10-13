@@ -9,7 +9,7 @@ export async function load({ params }) {
 
 		return {
 			content: post.default,
-			projectData: post.metadata satisfies ProjectMetaData,
+			projectData: {...post.metadata, slug: params.projectName} satisfies ProjectMetaData,
       allProjects,
 		}
 	} catch (e) {
