@@ -3,7 +3,7 @@ name: Remit-Tracker
 year: 2022
 description: A simple remittance tracker built with the frontend built with NextJS
   and DaisyUI and the data spider built with Python and Scrapy.
-thumbnail: https://http.dog/204.avif
+thumbnail: /mockups/remit-tracker.png
 techs:
 - nextjs
 - tailwindcss

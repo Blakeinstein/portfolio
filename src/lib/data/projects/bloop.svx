@@ -2,7 +2,7 @@
 name: Bloop
 year: 2020
 description: A cross-platform simple hackable scratchpad built with Rust and Tauri.
-thumbnail: https://http.dog/204.avif
+thumbnail: /mockups/bloop.png
 techs:
   - svelte
   - typescript

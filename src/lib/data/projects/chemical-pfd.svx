@@ -2,7 +2,7 @@
 name: Chemical-PFD
 year: 2020
 description: Part of my fellowship at Indian Institute of Technology, Bombay. A simple chemical process flow diagram builder built with PyQt5.
-thumbnail: https://http.dog/204.avif
+thumbnail: /mockups/chemical-pfd.png
 techs:
   - python
   - pyqt5

@@ -3,7 +3,7 @@ name: BroLang
 year: 2023
 description: A toy programming language built as a part of a submission for SER 502
   (Programming Paradigms) at ASU.
-thumbnail: https://http.dog/204.avif
+thumbnail: /mockups/bro-lang.png
 techs:
 - python
 - antlr4

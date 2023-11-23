@@ -39,11 +39,11 @@ a[aria-current='page']::before {
 }
 
 
-.sparkles {
+/* .sparkles {
   @apply relative font-bold;
-  z-index: 10;
+  z-index: 10; */
 
-  &::before {
+  /* &::before {
     content: '';
     @apply absolute;
     top: -5%;
@@ -55,6 +55,6 @@ a[aria-current='page']::before {
     mix-blend-mode: overlay;
     border-radius: 50%;
     opacity: 20%;
-  }
-}
+  } */
+/* } */
 </style>

@@ -2,7 +2,7 @@
 name: Old Portfolio
 year: 2019
 description: Originally built in Vanilla + LitElement, this was my first portfolio website. It was later rebuilt with Astro
-thumbnail: https://http.dog/204.avif
+thumbnail: /mockups/old-portfolio.png
 techs:
   - typescript
   - lit-element
