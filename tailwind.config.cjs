@@ -17,10 +17,10 @@ const config = {
               },
             },
 						h1: {
-							marginBottom: '0.5rem',
+							marginBottom: '1rem',
 						},
 						h2: {
-							margin: 0,
+							margin: '0.5rem 0',
 						},
 						p: {
 							margin: 0,

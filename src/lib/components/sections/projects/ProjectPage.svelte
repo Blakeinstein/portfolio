@@ -1,6 +1,7 @@
 <script lang="ts">
   import Icon from "@iconify/svelte";
   import { fly } from 'svelte/transition';
+
 	import type { ProjectMetaData } from "$lib/data/ProjectData";
   import Section from "$lib/layouts/section.svelte";
   import ProjectMiniMap from "./ProjectMiniMap.svelte";
@@ -29,7 +30,7 @@
         <ProjectMiniMap active={projectData.slug} {allProjects} />
       </div>
       <div
-        class="flex flex-col gap-4 desc-box prose max-w-none"
+        class="desc-box prose max-w-none"
         in:fly={{ y: 80, opacity: 0, duration: 1200, delay: 0, easing: expoInOut }}
       >
         <slot>
@@ -38,9 +39,6 @@
           </p>
         </slot>
       </div>
-      <div>
-        
-      </div>
     </div>
   </div>
 </Section>
@@ -48,5 +46,12 @@
 <style lang="postcss">
   .desc-box {
     view-transition-name: project-desc;
+  }
+  .desc-box  p {
+    display: contents;
+  }
+
+  .desc-box > * {
+    @apply mb-2;
   }
 </style>

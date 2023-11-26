@@ -118,7 +118,8 @@ html.lenis {
 }
 
 ::-webkit-scrollbar {
-	width: 10px;
+	height: 5px;
+	width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -126,9 +127,13 @@ html.lenis {
 }
 
 ::-webkit-scrollbar-thumb {
-	@apply bg-slate-700 rounded-lg bg-opacity-50;
+	@apply bg-slate-700 rounded bg-opacity-50;
 }
 
 * {
 	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+img {
+	@apply rounded-md;
 }

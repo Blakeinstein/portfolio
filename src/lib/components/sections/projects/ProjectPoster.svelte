@@ -1,6 +1,7 @@
-<script lang="ts">
+<script async script lang="ts">
   import { TechConstants, type ProjectMetaData } from "$lib/data/ProjectData";
   import Icon from "@iconify/svelte";
+  import { LightboxGallery, GalleryImage, GalleryThumbnail } from 'svelte-lightbox';
 
   export let projectData: ProjectMetaData;
 </script>
@@ -15,11 +16,36 @@
     <h2 class="project-title">{projectData.name}</h2>
   </header>
   <img
-    class="rounded-md w-full h-full"
+    class="rounded-md w-full"
     src={projectData.thumbnail}
     alt={projectData.slug}
     style={`view-transition-name: project-${projectData.slug}-img`}
   />
+  {#if projectData.images}
+    <LightboxGallery>
+      <svelte:fragment slot="thumbnail">
+        <div class="flex gap-2 align-start overflow-x-scroll h-fit">
+          {#each projectData.images as image, i}
+            <GalleryThumbnail id={i}>
+              <img
+              class="h-36"
+              src={image.link}
+              alt={projectData.slug}
+              />
+            </GalleryThumbnail>
+          {/each}
+        </div>
+      </svelte:fragment>
+      {#each projectData.images as image, i}
+        <GalleryImage id={i}>
+          <img
+            src={image.link}
+            alt={projectData.slug}
+          />
+        </GalleryImage>
+      {/each}
+    </LightboxGallery>
+  {/if}
   <footer class="flex flex-col gap-8">
     {#if projectData.techs}
       <div class="flex self-end" style="view-transition-name: project-tech-box">
@@ -57,7 +83,7 @@
 
 <style lang="postcss">
   .card {
-    @apply flex flex-col lg:border-2 lg:shadow-xl bg-slate-200 p-8 border-black gap-4;
+    @apply flex flex-col border-2 lg:shadow-xl bg-slate-200 p-8 border-black gap-4 h-fit;
   }
   .project-date {
     @apply px-4 py-2 inline self-end w-fit bg-black text-white font-semibold text-2xl;
