@@ -108,7 +108,7 @@ export type ProjectMetaData = {
   row?: number;
   links: ProjectLink[];
   slug: string;
-  images?: { link: string, href?: string }[];
+  images?: { link: string, href?: string, desc: string }[];
 };
 
 export const getProjects = async () => {

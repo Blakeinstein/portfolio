@@ -21,10 +21,15 @@ links:
     type: Webpage
 images:
   - link: /gallery/oldPortfolio/Home.png
+    desc: Home page
   - link: /gallery/oldPortfolio/About.png
+    desc: About page
   - link: /gallery/oldPortfolio/Social.png
+    desc: Socials page
   - link: /gallery/oldPortfolio/Contact.png
+    desc: Contact page
   - link: /gallery/oldPortfolio/Projects.png
+    desc: Projects page
 
 ---
 

@@ -9,6 +9,9 @@ import { mdsvex } from 'mdsvex';
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
 	extensions: ['.svx'],
+	highlight: {
+		alias: { brolang: "elixir" }
+	}
 }
 
 /** @type {import('@sveltejs/kit').Config} */

@@ -13,6 +13,17 @@ links:
 - icon: entypo-social:github
   href: https://github.com/Blakeinstein/BroLang
   type: Github
+images:
+  - link: /gallery/broLang/Declaration.png
+    desc: Declaration
+  - link: /gallery/broLang/Expression.png
+    desc: Expression
+  - link: /gallery/broLang/Loops.png
+    desc: Traditional Loops
+  - link: /gallery/broLang/ForLoops.png
+    desc: For Loops
+  - link: /gallery/broLang/Basic.png
+    desc: Basic
 ---
 
 ## Inspiration
@@ -27,7 +38,7 @@ of only two types, `float` and `string`. It supports both traditional style of l
 the `for` loop also supports the `in` keyword to iterate over a range of numbers. It supports printing multiple strings
 and variables with a single keyword. An example code in BroLang looks like this:
 
-```
+```brolang
 dawg
   say "Hello World";
  

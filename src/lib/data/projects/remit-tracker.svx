@@ -18,6 +18,11 @@ links:
 - icon: mdi:web
   href: https://remit.blaine.vip
   type: Webpage
+images:
+  - link: /gallery/remit-tracker/zyte.png
+    desc: Zyte Dashboard
+  - link: /gallery/remit-tracker/zyte-usage.png
+    desc: Zyte Usage
 ---
 
 # { name }

@@ -16,6 +16,13 @@ links:
     href: https://static.fossee.in/fossee/fellowship2020/Fellowship-Reports/Python/Python-Chemical/Python-Chemical-RishikeshAnand-FSF-2020.pdf
     type: Report
 layout: false
+images:
+  - link: /gallery/chemical-pfd/pfd-windows.png
+    desc: Checmical PFD on windows.
+  - link: /gallery/chemical-pfd/pfd-mac.png
+    desc: Checmical PFD on mac.
+  - link: /gallery/chemical-pfd/fossee.png
+    desc: FOSSEE Group at IIT Bombay.
 ---
 
 # {name}
@@ -32,6 +39,10 @@ to demonstrate proficiency in PyQT.
 Like the pre-lim project, Chemical PFD was built using PyQt5 and Python. It also uses [FMan's Build System (FBS)](https://build-system.fman.io/) to enable
 faster iterations with a more robust build process. I worked in a team of 2 in a Pair Programming process, with me focusing on the GUI elements and my teammate
 focusing on the diagram engine. The project was built in a span of 2 months.
+
+## About FOSSEE
+[FOSSEE](https://fossee.in) (Free/Libre and Open Source Software for Education) project promotes the use of FLOSS tools to improve the quality of education in our country. We aim to reduce dependency on proprietary software in educational institutions. We encourage the use of FLOSS tools through various activities to ensure commercial software is replaced by equivalent FLOSS tools. We also develop new FLOSS tools and upgrade existing tools to meet requirements in academia and research.
+The FOSSEE project is part of the National Mission on Education through Information and Communication Technology (ICT), Ministry of Education (MoE), Government of India.
 
 ## Fun Facts
 - Was coined the best software on the FOSSEE 2020 presentation panel.

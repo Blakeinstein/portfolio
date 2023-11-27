@@ -1,6 +1,7 @@
 <script lang="ts">
   import Icon from "@iconify/svelte";
   import { fly } from 'svelte/transition';
+  import "./prism.css";
 
 	import type { ProjectMetaData } from "$lib/data/ProjectData";
   import Section from "$lib/layouts/section.svelte";
@@ -47,7 +48,7 @@
   .desc-box {
     view-transition-name: project-desc;
   }
-  .desc-box  p {
+  .desc-box p {
     display: contents;
   }
 

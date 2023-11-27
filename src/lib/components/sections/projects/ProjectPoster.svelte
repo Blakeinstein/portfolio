@@ -22,26 +22,28 @@
     style={`view-transition-name: project-${projectData.slug}-img`}
   />
   {#if projectData.images}
-    <LightboxGallery>
+    <LightboxGallery imagePreset="scroll">
       <svelte:fragment slot="thumbnail">
         <div class="flex gap-2 align-start overflow-x-scroll h-fit">
           {#each projectData.images as image, i}
-            <GalleryThumbnail id={i}>
+            <GalleryThumbnail id={i} >
               <img
-              class="h-36"
-              src={image.link}
-              alt={projectData.slug}
+                src={image.link}
+                alt={image.desc}
               />
             </GalleryThumbnail>
           {/each}
         </div>
       </svelte:fragment>
       {#each projectData.images as image, i}
-        <GalleryImage id={i}>
-          <img
-            src={image.link}
-            alt={projectData.slug}
-          />
+        <GalleryImage id={i} class="lightbox">
+          <div class="flex flex-col items-center text-white gap-2 text-2xl">
+            <img
+              src={image.link}
+              alt={image.desc}
+            />
+            <span>{ image.desc }</span>
+          </div>
         </GalleryImage>
       {/each}
     </LightboxGallery>
