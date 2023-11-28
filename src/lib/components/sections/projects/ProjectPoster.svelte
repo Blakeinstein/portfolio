@@ -1,7 +1,7 @@
 <script async script lang="ts">
   import { TechConstants, type ProjectMetaData } from "$lib/data/ProjectData";
   import Icon from "@iconify/svelte";
-  import { LightboxGallery, GalleryImage, GalleryThumbnail } from 'svelte-lightbox';
+  import Lightbox from "$lib/components/elements/lightbox/index.svelte";
 
   export let projectData: ProjectMetaData;
 </script>
@@ -22,31 +22,7 @@
     style={`view-transition-name: project-${projectData.slug}-img`}
   />
   {#if projectData.images}
-    <LightboxGallery imagePreset="scroll">
-      <svelte:fragment slot="thumbnail">
-        <div class="flex gap-2 align-start overflow-x-scroll h-fit">
-          {#each projectData.images as image, i}
-            <GalleryThumbnail id={i} >
-              <img
-                src={image.link}
-                alt={image.desc}
-              />
-            </GalleryThumbnail>
-          {/each}
-        </div>
-      </svelte:fragment>
-      {#each projectData.images as image, i}
-        <GalleryImage id={i} class="lightbox">
-          <div class="flex flex-col items-center text-white gap-2 text-2xl">
-            <img
-              src={image.link}
-              alt={image.desc}
-            />
-            <span>{ image.desc }</span>
-          </div>
-        </GalleryImage>
-      {/each}
-    </LightboxGallery>
+    <Lightbox images={projectData.images} />
   {/if}
   <footer class="flex flex-col gap-8">
     {#if projectData.techs}

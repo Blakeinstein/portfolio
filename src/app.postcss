@@ -137,3 +137,10 @@ html.lenis {
 img {
 	@apply rounded-md;
 }
+
+:root:has(dialog[open]) {
+  overflow: hidden;
+}
+dialog, ::backdrop {
+  overscroll-behavior: contain;
+}
