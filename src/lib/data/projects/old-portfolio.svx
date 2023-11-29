@@ -14,7 +14,7 @@ col: 1
 row: 1
 links:
   - icon: entypo-social:github
-    href: https://github.com/Blakeinstein/Blakeinstein.github.io/
+    href: https://github.com/Blakeinstein/old-portfolio/
     type: Github
   - icon: mdi:web
     href: https://old.blaine.vip
