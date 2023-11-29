@@ -4,6 +4,7 @@
 	import Title from "$lib/components/elements/atoms/Title.svelte";
 </script>
 <Section class="flex flex-col lg:flex-row justify-around pb-16 lg:items-center gap-4">
+  <Image src="/dp.png" alt="hero image" class="min-w-[12rem] m-4 grow"/>
   <div class="flex flex-col gap-4">
     <Title noArrow>
       Hey all!
@@ -22,5 +23,4 @@
       is <strong>Rust</strong>, no matter how much <strong>TypeScript/JavaScript</strong> I have written in my life. 
     </p>
   </div>
-  <Image src="https://http.dog/204.avif" alt="hero image" class="min-w-[12rem] m-4 grow"/>
 </Section>

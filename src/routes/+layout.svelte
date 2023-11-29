@@ -23,7 +23,7 @@
 </script>
 
 <Blobity />
-<Lenis />
+<!-- <Lenis /> -->
 <PartyTown />
 
 <MainLayout>

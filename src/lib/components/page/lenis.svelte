@@ -4,6 +4,7 @@
   
 	import { browser } from "$app/environment";
 	import { lenisInstance } from "$lib/context";
+  import ScrollIndicator from "$lib/animations/scrollIndicator.svelte";
 
 	if (browser) {
 		lenisInstance.set(new Lenis());
@@ -14,3 +15,5 @@
 		requestAnimationFrame(fn);
   }
 </script>
+
+<ScrollIndicator class="fixed bottom-10 right-10" />

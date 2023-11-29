@@ -1,9 +1,12 @@
-<script>
+<script lang="ts">
   import Ellipsis from "./Ellipsis.svelte";
   import CopyWrite from "./CopyWrite.svelte";
   import ProjectPreview from "./ProjectPreview.svelte";
 	import Button from "$lib/components/elements/atoms/Button.svelte";
 	import Icon from "@iconify/svelte";
+  import type { ProjectMetaData } from "$lib/data/ProjectData";
+
+  export let allProjects: ProjectMetaData[] = [];
 </script>
 
 <div class="h-[50vh] grid place-items-center">
@@ -21,7 +24,7 @@
     </Button>
   </div>
 </Ellipsis>
-<ProjectPreview />
+<ProjectPreview {allProjects} />
 
 <style lang="postcss">
   .hero-title {

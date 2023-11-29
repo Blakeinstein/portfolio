@@ -1,5 +1,4 @@
 <script>
-	import ScrollIndicator from "$lib/animations/scrollIndicator.svelte";
 	import Navbar from "$lib/components/navbar/index.svelte";
 	import Backdrop from '$lib/components/elements/backdrop/index.svelte';
 </script>
@@ -10,7 +9,6 @@
 	</slot>
 </background>
 <Navbar />
-<main class="section gap-4 relative">
+<main class="section relative snap-y snap-mandatory">
 	<slot />
 </main>
-<ScrollIndicator class="fixed bottom-10 right-10" />

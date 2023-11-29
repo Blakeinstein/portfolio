@@ -51,8 +51,8 @@ import type { ImageType } from "./types";
     </button>
   {/each}
   <dialog bind:this={dialog}>
-    <form method="dialog" class="lightbox-form flex flex-col items-center gap-2 text-white">
-      <div class="flex justify-around w-full">
+    <form method="dialog" class="text-white">
+      <div class="flex justify-around w-full mb-2">
         <span>{ activeImage + 1} of { images.length }</span>
         {#if activeImage >= 0}
           <span>{images[activeImage].desc}</span>
@@ -94,16 +94,13 @@ import type { ImageType } from "./types";
 <style lang="postcss">
   dialog {
     @apply bg-transparent;
+    max-height: 90dvh;
+    max-width: 95dvw;
 
     &::backdrop {
       @apply bg-black;
       opacity: 0.5;
     }
-  }
-
-  .lightbox-form {
-    height: 90dvh;
-    width: 95dvw;
   }
 
   .lightbox {
