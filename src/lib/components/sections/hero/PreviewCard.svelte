@@ -4,8 +4,8 @@
   import classNames from "classnames";
 
   export let project: ProjectMetaData;
-  export let index: number = 0;
-  export let activeIdx: number = 0;
+  export let index = 0;
+  export let activeIdx = 0;
 
   let classes = "";
 

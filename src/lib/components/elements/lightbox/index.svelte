@@ -4,7 +4,7 @@ import type { ImageType } from "./types";
   import { browser } from "$app/environment";
 
   export let images: ImageType[];
-  export let activeImage: number = -1;
+  export let activeImage = -1;
 
   let dialog: HTMLDialogElement;
 

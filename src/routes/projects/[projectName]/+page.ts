@@ -16,3 +16,5 @@ export async function load({ params }) {
 		throw error(404, 'Project not found');
 	}
 }
+
+export const prerender = true;
