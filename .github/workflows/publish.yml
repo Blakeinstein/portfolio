@@ -22,11 +22,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '21'
-      - run: pnpm install
       - name: Install dependencies
-        run: pnpm install
+        run: npm ci
       - name: Build
-        run: pnpm build
+        run: npm build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
