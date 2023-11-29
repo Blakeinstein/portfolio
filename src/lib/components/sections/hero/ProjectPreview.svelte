@@ -19,7 +19,7 @@
   }
 </script>
 <Section>
-  <div class="flex flex-col gap-4 mx-12 items-center">
+  <div class="flex flex-col gap-4 mx-12 items-center overflow-clip">
     <Button href="/projects" class="= px-4 py-2 font-xl">
       Check all projects!
       <Icon icon="mdi:arrow-right" class="w-6 h-6" />
