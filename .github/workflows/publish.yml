@@ -33,6 +33,8 @@ jobs:
             - args: [--global, gulp, prettier, typescript]
       - name: Build
         run: pnpm build
+      - name: Optimize build
+        run: pnpm optimize
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
