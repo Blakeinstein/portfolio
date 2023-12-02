@@ -42,7 +42,9 @@ goto genre to achieve that state of mind. I found Krosia from his song [Sunlight
 but the album art for Light Mind was what lived in my head rent free.
 
 <a href="https://www.last.fm/music/Krosia/_/Light+Mind" style="float: right;">
-  <img src="https://i1.sndcdn.com/artworks-000453095226-okvlkl-t500x500.jpg" alt="Light Mind album art" width="400"/>
+  <picture>
+    <img src="https://i1.sndcdn.com/artworks-000453095226-okvlkl-t500x500.jpg" width="400" alt="Light Mind album art"/>
+  </picture>
 </a>
 
 

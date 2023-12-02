@@ -26,7 +26,13 @@
   style:--direction={ Math.sign(activeIdx - index) }
   style:--abs-offset={ Math.abs(activeIdx - index) / 3 }
 >
-  <img src={project.thumbnail} alt={project.name} class="object-contain w-full h-full" style={`view-transition-name: project-${project.slug}-img`} />
+  <picture>
+    <img
+      class="object-contain w-full h-full"
+      style={`view-transition-name: project-${project.slug}-img`}
+      src={project.thumbnail} alt={project.name} 
+    />
+  </picture>
 </a>
 
 <style lang="postcss">
@@ -43,7 +49,7 @@
   transition: all 0.3s ease-out;
   height: fit-content;
   width: 100%;
-  > img {
+  img {
     width: auto;
     height: 80vh;
   }

@@ -141,6 +141,11 @@ img {
 :root:has(dialog[open]) {
   overflow: hidden;
 }
+
 dialog, ::backdrop {
   overscroll-behavior: contain;
+}
+
+picture {
+	display: contents;
 }

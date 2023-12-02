@@ -16,12 +16,14 @@
   $: scrollProgress = elasticInOut($scrollVelocity) * $scrollVelocity * 4 ;
 </script>
 
-<img 
-  bind:this={el}
-  src={src}
-  alt={alt}
-  class={`origin-top transition-all hover:scale-105 ${classes}`}
-  style:translate="0 {scrollProgress}px"
-  height={height}
-  width={width}
-/>
+<picture>
+  <img 
+    class={`origin-top transition-all hover:scale-105 ${classes}`}
+    style:translate="0 {scrollProgress}px"
+    bind:this={el}
+    src={src}
+    alt={alt}
+    height={height}
+    width={width}
+  />
+</picture>

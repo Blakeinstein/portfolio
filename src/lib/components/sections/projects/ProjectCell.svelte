@@ -15,7 +15,9 @@
     class="img-wrapper relative overflow-hidden shrink-0 grow-0 rounded-md"
     style={`view-transition-name: project-${projectData.slug}-img`}
   >
-    <img src={projectData.thumbnail} alt={projectData.slug} class="absolute object-cover" />
+    <picture>
+      <img class="absolute object-cover" src={projectData.thumbnail} alt={projectData.slug} />
+    </picture>
   </div>
   <div class="lg:absolute bottom-0 info lg:p-8 lg:text-white w-full">
     <h2 class="font-semibold text-2xl">{projectData.name}</h2>
@@ -38,7 +40,7 @@
 
   .img-wrapper {
     width: 45vw;
-    > img {
+    img {
       min-height: 100%;
     }
   }
@@ -74,7 +76,7 @@
         .img-wrapper {
           scale: 0.98;
           transition-duration: 1s;
-          > img {
+          img {
             transition-duration: 1s;
             scale: 1.2;
             filter: blur(4px);
@@ -85,7 +87,7 @@
 
     .img-wrapper {
       transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-      > img {
+      img {
         translate: -50% -50%;
         top: 50%;
         left: 50%;

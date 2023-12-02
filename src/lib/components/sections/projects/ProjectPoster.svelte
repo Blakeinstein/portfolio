@@ -15,12 +15,14 @@
     </div>
     <h2 class="project-title">{projectData.name}</h2>
   </header>
-  <img
-    class="rounded-md w-full"
-    src={projectData.thumbnail}
-    alt={projectData.slug}
-    style={`view-transition-name: project-${projectData.slug}-img`}
-  />
+  <picture>
+    <img
+      class="rounded-md w-full"
+      style={`view-transition-name: project-${projectData.slug}-img`}
+      src={projectData.thumbnail}
+      alt={projectData.slug}
+    />
+  </picture>
   {#if projectData.images}
     <Lightbox images={projectData.images} />
   {/if}

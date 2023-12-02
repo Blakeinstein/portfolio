@@ -27,12 +27,14 @@
         style:grid-column={projectData.col}
         style:grid-row={projectData.row}
       >
-        <img
-          src={projectData.thumbnail}
-          alt={projectData.slug}
-          class="w-full"
-          style={active !== projectData.slug ? `view-transition-name: project-${projectData.slug}-img` : ""}
-        />
+        <picture>
+          <img
+            class="w-full"
+            style={active !== projectData.slug ? `view-transition-name: project-${projectData.slug}-img` : ""}
+            src={projectData.thumbnail}
+            alt={projectData.slug}
+          />
+        </picture>
       </a>
     {/each}
   </div>
