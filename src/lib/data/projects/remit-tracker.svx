@@ -3,7 +3,7 @@ name: Remit-Tracker
 year: 2022
 description: A simple remittance tracker built with the frontend built with NextJS
   and DaisyUI and the data spider built with Python and Scrapy.
-thumbnail: /mockups/remit-tracker.png
+thumbnail: /mockups/remit-tracker.avif
 techs:
 - nextjs
 - tailwindcss
@@ -19,9 +19,9 @@ links:
   href: https://remit.blaine.vip
   type: Webpage
 images:
-  - link: /gallery/remit-tracker/zyte.png
+  - link: /gallery/remit-tracker/zyte.avif
     desc: Zyte Dashboard
-  - link: /gallery/remit-tracker/zyte-usage.png
+  - link: /gallery/remit-tracker/zyte-usage.avif
     desc: Zyte Usage
 ---
 

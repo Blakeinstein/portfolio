@@ -3,7 +3,7 @@ name: BroLang
 year: 2023
 description: A toy programming language built as a part of a submission for SER 502
   (Programming Paradigms) at ASU.
-thumbnail: /mockups/bro-lang.png
+thumbnail: /mockups/bro-lang.avif
 techs:
 - python
 - antlr4
@@ -14,15 +14,15 @@ links:
   href: https://github.com/Blakeinstein/BroLang
   type: Github
 images:
-  - link: /gallery/broLang/Declaration.png
+  - link: /gallery/broLang/Declaration.avif
     desc: Declaration
-  - link: /gallery/broLang/Expression.png
+  - link: /gallery/broLang/Expression.avif
     desc: Expression
-  - link: /gallery/broLang/Loops.png
+  - link: /gallery/broLang/Loops.avif
     desc: Traditional Loops
-  - link: /gallery/broLang/ForLoops.png
+  - link: /gallery/broLang/ForLoops.avif
     desc: For Loops
-  - link: /gallery/broLang/Basic.png
+  - link: /gallery/broLang/Basic.avif
     desc: Basic
 ---
 
