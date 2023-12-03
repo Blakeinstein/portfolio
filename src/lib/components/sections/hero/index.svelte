@@ -5,6 +5,7 @@
 	import Button from "$lib/components/elements/atoms/Button.svelte";
 	import Icon from "@iconify/svelte";
   import type { ProjectMetaData } from "$lib/data/ProjectData";
+  import Gradienttext from "$lib/animations/gradienttext.svelte";
 
   export let allProjects: ProjectMetaData[] = [];
 </script>
@@ -12,7 +13,7 @@
 <div class="grid-center">
   <h1 class="">
     Hi! I'm
-    <div class="gradient-text">Blaine</div>.
+    <Gradienttext>Blaine</Gradienttext>.
   </h1>
 </div>
 <Ellipsis>

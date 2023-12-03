@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Gradienttext from "$lib/animations/gradienttext.svelte";
+
   let statements = [
     "A Full Stack Developer.",
     "A DevOps expert.",
@@ -19,13 +21,15 @@
   <div class="morphing">
     {#each statements as statement, idx}
       <span
-        class="word gradient-text"
+        class="word"
         style={`
           animation-duration: ${speed}s;
           animation-delay: ${delay(idx)}s;
         `}
       >
-        {statement}
+        <Gradienttext>
+          {statement}
+        </Gradienttext>
       </span>
     {/each}
   </div>

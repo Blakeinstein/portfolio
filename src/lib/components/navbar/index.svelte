@@ -25,6 +25,7 @@
       target="_blank"
       rel="noopener noreferrer"
       data-blobity-tooltip="GitHub"
+      aria-label="GitHub"
     >
       <Icon class="icon" icon="akar-icons:github-fill" />
     </a>
