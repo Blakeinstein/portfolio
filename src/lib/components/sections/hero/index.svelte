@@ -9,25 +9,60 @@
   export let allProjects: ProjectMetaData[] = [];
 </script>
 
-<div class="h-[50vh] grid place-items-center">
-  <h1 class="text-8xl lg:text-9xl font-black hero-title px-12 py-2 text-center">
+<div class="grid-center">
+  <h1 class="">
     Hi! I'm
-    <div class="inline gradient-text">Blaine</div>.
+    <div class="gradient-text">Blaine</div>.
   </h1>
 </div>
 <Ellipsis>
-  <div class="tracking-wider text-gray-800 text-2xl flex items-center flex-col gap-2">
+  <div class="col">
     <CopyWrite />
-    <Button class="text-xl tracking-wider gap-2" href="/about">
+    <Button class="copy-btn" href="/about">
       About me
-      <Icon icon="mdi:arrow-right" class="w-6 h-6" />
+      <Icon icon="mdi:arrow-right" class="icon" />
     </Button>
   </div>
 </Ellipsis>
 <ProjectPreview {allProjects} />
 
 <style lang="postcss">
-  .hero-title {
+  .grid-center {
+    height: 50vh;
+  }
+  h1 {
+    color: var(--color-primary-content);
+    padding: 0.5rem 3rem;
+    text-align: center;
+    font-size: 6rem;
+    line-height: 1;
     word-spacing: 0.5rem;
+  }
+
+  .gradient-text {
+    display: inline;
+  }
+
+  .col {
+    letter-spacing: 0.05em;
+    color: var(--color-primary-content);
+    font-size: 1.5rem;
+    line-height: 2rem;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  :global(.copy-btn) {
+    letter-spacing: 0.05em;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 8rem/* 128px */;
+      line-height: 1;
+    }
   }
 </style>

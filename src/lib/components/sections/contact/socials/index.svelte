@@ -1,19 +1,34 @@
 <script lang="ts">
 	import Section from "$lib/layouts/section.svelte";
 	import Title from "../../../elements/atoms/Title.svelte";
-	import Goo from "./Goo.svelte";
   import { SocialData } from "$lib/data/SocialData";
 	import SocialGroup from "./SocialGroup.svelte";
 
 </script>
 <Section>
   <Title noArrow size="sm" class="mb-4">Find me on:</Title>
-  <div class="w-full h-full rounded-lg bg-slate-600 bg-opacity-10 py-12">
-    <div class="flex flex-wrap justify-center w-full h-full gap-0.5">
+  <div class="wf social-container">
+    <div class="wf">
       {#each Object.entries(SocialData) as [groupName, socials]}
         <SocialGroup groupName={groupName} socials={socials} />
       {/each}
     </div>
   </div>
 </Section>
+
+<style>
+  .social-container {
+    height: 100%;
+    border-radius: 0.5rem;
+    background-color: var(--color-social);
+    padding: 4rem 0;
+  }
+  .social-container > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+    gap: 0.125rem;
+  }
+</style>
 

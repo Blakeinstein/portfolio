@@ -9,7 +9,7 @@
   }
 </script>
 <div>
-  <Section class="flex flex-col">
+  <Section class="col">
     <Title noArrow>Projects</Title>
     <ProjectGrid allProjects={data.allProjects}/>
   </Section>

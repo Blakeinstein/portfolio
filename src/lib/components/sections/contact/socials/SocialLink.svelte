@@ -10,12 +10,12 @@
 </script>
 
 {#if dummy}
-  <div class="social-icon bg-black text-white">
+  <div class="social-icon grid-center">
     {icon}
   </div>
 {:else}
   <a
-  class="transition-all social-icon p-6 text-white"
+  class="social-icon grid-center"
   data-blobity-tooltip={tooltipContent}
   data-blobity-radius="16"
   href={href}
@@ -28,17 +28,40 @@
   {#if custom}
     {@html icon}
   {:else}
-    <Icon class="fill-current w-1/2 h-1/2" icon={icon} />
+    <Icon class="fill half" icon={icon} />
   {/if}
   </a>
 {/if}
 
 <style lang="postcss">
   .social-icon {
-    @apply w-36 h-36 lg:w-80 lg:h-80 text-lg lg:text-5xl grid place-items-center rounded-lg;
+    background-color: black;
+    color: white;
+    width: 9rem;
+    height: 9rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    border-radius: 0.5rem;
+    transition: all var(--transition-duration) var(--transition-timing);
+
     &:is(a):hover {
+      padding: 1.5rem;
       scale: 1.1;
       z-index: 10;
     }
   }
+
+  :global(.half) {
+    width: 50%;
+    height: 50%;
+  }
+
+  @media (min-width: 1024px) { 
+    .social-icon {
+      width: 20rem;
+      height: 20rem;
+      font-size: 3rem;
+      line-height: 1;
+    }
+   }
 </style>

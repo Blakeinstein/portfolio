@@ -28,44 +28,45 @@
     }
   }
 </script>
-<Section class="grid place-items-center">
-  <div class="flex flex-col lg:flex-row w-full lg:w-auto gap-12 items-center justify-around mx-2 lg:mx-16">
-    <div class="flex flex-col items-center">
+<Section class="grid-center">
+  <div class="col inner-contact wf">
+    <div class="col">
       <Title noArrow>MAKE CONTACT</Title>
-      <span class="lg:text-4xl text-2xl">Send me a message, regarding anything!</span>
+      <span class="info">Send me a message, regarding anything!</span>
     </div>
-    <div class="flex items-center lg:min-h-screen lg:basis-2/3 w-full">
+    <div class="contact-container wf">
       {#if submitted}
-        <div class="mx-auto text-center">
+        <div class="center">
           {#if error.length > 0}
-            <h1 class="text-4xl font-black mb-2">Something went wrong!</h1>
-            <h4 class="text-red-400">{error}</h4>
+            <h1>Something went wrong!</h1>
+            <h4 class="error">{error}</h4>
           {:else}
-            <h1 class="text-4xl font-black mb-2">Thanks!</h1>
+            <h1>Thanks!</h1>
             <h4>I will try to get back as soon as possible!</h4>
           {/if}
         </div>
       {:else}
-        <form class="flex flex-col gap-4 w-full" on:submit|preventDefault={sendEmail}>
-          <div class="grid grid-flow-col gap-2">
+        <form class="col gap wf" on:submit|preventDefault={sendEmail}>
+          <div class="row">
             <Input name="Name" placeholder="Your Name" type="text"/>
             <Input name="Email" placeholder="Email address" type="email"/>
           </div>
           <Input name="Subject" placeholder="Choose Subject" type="text"/>
           <Input name="message" placeholder="Start typing here" type="TextArea" />
-          <div class="mb-1 ml-10">
+          <div class="ospace">
             <Oath />
           </div>
           <div>
-            <Button buttonType="submit" class="text-lg italic tracking-widest uppercase">
+            <Button buttonType="submit" class="contact-submit">
               <svg
+                class="iconl fill"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 x="0px" y="0px"
                 viewBox="0 0 1000 1000"
                 xml:space="preserve"
-                class="h-8 fill-current"
+                height="2rem"
               >
                 <g>
                   <g transform="matrix(1 0 0 -1 0 1008)"><path d="M756.2,741.8L990,508L756.2,274.2l-27,27L918.1,490H10v36h908.1L729.3,714.8L756.2,741.8z"/></g></g>
@@ -78,3 +79,75 @@
     </div>
   </div>
 </Section>
+
+<style>
+
+  .inner-contact {
+    gap: 3rem;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 0.5rem;
+  }
+
+  .info {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .contact-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .center {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .center h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    color: var(--color-primary-content);
+    margin-bottom: 0.5rem;
+  }
+
+  .error {
+    color: var(--color-error);
+  }
+
+  .row {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+  }
+
+  .ospace {
+    margin-bottom: 0.25rem;
+    margin-left: 3rem;
+  }
+
+  :global(.contact-submit) {
+    font-size: 1.125rem;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 1024px) { 
+    .inner-contact {
+      flex-direction: row;
+      width: auto;
+      margin: 0 4rem;
+    }
+
+    .info {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+
+    .contact-container {
+      min-height: 100vh;
+      flex-basis: 66.666667%;
+    }
+  }
+</style>

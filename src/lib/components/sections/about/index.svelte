@@ -3,17 +3,17 @@
   import Section from "$lib/layouts/section.svelte";
 	import Title from "$lib/components/elements/atoms/Title.svelte";
 </script>
-<Section class="flex flex-col lg:flex-row justify-around pb-16 lg:items-center gap-4">
-  <Image src="/dp.png" alt="hero image" class="min-w-[12rem] m-4 grow max-h-[90vh]"/>
-  <div class="flex flex-col gap-4">
+<Section class="col about">
+  <Image src="/dp.png" alt="hero image" class="about-image"/>
+  <div class="col gap">
     <Title noArrow>
       Hey all!
     </Title>
-    <p class="text-lg prose max-w-5xl lg:pr-20">
+    <p class="leader-text">
       I'm Rishikesh "Blaine" Anand, a developer, software engineer and a tech enthusiast.
       I love architecting solutions to real life problems, and bringing them to life in a user-friendly way!
     </p>
-    <p class="text-slate-500 prose max-w-5xl lg:pl-20">
+    <p class="subtext">
       I've always believed myself to be flexible in the things I can do. I am willing to
       spend the time to research the best solution to a problem, and I take
       immense pride in my ability to learn new tech. My interest in programming had 
@@ -24,3 +24,43 @@
     </p>
   </div>
 </Section>
+
+<style>
+  :global(.about) {
+    gap: 1rem;
+  }
+
+  :global(.about-image) {
+    min-width: 12rem;
+    margin: 1rem;
+    max-height: 90vh;
+    width: auto;
+  }
+
+  p {
+    max-width: 64rem;
+  }
+
+  .leader-text {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .subtext {
+    color: var(--color-secondary-content);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    max-width: 64rem;
+  }
+
+  @media (min-width: 1024px) { 
+    :global(.about) {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .subtext {
+      padding-left: 5rem;
+    }
+  }
+</style>

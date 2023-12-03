@@ -18,7 +18,7 @@
 
 <picture>
   <img 
-    class={`origin-top transition-all hover:scale-105 ${classes}`}
+    class={classes}
     style:translate="0 {scrollProgress}px"
     bind:this={el}
     src={src}
@@ -27,3 +27,14 @@
     width={width}
   />
 </picture>
+
+<style>
+  img {
+    transform-origin: top;
+    transition: all var(--transition-duration) var(--transition-timing);
+  }
+
+  img:hover {
+    scale: 1.05;
+  }
+</style>

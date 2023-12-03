@@ -13,23 +13,18 @@
   style="view-transition-name: project-mini-map;"
 >
   <h5>Mini Map:</h5>
-  <div class="inline-grid grid-cols-4 gap-1">
+  <div class="minimap">
     {#each allProjects as projectData}
       <a
         href={`/projects/${projectData.slug}`}
-        class={
-          classNames(
-            "w-12 rounded-sm",
-            active === projectData.slug && "opacity-75 grayscale pointer-events-none cursor-default"
-          )
-        }
+        aria-current={active === projectData.slug ? "page" : undefined}
         data-blobity-tooltip={projectData.name}
         style:grid-column={projectData.col}
         style:grid-row={projectData.row}
       >
         <picture>
           <img
-            class="w-full"
+            class="wf"
             style={active !== projectData.slug ? `view-transition-name: project-${projectData.slug}-img` : ""}
             src={projectData.thumbnail}
             alt={projectData.slug}
@@ -39,3 +34,23 @@
     {/each}
   </div>
 </div>
+
+<style>
+  a {
+    width: 4rem;
+    border-radius: 0.125rem;
+  }
+
+  a[aria-current='page'] {
+    filter: grayscale(1);
+    opacity: 0.75;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .minimap {
+    display: inline-grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.25rem;
+  }
+</style>

@@ -6,33 +6,75 @@
   $: current = $page.url.pathname?.split("/")?.[1];
 </script>
 
-<nav class="flex justify-between px-6 lg:px-12 h-12 items-center py-10 navbar">
-  <a class="px-2 py-1" href="/">
-    <span class="text-3xl font-black block lg:inline">
+<nav>
+  <a class="nav-title" href="/">
+    <span class="title-main">
       Blaine
     </span>
     <span>
       .is-a.dev
     </span>
   </a>
-  <div class="flex gap-4 items-center">
-    <Link href="/about" {current} highlightOn="">About</Link>
-    <Link href="/projects" {current} highlightOn="about">Projects</Link>
-    <Link href="/contact" {current} highlightOn="projects">Contact</Link>
+  <div class="nav-menu">
+    <Link href="/about" {current}>About</Link>
+    <Link href="/projects" {current}>Projects</Link>
+    <Link href="/contact" {current}>Contact</Link>
     <a
-      class="p-2 rounded-md hover:bg-slate-800 hover:text-white"
+      class="nav-external"
       href="https://github.com/blakeinstein"
       target="_blank"
       rel="noopener noreferrer"
       data-blobity-tooltip="GitHub"
     >
-      <Icon class="fill-current w-6 h-6" icon="akar-icons:github-fill" />
+      <Icon class="icon" icon="akar-icons:github-fill" />
     </a>
   </div>
 </nav>
 
 <style>
-  .navbar{
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 1.5rem;
+    height: 3rem;
     view-transition-name: header;
+  }
+  .nav-title {
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+  }
+
+  .title-main {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    color: var(--color-primary-content);
+    display: block;
+    font-weight: 900;
+  }
+
+  .nav-menu {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .nav-external {
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+  }
+
+  .nav-external:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-secondary-content);
+  }
+  @media (min-width: 1024px) { 
+    nav {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+    .title-main {
+      display: inline;
+    }
   }
 </style>

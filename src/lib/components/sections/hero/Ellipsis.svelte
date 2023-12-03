@@ -5,7 +5,7 @@
 </script>
 <Section>
   <div class="container greeting-root">
-    <div class="greeting absolute z-10">
+    <div class="greeting">
       <slot />
     </div>
     <div class="ellipses ellipses-outer-thin pointer-events-none">
@@ -18,7 +18,7 @@
 
 <style lang="postcss">
 .container {
-  @apply mt-[8vh] mx-auto lg:mt-[3vh];
+  margin: 8vh auto 0;
   --size: min(80vw, 80vh);
   width: var(--size);
   height: var(--size);
@@ -27,6 +27,8 @@
   overflow: visible;
 
   .greeting {
+    position: absolute;
+    z-index: 10;
     top: 10%;
     left: 50%;
     translate: -50% 0;
@@ -98,6 +100,12 @@
 
   100% {
     rotate: 405deg;
+  }
+}
+
+@media (min-width: 1024px) { 
+  .container {
+    margin-top: 3vh;
   }
 }
 </style>

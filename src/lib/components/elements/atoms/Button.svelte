@@ -1,6 +1,4 @@
 <script lang="ts">
-	import classNames from "classnames";
-
   export let buttonType: HTMLButtonElement["type"] = "button";
   let classes = "";
   export { classes as class };
@@ -9,24 +7,28 @@
 
 <svelte:element this={href ? 'a' : 'button'}
   type={buttonType}
-  class={
-    classNames(
-      "flex gap-2 border-2 px-2 rounded-sm items-center transition-all",
-      "border-zinc-800 text-zinc-800 hover:bg-zinc-800 hover:text-white",
-      "ghost-button",
-      classes
-    )
-  }
+  class={classes}
   {href}
 >
   <slot/>
 </svelte:element> 
 
 <style lang="postcss">
-  .ghost-button {
+  button, a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid var(--color-primary-content);
+    color: var(--color-primary-content);
+    background-color: transparent;
+    padding: 0 0.5rem;
+    border-radius: 0.125rem;
+    transition: all var(--transition-duration) var(--transition-timing) ;
     &:hover {
-      box-shadow: 0 0 5px theme('colors.zinc.800'), 0 0 25px theme('colors.zinc.800'),
-        0 0 50px theme('colors.zinc.800'), 0 0 100px theme('colors.zinc.800');
+      background-color: var(--color-primary-content);
+      color: var(--color-primary);
+      box-shadow: 0 0 5px var(--color-primary-content), 0 0 25px var(--color-primary-content),
+        0 0 50px var(--color-primary-content), 0 0 100px var(--color-primary-content);
     }
 
     &:active {

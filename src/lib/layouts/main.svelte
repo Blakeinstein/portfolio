@@ -3,12 +3,24 @@
 	import Backdrop from '$lib/components/elements/backdrop/index.svelte';
 </script>
 
-<background class="fixed pointer-events-none inset-0">
+<background class="">
 	<slot name="background">
 		<Backdrop />
 	</slot>
 </background>
 <Navbar />
-<main class="section relative snap-y snap-mandatory">
+<main>
 	<slot />
 </main>
+
+<style>
+	background {
+		position: fixed;
+		inset: 0;
+		pointer-events: none;
+	}
+	main {
+		position: relative;
+		scroll-snap-type: y mandatory;
+	}
+</style>

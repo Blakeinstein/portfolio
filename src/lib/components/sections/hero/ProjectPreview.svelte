@@ -8,7 +8,7 @@
 
   export let allProjects: ProjectMetaData[] = [];
 
-  let activeIdx = 0;
+  let activeIdx = 3;
 
   const increment = () => {
     activeIdx = (activeIdx + 1) % allProjects.length;
@@ -19,12 +19,12 @@
   }
 </script>
 <Section>
-  <div class="flex flex-col gap-4 mx-12 items-center overflow-clip">
-    <Button href="/projects" class="= px-4 py-2 font-xl">
+  <div class="col gap">
+    <Button href="/projects" class="prev-btn">
       Check all projects!
-      <Icon icon="mdi:arrow-right" class="w-6 h-6" />
+      <Icon icon="mdi:arrow-right" class="icon" />
     </Button>
-    <div class="relative card-holder">
+    <div class="card-holder">
       {#each allProjects as project, index}
         <PreviewCard project={project} {index} {activeIdx}/>
       {/each}
@@ -33,10 +33,21 @@
 </Section>
 
 <style>
+  .col {
+    padding: 4rem;
+    align-items: center;
+    overflow: clip;
+  }
+
+  :global(.prev-btn) {
+    padding: 0.5rem 1rem;
+  }
   .card-holder {
+    position: relative;
     width: 100vmin;
     height: 80vh;
     perspective: 500px;
     transform-style: preserve-3d;
+    margin: 5rem 0;
   }
 </style>

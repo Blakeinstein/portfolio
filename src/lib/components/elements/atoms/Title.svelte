@@ -6,11 +6,8 @@
   export let noArrow = false;
   export { classes as class };
 
-  $: classes = classnames('font-black flex gap-2 items-center mb-4 header', {
-    ['text-2xl lg:text-6xl']: size === "sm",
-    ['text-5xl lg:text-9xl ']: size === "md",
-    ['text-7xl lg:text-11xl']: size === "lg",
-    [classes]: classes,
+  $: classes = classnames('header', size, classes,
+  {
     'arrow': !noArrow,
   });
 </script>
@@ -20,10 +17,39 @@
 </h1>
 
 <style>
+.header {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font: var(--color-primary-content);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  line-height: 1;
+  font-weight: 900;
+}
 
-  .header {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+.header.sm {
+  font-size: 1.5rem;
+}
+.header.md {
+  font-size: 3rem;
+}
+.header.lg {
+  font-size: 4.5rem;
+}
+
+@media (min-width: 1024px) { 
+  .header.sm {
+    font-size: 3.75rem;
   }
+  .header.md {
+    font-size: 8rem;
+  }
+  .header.lg {
+    font-size: 10rem;
+  }
+}
+
 .arrow::before {
   content: "△";
   font-size: 0.65em;

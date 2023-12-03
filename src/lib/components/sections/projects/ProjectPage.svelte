@@ -13,29 +13,29 @@
   export let allProjects: ProjectMetaData[];
 </script>
 
-<Section class="grid place-items-center">
+<Section class="grid-center">
   <div
-    class="flex flex-col lg:flex-row gap-6 w-full justify-around mb-8 lg:p-16"
+    class="col wf"
   >
     <ProjectPoster {projectData} />
-    <div class="flex flex-col gap-16 lg:basis-1/2 items-around lg:py-12">
-      <div class="hidden lg:flex gap-2 items-center">
+    <div class="col head">
+      <div class="guide">
         <a
           href="/projects"
-          class="inline-flex gap-2 p-2 hover:underline w-24 items-center text-lg"
+          class=""
           in:fly={{ y: 80, opacity: 0, duration: 1200, delay: 400, easing: expoInOut }}
         >
-          <Icon icon="fluent-mdl2:back" class="w-4 h-4" />
+          <Icon icon="fluent-mdl2:back" class="iconl" />
           Back
         </a>
         <ProjectMiniMap active={projectData.slug} {allProjects} />
       </div>
       <div
-        class="desc-box prose max-w-none"
+        class="desc-box"
         in:fly={{ y: 80, opacity: 0, duration: 1200, delay: 0, easing: expoInOut }}
       >
         <slot>
-          <p class="">
+          <p>
             {projectData.description}
           </p>
         </slot>
@@ -45,14 +45,78 @@
 </Section>
 
 <style lang="postcss">
-  .desc-box {
-    view-transition-name: project-desc;
-  }
-  .desc-box p {
-    display: contents;
+  .col.wf {
+    gap: 1.5rem;
+    justify-content: space-around;
+    margin-bottom: 2rem;
   }
 
-  .desc-box > * {
-    @apply mb-2;
+  .col.head {
+    gap: 4rem;
+  }
+
+  .guide {
+    display: none;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .guide a {
+    display: inline-flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    width: 6rem;
+    align-items: center;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .desc-box {
+    view-transition-name: project-desc;
+    max-width: none;
+    color: var(----color-secondary-content);
+
+    :global(p) {
+      display: contents;
+    }
+
+    > * {
+      margin-bottom: 0.5rem;
+    }
+
+    :global(a) {
+      color: '#3182ce';
+
+      &:hover {
+        color: '#2c5282',
+      }
+    }
+
+    :global(h1) {
+      margin-bottom: 1rem;
+    }
+
+    :global(h2) {
+      margin: 0.5rem 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .col.wf {
+      flex-direction: row;
+      padding: 4rem;
+    }
+
+    .col.head {
+      flex-basis: 50%;
+      padding: 3rem 0;
+    }
+
+    .guide {
+      display: flex;
+    }
   }
 </style>

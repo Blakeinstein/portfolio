@@ -16,7 +16,9 @@
   align-items: center;
 	
 	&:after {
-		@apply bg-slate-400 transition-all delay-300;
+    background-color: var(--color-secondary-content);
+    transition: all var(--transition-duration) var(--transition-timing);
+    transition-delay: 300ms;
 		content: "";
 		height: 3em;
 		width: 2%;
@@ -27,8 +29,5 @@
   50% {
     opacity: .5;
   }
-}
-.animate-pulse {
-  
 }
 </style>

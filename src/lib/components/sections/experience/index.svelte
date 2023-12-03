@@ -7,10 +7,10 @@ import ExpItem from "./ExpItem.svelte";
 </script>
 
 <!-- Work Experience -->
-<Section class="flex flex-col gap-12">
+<Section class="col lgap">
   <Fade>
     <Title size="sm">Work Experience</Title>
-    <div class="flex flex-col gap-4 px-4"> 
+    <div class="col gap"> 
       <WorkItem 
         company="Arizona State University"
         companyUrl="https://entrepreneurship.asu.edu/programs/edson-entrepreneurship-innovation-at-healab/"
@@ -19,7 +19,7 @@ import ExpItem from "./ExpItem.svelte";
       >
         <em>Built a social media platform for the ASU Heal lab, to be used by death investigators to collaborate on cases.</em>
         <br>
-        <span class="text-zinc-500">
+        <span>
           <strong>Tech used:</strong> VueJs, TypeScript, SpringBoot, Java, GraphQl, Neo4j and more.
         </span>
       </WorkItem>
@@ -31,7 +31,7 @@ import ExpItem from "./ExpItem.svelte";
       >
         <em>Worked on a platform to enable ML engineers to iterate faster, simplifying their path to productionizing their models.</em>
         <br>
-        <span class="text-zinc-500">
+        <span>
           <strong>Tech used:</strong> React, TypeScript, NextJS, OpenAPI, Docker, Kubernetes, Terraform, CDKTF and more.
         </span>
       </WorkItem>
@@ -41,7 +41,7 @@ import ExpItem from "./ExpItem.svelte";
 <!-- Programming languages -->
   <Fade>
     <Title size="sm">Programming Languages</Title>
-    <div class="flex flex-col gap-4 px-4">
+    <div class="col gap">
       <ExpItem skill="Web Frameworks" note="React, Vue, Svelte, Angular, Solid, Alpine...." years={5}>
         I have had my roots in web development, and take pride in my expertise in the domain. I am very flexible with the frameworks I use, and I am always looking to learn more. I have used React, Vue, Svelte, Angular, Solid, Alpine, and more. I am currently using Svelte for my personal projects, and I have professional experience in writing production grade React and VueJs (both 2 and 3).
       </ExpItem>
@@ -55,9 +55,23 @@ import ExpItem from "./ExpItem.svelte";
       <ExpItem skill="C++"years={2}>
         I started using C++ in college, and my primary use-case for it has always been competitive programming. I'd much rather prefer to use Rust for actual software.
       </ExpItem>
-      <ExpItem skill="Java" years={2} last>
+      <ExpItem skill="Java" years={2}>
         My primary uses for Java was an OO programming course in college, and the entirety of my Master's degree. I have professional experience in working with Spring and Spring Boot.
       </ExpItem>
     </div>
   </Fade>
 </Section>
+
+<style>
+  .col {
+    padding: 0 1rem;
+  }
+
+  :global(.lgap) {
+    gap: 2rem;
+  }
+
+  span {
+    color: var(--color-secondary-content);
+  }
+</style>

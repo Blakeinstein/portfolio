@@ -16,10 +16,10 @@
 </script>
 <div class="contents">
   I am
-  <div class="relative tracking-wider morphing text-5xl capitalcase text-center font-semibold">
+  <div class="morphing">
     {#each statements as statement, idx}
       <span
-        class="absolute word gradient-text"
+        class="word gradient-text"
         style={`
           animation-duration: ${speed}s;
           animation-delay: ${delay(idx)}s;
@@ -34,11 +34,17 @@
 <style>
 
 .morphing {
+  position: relative;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: 600;
   height: 5ch;
   min-width: 45vw;
 }
 
-.word {
+.morphing > .word {
+  position: absolute;
   top: 50%;
   left: 50%;
   translate: -50% -50%;

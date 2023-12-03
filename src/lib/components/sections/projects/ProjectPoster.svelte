@@ -7,17 +7,17 @@
 </script>
 
 
-<div class="lg:basis-1/2 card">
+<div class="card col gap">
   <header>
-    <div class="flex flex-col w-full">
-      <hr class="w-full h-2 bg-black" />
+    <div class="col wf">
+      <hr class="wf" />
       <span class="project-date">{projectData.year || "20XX"}</span>
     </div>
     <h2 class="project-title">{projectData.name}</h2>
   </header>
   <picture>
     <img
-      class="rounded-md w-full"
+      class="wf"
       style={`view-transition-name: project-${projectData.slug}-img`}
       src={projectData.thumbnail}
       alt={projectData.slug}
@@ -26,17 +26,16 @@
   {#if projectData.images}
     <Lightbox images={projectData.images} />
   {/if}
-  <footer class="flex flex-col gap-8">
+  <footer class="col">
     {#if projectData.techs}
-      <div class="flex self-end" style="view-transition-name: project-tech-box">
+      <div class="techs" style="view-transition-name: project-tech-box">
         {#each projectData.techs as techName}
           <span
-            class="inline-grid place-items-center w-16 h-8 text-white"
             data-blobity-tooltip="{techName}"
             data-blobity-magnetic="false"
             style:background={TechConstants[techName]?.color}
           >
-            <Icon class="fill-current w-6 h-6" icon={TechConstants[techName]?.icon} />
+            <Icon class="icon" icon={TechConstants[techName]?.icon} />
           </span>
         {/each}
       </div>
@@ -46,13 +45,12 @@
       <div>
         {#each projectData.links as link}
           <a
-            class="p-2 rounded-md hover:underline hover:text-slate-500 text-xl capitalize inline-flex gap-1 items-center"
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
             data-blobity-tooltip={link.href}
           >
-            <Icon class="fill-current w-6 h-6" icon={link.icon} />
+            <Icon class="icon" icon={link.icon} />
             { link.type }
           </a>
         {/each}
@@ -63,13 +61,66 @@
 
 <style lang="postcss">
   .card {
-    @apply flex flex-col border-2 lg:shadow-xl bg-slate-200 p-8 border-black gap-4 h-fit;
+    border: 2px solid var(--color-primary-content);
+    padding: 2rem;
+    background-color: var(--color-primary);
+    height: fit-content;
   }
+
+  hr {
+    height: 0.5rem;
+    background-color: var(--color-primary-content); 
+  }
+
+  footer {
+    gap: 2rem;
+
+    a {
+      padding: 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      text-transform: capitalize;
+      display: inline-flex;
+      gap: 0.25rem;
+      align-items: center;
+
+      &:hover {
+        text-decoration: underline;
+        color: var(--color-secondary-content);
+      }
+    }
+  }
+
   .project-date {
-    @apply px-4 py-2 inline self-end w-fit bg-black text-white font-semibold text-2xl;
+    padding: 0.5rem 1rem;
+    display: inline;
+    align-self: flex-end;
+    background-color: var(--color-primary-content);
+    color: var(--color-primary);
+    width: fit-content;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
+
   .project-title {
-    @apply text-7xl font-black text-black -mt-4;
+    font-size: 4.5rem;
+    line-height: 1;
+    color: var(--color-primary-content);
+    margin-top: -1rem;
+  }
+
+  .techs {
+    display: flex;
+    align-self: flex-end;
+    > span {
+      display: inline-grid;
+      place-items: center;
+      width: 4rem;
+      height: 2rem;
+      color: var(--color-primary);
+    }
   }
 
   ::view-transition-old(project-tech-box) {
@@ -99,6 +150,13 @@
     }
     to {
       scale: 100% 0%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .card {
+      flex-basis: 50%;
+      box-shadow: 0 0 #0000, 0 0 #0000, 0 20px 25px -5px rgb(0 0 0 / 0.1);
     }
   }
 </style>

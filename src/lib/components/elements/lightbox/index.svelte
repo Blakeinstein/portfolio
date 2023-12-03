@@ -1,6 +1,6 @@
 <script lang="ts">
   import Icon from "@iconify/svelte";
-import type { ImageType } from "./types";
+  import type { ImageType } from "./types";
   import { browser } from "$app/environment";
 
   export let images: ImageType[];
@@ -39,20 +39,22 @@ import type { ImageType } from "./types";
   $: toggleDialog(activeImage);
 </script>
 
-<div class="flex gap-2 overflow-x-scroll">
+<div class="lightbox-container">
   {#each images as image, index}
     <button
-      class="h-24 shrink-0"
+      class="lightbox-image"
       on:click={() => activeImage = index}
       aria-haspopup="dialog"
       data-blobity-magnetic="false"
     >
-      <img class="h-full" src={image.link} alt={image.desc}>
+      <picture>
+        <img src={image.link} alt={image.desc}>
+      </picture>
     </button>
   {/each}
   <dialog bind:this={dialog}>
-    <form method="dialog" class="text-white">
-      <div class="flex justify-around w-full mb-2">
+    <form method="dialog">
+      <div class="lightbox-dialog wf">
         <span>{ activeImage + 1} of { images.length }</span>
         {#if activeImage >= 0}
           <span>{images[activeImage].desc}</span>
@@ -61,18 +63,18 @@ import type { ImageType } from "./types";
           type="submit"
           on:click={() => activeImage = -1}
         >
-          <Icon class="w-6 h-6" icon="material-symbols:close" />
+          <Icon class="icon" icon="material-symbols:close" />
         </button>
       </div>
       {#if activeImage >= 0}
-        <div class="lightbox">
+        <div class="lightbox grid-center">
           <button
             type="button"
             disabled={activeImage <= 0}
             on:click={() => activeImage--}
-            class="disabled:opacity-30 disabled:pointer-events-none"
+            class="seek"
           >
-            <Icon class="w-6 h-6" icon="akar-icons:arrow-left" />
+            <Icon class="icon" icon="akar-icons:arrow-left" />
           </button>
           <div class="max-h-[85dvh] overflow-y-auto" aria-label="scrollable">
             <img src={images[activeImage].link} alt={images[activeImage].desc} />
@@ -81,9 +83,9 @@ import type { ImageType } from "./types";
             type="button"
             disabled={activeImage >= (images.length - 1)}
             on:click={() => activeImage++}
-            class="disabled:opacity-30 disabled:pointer-events-none"
+            class="seek"
           >
-            <Icon class="w-6 h-6" icon="akar-icons:arrow-right" />
+            <Icon class="icon" icon="akar-icons:arrow-right" />
           </button>
         </div>
       {/if}
@@ -92,20 +94,54 @@ import type { ImageType } from "./types";
 </div>
 
 <style lang="postcss">
+  .lightbox {
+    height: 100%;
+    grid-template-columns: 2.5rem auto 2.5rem;
+  }
+
+  .lightbox-container {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: scroll;
+    padding: 0.25rem 0;
+  }
+
+  .lightbox-image {
+    height: 6rem;
+    flex-shrink: 0;
+  }
+
+  .lightbox-image img {
+    height: 100%;
+  }
+
+  .lightbox-dialog {
+    display: flex;
+    justify-content: space-around;
+
+    margin-bottom: 0.5rem;
+    background-color: var(--color-primary-content);
+    color: var(--color-primary);
+  }
+
+  .seek:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  form {
+    color: var(----color-primary);
+  }
+
   dialog {
-    @apply bg-transparent;
+    background-color: transparent;
     max-height: 90dvh;
     max-width: 95dvw;
 
     &::backdrop {
-      @apply bg-black;
+      background-color: var(--color-primary-content);
       opacity: 0.5;
     }
-  }
-
-  .lightbox {
-    @apply grid place-items-center h-full;
-    grid-template-columns: 2.5rem auto 2.5rem;
   }
 
   @media (prefers-reduced-motion: no-preference) {

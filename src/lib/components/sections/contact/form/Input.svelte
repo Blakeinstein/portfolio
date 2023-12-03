@@ -9,7 +9,7 @@ import type { HTMLInputTypeAttribute } from "svelte/elements";
   export { classes as class };
 </script>
 
-<label class={classNames("flex flex-col gap-1 focus:font-semibold", classes)}>
+<label class={"col " + classes}>
   {name}
   {#if type === "TextArea"}
     <textarea name={name.toLowerCase()} required {placeholder}/>
@@ -19,19 +19,37 @@ import type { HTMLInputTypeAttribute } from "svelte/elements";
 </label>
 
 <style lang="postcss">
+label {
+  gap: 0.25rem;
+}
+
+label:focus {
+  font-weight: 600;
+}
+
 input[type="text"], input[type="email"], textarea {
-  @apply grow w-full bg-transparent border-zinc-800 border-2 p-2 rounded-sm outline-none text-lg transition-all;
+  flex-grow: 1;
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid var(--color-primary-content);
+  padding: 0.5rem;
+  border-radius: 0.125rem;
+  outline: none;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  transition: all var(--transition-duration) var(--transition-timing);
 
   &:focus {
-    @apply bg-zinc-100 scale-105;
+    background-color: var(--color-primary);
+    scale: 1.05;
   }
 
   &:placeholder {
-    @apply text-gray-400;
+    background-color: var(--color-secondary-content);
   }
 }
 
 textarea {
-  @apply h-32;
+  height: 8rem;
 }
 </style>
