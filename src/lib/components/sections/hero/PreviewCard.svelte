@@ -16,6 +16,7 @@
   aria-hidden={!visible}
   aria-disabled={index !== activeIdx}
   data-no-blobity={index == activeIdx ? true : false}
+  data-blobity-tooltip={project.name}
   style:--active={ index === activeIdx ? 1 : 0 }
   style:--offset={ (activeIdx - index) / 3 }
   style:--direction={ Math.sign(activeIdx - index) }
