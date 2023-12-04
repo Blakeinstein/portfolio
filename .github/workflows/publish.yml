@@ -16,6 +16,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    environment: github-pages
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -35,10 +36,12 @@ jobs:
         run: pnpm build
       - name: Optimize build
         run: pnpm postbuild
+        env:
+          cname: ${{ secrets.CNAME }}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
           publish_branch: release
-          cname: blaine.vip
+          cname: ${{ secrets.CNAME }}
