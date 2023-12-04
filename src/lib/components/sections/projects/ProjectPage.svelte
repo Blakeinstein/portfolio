@@ -49,6 +49,7 @@
     gap: 1.5rem;
     justify-content: space-around;
     margin-bottom: 2rem;
+    max-width: 90vw;
   }
 
   .col.head {
@@ -96,10 +97,12 @@
     }
 
     :global(h1) {
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
 
     :global(h2) {
+      font-size: 1.75rem;
       margin: 0.5rem 0;
     }
   }
@@ -111,7 +114,7 @@
     }
 
     .col.head {
-      flex-basis: 50%;
+      max-width: 50%;
       padding: 3rem 0;
     }
 

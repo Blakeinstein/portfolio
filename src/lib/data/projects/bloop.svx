@@ -23,8 +23,6 @@ images:
     desc: An example Bloop Script.
 ---
 
-# {name}
-
 ## Inspiration 
 I saw [Boop](https://boop.okat.best/) by Ivan Mathy at [Product Hunt back in 2020](https://www.producthunt.com/products/boop). I loved the idea of a simple scratchpad 
 that could be used to run quick macros on text. I had been using online tools so much and I felt boop was exactly what I needed.

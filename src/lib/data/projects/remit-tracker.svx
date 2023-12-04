@@ -25,8 +25,6 @@ images:
     desc: Zyte Usage
 ---
 
-# { name }
-
 ## Inspiration
 I came to the US for my Master's degree and quickly realized that the fluctuating conversion rates / remittance cost for INR to
 USD is a big problem for students like me. I wanted to build a simple tool that would help me track the conversion rates across multiple

@@ -19,8 +19,6 @@ links:
     type: Webpage
 ---
 
-# {name}
-
 ## Inspiration and Design
 Learning from the mistakes I made in my [old-portfolio](/projects/old-portfolio), I started working on a new one. 
 I had the opportunity to talk to alot of students in the UX department at Arizona State University and I also wanted 

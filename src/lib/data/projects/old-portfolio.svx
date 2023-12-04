@@ -33,8 +33,6 @@ images:
 
 ---
 
-# { name }
-
 ## Design Ideas
 The design of the website was inspired by the album art for the track "[Light Mind](https://www.last.fm/music/Krosia/_/Light+Mind)" 
 by [Krosia](https://www.last.fm/music/Krosia). I deeply adore the vastness of outer space, and spacewave has been my 

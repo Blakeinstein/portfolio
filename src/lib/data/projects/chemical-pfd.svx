@@ -25,8 +25,6 @@ images:
     desc: FOSSEE Group at IIT Bombay.
 ---
 
-# {name}
-
 ## Background and Reasoning
 Chemical PFD was the project I pursued during my fellowship at IIT Bombay, under their FOSSEE initiative.
 The project was to build a simple chemical process flow diagram tool to enable Chemical Engineering labs primarly at IIT

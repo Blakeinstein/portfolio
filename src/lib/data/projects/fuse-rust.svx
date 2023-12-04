@@ -20,8 +20,6 @@ links:
   type: Docs
 ---
 
-# {name}
-
 ## Inspiration
 While working on [Bloop](/projects/bloop), I found out about [FuseJS](https://github.com/krisk/fuse) and 
 subsequently [fuse-swift](https://github.com/krisk/fuse-swift) both built by [krisk](https://github.com/krisk).

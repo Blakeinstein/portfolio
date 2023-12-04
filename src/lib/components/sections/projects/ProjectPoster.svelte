@@ -68,6 +68,7 @@
   }
 
   hr {
+    border: 0;
     height: 0.5rem;
     background-color: var(--color-primary-content); 
   }
@@ -155,7 +156,7 @@
 
   @media (min-width: 1024px) {
     .card {
-      flex-basis: 50%;
+      max-width: 50%;
       box-shadow: 0 0 #0000, 0 0 #0000, 0 20px 25px -5px rgb(0 0 0 / 0.1);
     }
   }
