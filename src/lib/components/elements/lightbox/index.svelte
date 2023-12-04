@@ -53,8 +53,8 @@
     </button>
   {/each}
   <dialog bind:this={dialog}>
-    <form method="dialog">
-      <div class="lightbox-dialog wf">
+    <form method="col">
+      <div class="lightbox-head wf">
         <span>{ activeImage + 1} of { images.length }</span>
         {#if activeImage >= 0}
           <span>{images[activeImage].desc}</span>
@@ -76,8 +76,10 @@
           >
             <Icon class="icon" icon="akar-icons:arrow-left" />
           </button>
-          <div class="max-h-[85dvh] overflow-y-auto" aria-label="scrollable">
-            <img src={images[activeImage].link} alt={images[activeImage].desc} />
+          <div class="image-container" aria-label="scrollable">
+            <picture>
+              <img src={images[activeImage].link} alt={images[activeImage].desc} />
+            </picture>
           </div>
           <button
             type="button"
@@ -94,6 +96,14 @@
 </div>
 
 <style lang="postcss">
+
+  button {
+    background: transparent;
+    outline: 0;
+    border: 0;
+    color: var(--color-primary);
+  }
+
   .lightbox {
     height: 100%;
     grid-template-columns: 2.5rem auto 2.5rem;
@@ -103,7 +113,7 @@
     display: flex;
     gap: 0.5rem;
     overflow-x: scroll;
-    padding: 0.25rem 0;
+    padding: 0.25rem 0;;
   }
 
   .lightbox-image {
@@ -115,12 +125,11 @@
     height: 100%;
   }
 
-  .lightbox-dialog {
+  .lightbox-head {
     display: flex;
     justify-content: space-around;
-
+    user-select: none;
     margin-bottom: 0.5rem;
-    background-color: var(--color-primary-content);
     color: var(--color-primary);
   }
 
@@ -131,16 +140,28 @@
 
   form {
     color: var(----color-primary);
+    max-height: 90dvh;
+    max-width: 95dvw;
   }
 
   dialog {
     background-color: transparent;
-    max-height: 90dvh;
-    max-width: 95dvw;
+    margin: auto;
+    overflow: clip;
+    border: 0;
 
     &::backdrop {
-      background-color: var(--color-primary-content);
-      opacity: 0.5;
+      background-color: #333;
+      opacity: 1;
+    }
+  }
+
+  .image-container {
+    max-height: 85dvh;
+    overflow-y: auto;
+
+    img {
+      max-width: 100%;
     }
   }
 
