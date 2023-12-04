@@ -34,7 +34,7 @@ jobs:
       - name: Build
         run: pnpm build
       - name: Optimize build
-        run: pnpm optimize
+        run: pnpm postbuild
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

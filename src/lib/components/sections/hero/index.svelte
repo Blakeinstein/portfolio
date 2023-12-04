@@ -40,10 +40,6 @@
     word-spacing: 0.5rem;
   }
 
-  .gradient-text {
-    display: inline;
-  }
-
   .col {
     letter-spacing: 0.05em;
     color: var(--color-primary-content);
