@@ -13,7 +13,7 @@ export async function load({ params }) {
       allProjects,
 		}
 	} catch (e) {
-		throw error(404, 'Project not found');
+		error(404, 'Project not found');
 	}
 }
 

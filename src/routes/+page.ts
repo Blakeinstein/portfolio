@@ -9,7 +9,7 @@ export async function load() {
       allProjects,
 		}
 	} catch (e) {
-		throw error(404, 'Project not found');
+		error(404, 'Project not found');
 	}
 }
 
