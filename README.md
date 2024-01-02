@@ -36,3 +36,9 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## ToDo
+
+- Fix about me page, with content not animating in on-scroll
+- Overhaul homepage, 1. Mobile view looks shit 2. Project scroller looks like dog-shit
+- Improve color scheme

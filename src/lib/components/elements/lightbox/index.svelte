@@ -52,7 +52,7 @@
       </picture>
     </button>
   {/each}
-  <dialog bind:this={dialog}>
+  <dialog bind:this={dialog} data-lenis-prevent>
     <form method="col">
       <div class="lightbox-head wf">
         <span>{ activeImage + 1} of { images.length }</span>

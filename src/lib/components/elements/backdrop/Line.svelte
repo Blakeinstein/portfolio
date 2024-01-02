@@ -1,6 +1,4 @@
 <script lang="ts">
-	import classNames from "classnames";
-
   export let top = "0%";
   export let left = "0%";
   export let vertical = false;

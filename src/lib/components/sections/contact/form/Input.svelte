@@ -1,6 +1,5 @@
 <script lang="ts">
-	import classNames from "classnames";
-import type { HTMLInputTypeAttribute } from "svelte/elements";
+  import type { HTMLInputTypeAttribute } from "svelte/elements";
 
   export let name: string;
   export let type: HTMLInputTypeAttribute | "TextArea";

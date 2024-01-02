@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { ProjectMetaData } from "$lib/data/ProjectData";
-  import classNames from "classnames";
   import { expoInOut } from "svelte/easing";
   import { fly } from "svelte/transition";
 

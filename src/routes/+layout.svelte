@@ -4,7 +4,7 @@
 	import PartyTown from '$lib/components/SEO/PartyTown.svelte';
 	import MainLayout from '$lib/layouts/main.svelte';
 	import Blobity from '$lib/components/page/blobity.svelte';
-	// import Lenis from '$lib/components/page/lenis.svelte';
+	import Lenis from '$lib/components/page/lenis.svelte';
 
 	import '../app.postcss';
 
@@ -23,7 +23,7 @@
 </script>
 
 <Blobity />
-<!-- <Lenis /> -->
+<Lenis />
 <PartyTown />
 
 <MainLayout>
