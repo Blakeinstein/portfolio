@@ -5,16 +5,19 @@
 	import Button from "$lib/components/elements/atoms/Button.svelte";
 	import Icon from "@iconify/svelte";
   import type { ProjectMetaData } from "$lib/data/ProjectData";
-  import Gradienttext from "$lib/animations/gradienttext.svelte";
 
   export let allProjects: ProjectMetaData[] = [];
 </script>
 
 <div class="grid-center">
-  <h1 class="">
-    Hi! I'm
-    <Gradienttext>Blaine</Gradienttext>.
-  </h1>
+  <div class="blaine gradient-text">
+    <span>B</span>
+    <span>L</span>
+    <span>A</span>
+    <span>I</span>
+    <span>N</span>
+    <span>E</span>
+  </div>
 </div>
 <Ellipsis>
   <div class="col">
@@ -28,16 +31,29 @@
 <ProjectPreview {allProjects} />
 
 <style lang="postcss">
+  .blaine {
+    width: 100vw;
+    color: var(--color-primary-content);
+    padding: 3rem;
+    line-height: 0.75;
+    letter-spacing: 0;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    font-size: calc(100vw / 6);
+
+    span:nth-child(1), span:nth-child(6) {
+      font-size: 1.6em;
+    }
+
+    span {
+      font-size: 1.25em;
+    }
+  }
+
   .grid-center {
     height: 50vh;
-  }
-  h1 {
-    color: var(--color-primary-content);
-    padding: 0.5rem 3rem;
-    text-align: center;
-    font-size: 6rem;
-    line-height: 1;
-    word-spacing: 0.5rem;
   }
 
   .col {
