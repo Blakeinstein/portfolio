@@ -21,7 +21,8 @@
     border: 2px solid var(--color-primary-content);
     color: var(--color-primary-content);
     background-color: transparent;
-    padding: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
     border-radius: 0.125rem;
     transition: all var(--transition-duration) var(--transition-timing) ;
     &:hover {

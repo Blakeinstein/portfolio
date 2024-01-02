@@ -9,25 +9,24 @@
   export let allProjects: ProjectMetaData[] = [];
 </script>
 
-<div class="grid-center">
-  <div class="blaine gradient-text">
-    <span>B</span>
-    <span>L</span>
-    <span>A</span>
-    <span>I</span>
-    <span>N</span>
-    <span>E</span>
-  </div>
+<div class="blaine gradient-text">
+  <span>B</span>
+  <span>L</span>
+  <span>A</span>
+  <span>I</span>
+  <span>N</span>
+  <span>E</span>
 </div>
-<Ellipsis>
+
+<!-- <Ellipsis> -->
   <div class="col">
-    <CopyWrite />
     <Button class="copy-btn" href="/about">
       About me
       <Icon icon="mdi:arrow-right" class="icon" />
     </Button>
+    <CopyWrite />
   </div>
-</Ellipsis>
+<!-- </Ellipsis> -->
 <ProjectPreview {allProjects} />
 
 <style lang="postcss">
@@ -42,6 +41,8 @@
     display: flex;
     justify-content: space-around;
     font-size: calc(100vw / 6);
+    pointer-events: none;
+    user-select: none;
 
     span:nth-child(1), span:nth-child(6) {
       font-size: 1.6em;
@@ -52,30 +53,25 @@
     }
   }
 
-  .grid-center {
-    height: 50vh;
-  }
-
   .col {
     letter-spacing: 0.05em;
     color: var(--color-primary-content);
     font-size: 1.5rem;
     line-height: 2rem;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
+    margin-top: -3rem;
   }
 
-  :global(.copy-btn) {
+  :global(a.copy-btn) {
     letter-spacing: 0.05em;
     font-size: 1.25rem;
+    padding: 0.5rem 1rem;
     line-height: 1.75rem;
     gap: 0.5rem;
   }
 
   @media (min-width: 1024px) {
-    h1 {
-      font-size: 8rem/* 128px */;
-      line-height: 1;
-    }
+   
   }
 </style>

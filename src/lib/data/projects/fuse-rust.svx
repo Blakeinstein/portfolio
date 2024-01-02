@@ -1,6 +1,7 @@
 ---
 name: Fuse-Rust
 year: 2021
+featured: true
 description: A fuzzy search library for the rust ecosystem, ideal for building friendly
   search bars.
 thumbnail: /mockups/fuse-rust.avif

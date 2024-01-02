@@ -15,7 +15,6 @@
   const delay = (idx: number) => (speed / (statements.length + 1)) * (idx) - speed;
 </script>
 <div class="contents">
-  I am
   <div class="morphing gradient-text">
     {#each statements as statement, idx}
       <span
@@ -39,7 +38,8 @@
   text-transform: capitalize;
   text-align: center;
   font-weight: 600;
-  height: 5ch;
+  font-size: larger;
+  height: 6ch;
   min-width: 45vw;
 }
 
