@@ -15,7 +15,7 @@
   const delay = (idx: number) => (speed / (statements.length + 1)) * (idx) - speed;
 </script>
 <div class="contents">
-  <div class="morphing gradient-text">
+  <div class="morphing">
     {#each statements as statement, idx}
       <span
         class="word"
@@ -48,6 +48,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  /* writing-mode: vertical-rl; */
   translate: -50% -50%;
   animation-name: word;
   animation-timing-function: ease-in-out;

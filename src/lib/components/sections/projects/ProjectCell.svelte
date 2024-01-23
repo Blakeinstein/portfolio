@@ -92,7 +92,7 @@
         opacity: 0;
         position: absolute;
         bottom: 0;
-        color: var(--color-primary);
+        color: var(--color-white);
       }
 
       &:hover {

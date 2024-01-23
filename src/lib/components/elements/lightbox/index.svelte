@@ -101,7 +101,7 @@
     background: transparent;
     outline: 0;
     border: 0;
-    color: var(--color-primary);
+    color: var(--color-main);
   }
 
   .lightbox {
@@ -130,7 +130,7 @@
     justify-content: space-around;
     user-select: none;
     margin-bottom: 0.5rem;
-    color: var(--color-primary);
+    color: var(--color-main);
   }
 
   .seek:disabled {
@@ -139,7 +139,7 @@
   }
 
   form {
-    color: var(----color-primary);
+    color: var(--color-white);
     max-height: 90dvh;
     max-width: 95dvw;
   }

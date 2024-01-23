@@ -46,7 +46,7 @@
 
     &:after {
       content: "✦";
-      color: var(--color-primary);
+      color: var(--color-accent);
       text-align: center;
       line-height: 2em;
       font-size: 1.5em;

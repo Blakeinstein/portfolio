@@ -44,9 +44,11 @@
   .nav-title {
     padding: 0.25rem 0.5rem;
     text-decoration: none;
+    color: var(--color-white);
   }
 
   .title-main {
+    color: var(--color-accent);
     font-size: 1.875rem;
     line-height: 2.25rem;
     display: block;
@@ -60,13 +62,14 @@
   }
 
   .nav-external {
+    color: var(--color-white);
     padding: 0.5rem;
     border-radius: 0.375rem;
   }
 
   .nav-external:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-bg-secondary);
+    background-color: var(--color-accent);
+    color: var(--color-bg-primary);
   }
   @media (min-width: 1024px) { 
     nav {

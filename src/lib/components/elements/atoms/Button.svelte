@@ -19,11 +19,11 @@
 <style lang="postcss">
   .inverted {
     --content-color: var(--color-bg-primary);
-    --background-color: var(--color-primary);
+    --background-color: var(--color-main);
   }
   button, a {
-    --content-color: var(--color-bg-primary);
-    --background-color: var(--color-primary);
+    --content-color: var(--color-main);
+    --background-color: var(--color-bg-primary);
     display: flex;
     align-items: center;
     gap: 0.5rem;

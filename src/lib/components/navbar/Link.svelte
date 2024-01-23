@@ -23,7 +23,11 @@
     padding: 0.25rem 0.5rem;
     border-radius: 0.375rem;
     text-decoration: none;
-    color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  a[aria-current='page'] {
+    color: var(--color-main);
   }
   
   a[aria-current='page']::before {

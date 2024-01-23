@@ -28,7 +28,7 @@
         <span>
           Each project I undertake is fueled by a deep passion and a commitment to excellence. My hands craft with care, and my mind works with creativity, transforming every idea into a meaningful and meticulously crafted reality. This portfolio is more than a collection of work; it's a reflection of my dedication to making every vision come alive with simplicity and elegance.
         </span>
-        <Button href="/projects" invert>
+        <Button href="/projects">
           All projects
           <Icon icon="mdi:arrow-right" class="icon" />
         </Button>

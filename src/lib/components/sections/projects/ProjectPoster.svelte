@@ -61,7 +61,7 @@
 
 <style lang="postcss">
   .card {
-    border: 2px solid var(--color-primary);
+    border: 2px solid var(--color-white);
     padding: 2rem;
     background-color: var(--color-bg-primary);
     height: fit-content;
@@ -70,7 +70,7 @@
   hr {
     border: 0;
     height: 0.5rem;
-    background-color: var(--color-primary); 
+    background-color: var(--color-white); 
   }
 
   footer {
@@ -97,7 +97,7 @@
     padding: 0.5rem 1rem;
     display: inline;
     align-self: flex-end;
-    background-color: var(--color-primary);
+    background-color: var(--color-white);
     color: var(--color-bg-primary);
     width: fit-content;
     font-weight: 600;
@@ -108,7 +108,7 @@
   .project-title {
     font-size: 4.5rem;
     line-height: 1;
-    color: var(--color-primary);
+    color: var(--color-white);
     margin-top: -1rem;
   }
 
@@ -120,7 +120,7 @@
       place-items: center;
       width: 4rem;
       height: 2rem;
-      color: var(--color-primary);
+      color: var(--color-white);
     }
   }
 

@@ -28,7 +28,7 @@
 <style>
 .exp-item {
   padding: 0 1px 1rem;
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-white);
 }
 
 .exp-item:last-child {

@@ -15,7 +15,7 @@
     position: absolute;
     opacity: 50%;
     border: 0;
-    background: var(--color-secondary);
+    background: var(--color-white);
     height: 1px;
   }
   hr.vertical {

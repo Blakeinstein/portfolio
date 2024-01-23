@@ -39,7 +39,7 @@ input[type="text"], input[type="email"], textarea {
   transition: all var(--transition-duration) var(--transition-timing);
 
   &:focus {
-    background-color: var(--color-primary);
+    background-color: var(--color-main);
     scale: 1.05;
   }
 
