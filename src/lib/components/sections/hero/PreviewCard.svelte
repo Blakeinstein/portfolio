@@ -6,7 +6,7 @@
 </script>
 
 <div class="card" style:background-image={`url(${project.thumbnail})`}>
-  <a class="card-body" href="/projects/{project.slug}" data-no-blobity>
+  <a class="card-body" href="/projects/{project.slug}" data-blobity-magnetic="false">
     <h3>{project.name}</h3>
     <p>{project.description}</p>
   </a>
@@ -34,5 +34,10 @@
   color: var(--color-primary-content);
   text-decoration: none;
   box-shadow: 0 0 #0000, 0 0 #0000, 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  transform-style: flat;
+  transition: all var(--transition-duration) var(--transition-timing);
+  &:hover {
+    scale: 1.03;
+  }
 }
 </style>

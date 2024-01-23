@@ -1,10 +1,8 @@
 <script lang="ts">
-  import Ellipsis from "./Ellipsis.svelte";
-  import CopyWrite from "./CopyWrite.svelte";
+  import Section from "$lib/layouts/section.svelte";
   import ProjectPreview from "./ProjectPreview.svelte";
-	import Button from "$lib/components/elements/atoms/Button.svelte";
-	import Icon from "@iconify/svelte";
   import type { ProjectMetaData } from "$lib/data/ProjectData";
+  import SkillsGrid from "./SkillsGrid.svelte";
 
   export let allProjects: ProjectMetaData[] = [];
 </script>
@@ -18,16 +16,10 @@
   <span>E</span>
 </div>
 
-<!-- <Ellipsis> -->
-  <div class="col">
-    <Button class="copy-btn" href="/about">
-      About me
-      <Icon icon="mdi:arrow-right" class="icon" />
-    </Button>
-    <CopyWrite />
-  </div>
-<!-- </Ellipsis> -->
-<ProjectPreview {allProjects} />
+<Section class="headline">
+  <SkillsGrid />
+  <ProjectPreview {allProjects} />
+</Section>
 
 <style lang="postcss">
   .blaine {
@@ -53,22 +45,11 @@
     }
   }
 
-  .col {
-    letter-spacing: 0.05em;
-    color: var(--color-primary-content);
-    font-size: 1.5rem;
-    line-height: 2rem;
-    align-items: center;
-    gap: 1rem;
-    margin-top: -3rem;
-  }
-
-  :global(a.copy-btn) {
-    letter-spacing: 0.05em;
-    font-size: 1.25rem;
-    padding: 0.5rem 1rem;
-    line-height: 1.75rem;
-    gap: 0.5rem;
+  :global(.headline) {
+    background: var(--color-primary-content);
+    color: var(--color-primary);
+    margin: 4rem 0;
+    border-radius: 1rem;
   }
 
   @media (min-width: 1024px) {

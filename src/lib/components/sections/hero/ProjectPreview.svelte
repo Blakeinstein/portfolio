@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Button from "$lib/components/elements/atoms/Button.svelte";
   import type { ProjectMetaData } from "$lib/data/ProjectData";
-  import Section from "$lib/layouts/section.svelte";
 	import Icon from "@iconify/svelte";
   import PreviewCard from "./PreviewCard.svelte";
   import Marquee from "$lib/animations/marquee.svelte";
@@ -10,41 +9,47 @@
 
   $: featuredProjects = allProjects.filter(project => project.featured)
 </script>
-<Section class="headline">
-  <div class="col gap">
-    <Marquee>
-      {#each {length: 6} as _}
-        <h3>
-          Featured Work!
-        </h3>
-      {/each}
-    </Marquee>
-    
-    <div class="featured wf">
-      {#each featuredProjects as project}
-        <PreviewCard project={project}/>
-      {/each}
-      <div class="grid-center">
-        <Button href="/projects" class="prev-btn">
-          Check all projects!
+
+<div class="featured-mq col gap">
+  <Marquee>
+    {#each {length: 6} as _}
+      <h3>
+        Featured Work!
+      </h3>
+    {/each}
+  </Marquee>
+  
+  <div class="featured wf">
+    {#each featuredProjects as project}
+      <PreviewCard project={project}/>
+    {/each}
+    <div class="grid-center">
+      <div class="col gap more">
+        <span>
+          Each project I undertake is fueled by a deep passion and a commitment to excellence. My hands craft with care, and my mind works with creativity, transforming every idea into a meaningful and meticulously crafted reality. This portfolio is more than a collection of work; it's a reflection of my dedication to making every vision come alive with simplicity and elegance.
+        </span>
+        <Button href="/projects" invert>
+          All projects
           <Icon icon="mdi:arrow-right" class="icon" />
         </Button>
       </div>
     </div>
   </div>
-</Section>
+</div>
 
 <style>
-  .col {
+  .more {
+    max-width: 80%;
+
+    span {
+      font-style: italic;
+    }
+  }
+
+  .featured-mq {
     padding: 4rem 0;
     align-items: center;
     overflow: clip;
-  }
-
-  :global(.headline) {
-    background: var(--color-primary-content);
-    color: var(--color-primary);
-    margin: 4rem 0;
   }
 
   .featured {

@@ -38,12 +38,13 @@
   text-transform: capitalize;
   text-align: center;
   font-weight: 600;
-  font-size: larger;
-  height: 6ch;
-  min-width: 45vw;
+  font-size: 3rem;
+  height: 3ch;
+  line-height: 3.5rem;
 }
 
 .morphing > .word {
+  width: 80vmin;
   position: absolute;
   top: 50%;
   left: 50%;
