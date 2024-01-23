@@ -61,16 +61,16 @@
 
 <style lang="postcss">
   .card {
-    border: 2px solid var(--color-primary-content);
+    border: 2px solid var(--color-primary);
     padding: 2rem;
-    background-color: var(--color-primary);
+    background-color: var(--color-bg-primary);
     height: fit-content;
   }
 
   hr {
     border: 0;
     height: 0.5rem;
-    background-color: var(--color-primary-content); 
+    background-color: var(--color-primary); 
   }
 
   footer {
@@ -88,7 +88,7 @@
 
       &:hover {
         text-decoration: underline;
-        color: var(--color-secondary-content);
+        color: var(--color-bg-secondary);
       }
     }
   }
@@ -97,8 +97,8 @@
     padding: 0.5rem 1rem;
     display: inline;
     align-self: flex-end;
-    background-color: var(--color-primary-content);
-    color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--color-bg-primary);
     width: fit-content;
     font-weight: 600;
     font-size: 1.5rem;
@@ -108,7 +108,7 @@
   .project-title {
     font-size: 4.5rem;
     line-height: 1;
-    color: var(--color-primary-content);
+    color: var(--color-primary);
     margin-top: -1rem;
   }
 

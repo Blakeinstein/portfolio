@@ -1,5 +1,5 @@
 const autoprefixer = require('autoprefixer');
-const nesting = require('tailwindcss/nesting');
+const nesting = require('postcss-nesting');
 
 const config = {
 	plugins: [

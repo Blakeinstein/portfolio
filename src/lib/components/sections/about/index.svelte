@@ -47,7 +47,7 @@
   }
 
   .subtext {
-    color: var(--color-secondary-content);
+    color: var(--color-accent);
     font-size: 1rem;
     line-height: 1.5rem;
     max-width: 64rem;

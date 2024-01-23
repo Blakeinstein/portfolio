@@ -22,7 +22,7 @@
   right: 2.5em;
 	
 	&:after {
-    background-color: var(--color-secondary-content);
+    background-color: var(--color-accent);
     transition: all var(--transition-duration) var(--transition-timing);
     transition-delay: 300ms;
 		content: "";

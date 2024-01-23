@@ -72,6 +72,6 @@ import ExpItem from "./ExpItem.svelte";
   }
 
   span {
-    color: var(--color-secondary-content);
+    color: var(--color-secondary);
   }
 </style>

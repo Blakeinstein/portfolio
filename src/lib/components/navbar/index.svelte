@@ -8,7 +8,7 @@
 
 <nav>
   <a class="nav-title" href="/">
-    <span class="title-main">
+    <span class="title-main gradient-text">
       Blaine
     </span>
     <span>
@@ -49,7 +49,6 @@
   .title-main {
     font-size: 1.875rem;
     line-height: 2.25rem;
-    color: var(--color-primary-content);
     display: block;
     font-weight: 900;
   }
@@ -67,7 +66,7 @@
 
   .nav-external:hover {
     background-color: var(--color-secondary);
-    color: var(--color-secondary-content);
+    color: var(--color-bg-secondary);
   }
   @media (min-width: 1024px) { 
     nav {

@@ -18,11 +18,11 @@
 
 <style lang="postcss">
   .inverted {
-    --content-color: var(--color-primary);
-    --background-color: var(--color-primary-content);
+    --content-color: var(--color-bg-primary);
+    --background-color: var(--color-primary);
   }
   button, a {
-    --content-color: var(--color-primary-content);
+    --content-color: var(--color-bg-primary);
     --background-color: var(--color-primary);
     display: flex;
     align-items: center;

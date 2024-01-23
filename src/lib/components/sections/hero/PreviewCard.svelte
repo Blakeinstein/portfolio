@@ -31,7 +31,7 @@
   padding: 0.5rem 1rem;
   border-radius: 0.275rem;
   background-color: var(--color-primary);
-  color: var(--color-primary-content);
+  color: var(--color-bg-primary);
   text-decoration: none;
   box-shadow: 0 0 #0000, 0 0 #0000, 0 20px 25px -5px rgb(0 0 0 / 0.1);
   transform-style: flat;

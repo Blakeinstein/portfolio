@@ -28,7 +28,7 @@
 <style>
 .exp-item {
   padding: 0 1px 1rem;
-  border-bottom: 1px solid var(--color-secondary-content);
+  border-bottom: 1px solid var(--color-primary);
 }
 
 .exp-item:last-child {
@@ -54,7 +54,7 @@ em {
 }
 
 p {
-  color: var(--color-secondary-content);
+  color: var(--color-secondary);
   font-style: italic;
 }
 

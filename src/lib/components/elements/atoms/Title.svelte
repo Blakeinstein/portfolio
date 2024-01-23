@@ -19,7 +19,7 @@
 <style>
 .header {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  font: var(--color-primary-content);
+  font: var(--color-primary);
   display: flex;
   gap: 0.5rem;
   align-items: center;

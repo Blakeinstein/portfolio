@@ -29,7 +29,7 @@
 
   .col {
     letter-spacing: 0.05em;
-    color: var(--color-primary-content);
+    color: var(--color-secondary);
     line-height: 2rem;
     align-items: center;
     gap: 1rem;

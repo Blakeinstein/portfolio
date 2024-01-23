@@ -1,13 +1,15 @@
 @import url("https://api.fontshare.com/v2/css?f[]=red-hat-display@401,800,900,901,301,300,801,400,500,600&display=swap");
 
 :root {
-	--color-primary: rgb(226 232 240);
-	--color-primary-content: rgb(39 39 42);
-	--color-secondary: rgb(30 41 59);
-	--color-secondary-content: rgb(113 113 122);
+	--color-primary: #393E46;
+	--color-secondary: #4A4B4DC3;
+	--color-accent: #00ADB5;
+	--color-bg-primary: #EEEEEE;
+	--color-bg-secondary: #AAD8D3;
+
 	--color-error: rgb(248 113 113);
 	--color-social: rgb(71 85 105 / 0.1);
-
+	--gradient-background: url(/gradient.webp);
 	--transition-duration: 150ms;
 	--transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -17,6 +19,7 @@
     box-sizing: border-box;
 		margin: 0;
 		padding: 0;
+		min-width: 0;
 	}
 }
 
@@ -109,8 +112,8 @@ html {
 }
 
 body {
-	background-color: var(--color-primary);
-	color: var(--color-primary-content);
+	background-color: var(--color-bg-primary);
+	color: var(--color-primary);
 }
 
 ::-webkit-scrollbar {
@@ -123,7 +126,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: var(--color-secondary-content);
+	background-color: var(--color-accent);
 	opacity: 0.5;
 	border-radius: 0.25rem;
 }
@@ -149,7 +152,7 @@ picture {
 }
 
 .gradient-text>span {
-	background: url(/gradient.webp);
+	background: var(--gradient-background);
 	background-position-x: 0%;
 	background-position-y: 0%;
 	background-clip: border-box;

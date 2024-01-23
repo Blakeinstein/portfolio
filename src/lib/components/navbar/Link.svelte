@@ -23,11 +23,12 @@
     padding: 0.25rem 0.5rem;
     border-radius: 0.375rem;
     text-decoration: none;
+    color: var(--color-primary);
   }
   
   a[aria-current='page']::before {
     position: absolute;
-    background-color: var(--color-primary-content);
+    background-color: var(--color-secondary);
     height: 1px;
     bottom: 0.25em;
     width: calc(100% - 1em);

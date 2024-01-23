@@ -107,7 +107,7 @@
   .center h1 {
     font-size: 2.25rem;
     line-height: 2.5rem;
-    color: var(--color-primary-content);
+    color: var(--color-bg-primary);
     margin-bottom: 0.5rem;
   }
 

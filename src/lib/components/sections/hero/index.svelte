@@ -24,7 +24,7 @@
 <style lang="postcss">
   .blaine {
     width: 100vw;
-    color: var(--color-primary-content);
+    color: var(--color-primary);
     padding: 3rem;
     line-height: 0.75;
     letter-spacing: 0;
@@ -46,8 +46,8 @@
   }
 
   :global(.headline) {
-    background: var(--color-primary-content);
-    color: var(--color-primary);
+    background: var(--color-secondary);
+    color: var(--color-bg-secondary);
     margin: 4rem 0;
     border-radius: 1rem;
   }

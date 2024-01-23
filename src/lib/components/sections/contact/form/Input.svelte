@@ -30,7 +30,7 @@ input[type="text"], input[type="email"], textarea {
   flex-grow: 1;
   width: 100%;
   background-color: transparent;
-  border: 2px solid var(--color-primary-content);
+  border: 2px solid var(--color-bg-primary);
   padding: 0.5rem;
   border-radius: 0.125rem;
   outline: none;
@@ -44,7 +44,7 @@ input[type="text"], input[type="email"], textarea {
   }
 
   &:placeholder {
-    background-color: var(--color-secondary-content);
+    background-color: var(--color-secondary);
   }
 }
 
