@@ -54,13 +54,13 @@ em {
 }
 
 p {
-  color: var(--color-secondary);
   font-style: italic;
 }
 
 h2 {
   font-size: 1.875rem;
   line-height: 2.25rem;
+  color: var(--color-main);
 }
 
 h4 {

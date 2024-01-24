@@ -41,7 +41,10 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--color-secondary);
+  }
+
+  a {
+    color: var(--color-main);
   }
 
   h2 {
@@ -63,10 +66,6 @@
     flex-grow: 1;
     flex-shrink: 0;
     line-height: 1.75rem;
-  }
-
-  p {
-    color: var(--color-secondary);
   }
 
   @media (min-width: 1024px) {

@@ -10,7 +10,7 @@
       Hey all!
     </Title>
     <p class="leader-text">
-      I'm Rishikesh "Blaine" Anand, a developer, software engineer and a tech enthusiast.
+      I'm <b>Rishikesh "Blaine" Anand</b>, a developer, software engineer and a tech enthusiast.
       I love architecting solutions to real life problems, and bringing them to life in a user-friendly way!
     </p>
     <p class="subtext">
@@ -26,6 +26,10 @@
 </Section>
 
 <style>
+  b {
+    color: var(--color-main);
+  }
+
   :global(.about) {
     gap: 1rem;
   }

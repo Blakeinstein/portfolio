@@ -26,7 +26,8 @@ I had the opportunity to talk to alot of students in the UX department at Arizon
 to resolve the deep rooted navigational challenges. Even worse fireship had made a video on [how to render a moon using ThreeJS](https://www.youtube.com/watch?v=Q7AOvWpIVHU).
 Which meant that my portfolio design was not unique anymore.
 
-Starfield came out around the time I was working on the portfolio and as such the site went through a complete overhaul. 
+Starfield came out around the time I was working on the portfolio and as such the site went through a complete overhaul. The initial design was pretty much inspired by the design choices
+used in the game. However, moving forward I switched to a more brutalism inspired tone. [The Sky Grew Darker](https://www.behance.net/gallery/128481315/The-Sky-Grew-Darker) by [Tomasz Artur Bolek](https://www.behance.net/TomaszBolek) was the driver for the chosen color palette.
 I dropped the idea of including a 3d scene, and instead switched focus to working on the one you see. 
 Heck I even made Rain postprocess filter for ThreeJS based on shaders written by [Lucas Bebber in their article on CoDrops](https://tympanus.net/codrops/2015/11/04/rain-water-effect-experiments/). 
 I wish I can find a use case for it some other time.

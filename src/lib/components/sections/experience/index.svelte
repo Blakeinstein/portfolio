@@ -70,8 +70,4 @@ import ExpItem from "./ExpItem.svelte";
   :global(.lgap) {
     gap: 2rem;
   }
-
-  span {
-    color: var(--color-secondary);
-  }
 </style>
