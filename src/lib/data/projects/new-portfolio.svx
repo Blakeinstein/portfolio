@@ -4,7 +4,7 @@ year: 2023
 featured: true
 description: You are here! Built with SvelteKit, TailwindCSS, and TypeScript.
 longDescription: You are here! Built with SvelteKit, TailwindCSS, and TypeScript.
-thumbnail: https://http.dog/204.avif
+thumbnail: /mockups/new-portfolio.avif
 techs:
   - sveltekit
   - typescript

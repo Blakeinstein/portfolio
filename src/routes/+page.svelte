@@ -1,5 +1,6 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO/index.svelte';
+	import Footer from "$lib/components/footer/index.svelte";
 	import Hero from '$lib/components/sections/hero/index.svelte';
   import type { ProjectMetaData } from '$lib/data/ProjectData';
 
@@ -22,3 +23,4 @@
 <SEO {...seoProps} />
 
 <Hero allProjects={data.allProjects}/>
+<Footer />

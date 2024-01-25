@@ -48,7 +48,7 @@
   }
 
   .title-main {
-    color: var(--color-accent);
+    color: var(--color-main);
     font-size: 1.875rem;
     line-height: 2.25rem;
     display: block;

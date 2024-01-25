@@ -24,14 +24,7 @@ export const SocialData: Record<string, SocialInfo[]> = {
       name: "Instagram",
       icon: "bi:instagram",
       href: "https://www.instagram.com/blainesensei/",
-      background: `radial-gradient(
-          circle at 30% 107%,
-          #fdf497 0%,
-          #fdf497 5%,
-          #fd5949 45%,
-          #d6249f 60%,
-          #285aeb 90%
-        );`
+      background: "#fd5949"
     }
   ],
   "Productivity": [

@@ -22,46 +22,36 @@
   target="_blank"
   rel="noopener noreferrer"
   style={`
-    background: ${background};
+    --color: ${background};
   `}
   >
   {#if custom}
     {@html icon}
   {:else}
-    <Icon class="fill half" icon={icon} />
+    <Icon class="half gradient" icon={icon} />
   {/if}
   </a>
 {/if}
 
 <style lang="postcss">
   .social-icon {
-    background-color: black;
-    color: white;
-    width: 9rem;
-    height: 9rem;
+    --size: 3rem;
+    width: var(--size);
+    height: var(--size);
     font-size: 1.125rem;
     line-height: 1.75rem;
     border-radius: 0.5rem;
     transition: all var(--transition-duration) var(--transition-timing);
 
-    &:is(a):hover {
-      padding: 1.5rem;
-      scale: 1.1;
-      z-index: 10;
+    &:hover {
+      scale: 1.4;
+      transform-origin: center;
     }
   }
 
   :global(.half) {
     width: 50%;
     height: 50%;
+    color: var(--color);
   }
-
-  @media (min-width: 1024px) { 
-    .social-icon {
-      width: 20rem;
-      height: 20rem;
-      font-size: 3rem;
-      line-height: 1;
-    }
-   }
 </style>

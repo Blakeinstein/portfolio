@@ -3,13 +3,8 @@
 	import Link from "./SocialLink.svelte";
 
   export let socials: SocialInfo[];
-  export let groupName: string;
 </script>
 
-<Link
-  dummy
-  icon={groupName}
-/>
 {#each socials as social}
   <Link
     tooltipContent={social.name}

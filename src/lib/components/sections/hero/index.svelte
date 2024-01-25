@@ -23,7 +23,8 @@
 
 <style lang="postcss">
   .blaine {
-    width: 100vw;
+    width: 90vw;
+    margin: 0 auto;
     color: var(--color-main);
     padding: 3rem;
     line-height: 0.75;
