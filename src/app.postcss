@@ -10,7 +10,6 @@
 
 	--color-error: rgb(248 113 113);
 	--color-social: rgb(71 85 105 / 0.1);
-	--gradient-background: url(https://media2.giphy.com/media/3oz8xus1ykCFgxW2ac/giphy.gif);
 	--transition-duration: 150ms;
 	--transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -155,16 +154,15 @@ picture {
 	display: contents;
 }
 
-.gradient-text>span, .gradient {
-	background: var(--gradient-background);
+.gradient-text>span {
+	background: url(/gradient.webp);
 	background-position-x: 0%;
 	background-position-y: 0%;
-	background-clip: border-box;
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
-	-webkit-text-stroke-width: 2px;
-	-webkit-text-stroke-color: rgba(40, 33, 81, 0.333);
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: var(--color-white);
 	background-position: center;
-	text-shadow: 0 0 20px #5315bf75;
+	text-shadow: none;
 }

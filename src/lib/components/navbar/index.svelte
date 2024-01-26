@@ -8,7 +8,7 @@
 
 <nav>
   <a class="nav-title" href="/">
-    <span class="title-main gradient-text">
+    <span class="title-main">
       Blaine
     </span>
     <span>

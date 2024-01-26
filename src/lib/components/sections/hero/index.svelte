@@ -7,7 +7,7 @@
   export let allProjects: ProjectMetaData[] = [];
 </script>
 
-<Section>
+<Section class="col header">
   <div class="blaine gradient-text">
     <span>B</span>
     <span>L</span>
@@ -26,16 +26,16 @@
 <style lang="postcss">
   .blaine {
     width: 90vw;
-    margin: 0 auto;
+    margin: 5rem 0;
     color: var(--color-main);
-    padding: 3rem;
+    padding: 3rem 0;
     line-height: 0.75;
     letter-spacing: 0;
     font-weight: 700;
     text-align: center;
     display: flex;
     justify-content: space-around;
-    font-size: calc(100vw / 6);
+    font-size: calc(90vw / 6);
     pointer-events: none;
     user-select: none;
 
@@ -48,7 +48,7 @@
     }
   }
 
-  @media (min-width: 1024px) {
-   
+  :global(.header) {
+    align-items: center;
   }
 </style>
