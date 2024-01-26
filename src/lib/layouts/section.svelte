@@ -13,4 +13,7 @@
 		padding: 0.5rem 2rem;
 		scroll-snap-align: start;
 	}
+	section:nth-of-type(1) {
+		min-height: calc(100dvh - 5rem);
+	}
 </style>

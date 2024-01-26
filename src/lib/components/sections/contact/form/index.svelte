@@ -146,7 +146,6 @@
     }
 
     .contact-container {
-      min-height: 100vh;
       flex-basis: 66.666667%;
     }
   }

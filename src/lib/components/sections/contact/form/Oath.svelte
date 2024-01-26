@@ -39,8 +39,9 @@
     }
 
     &:before {
+      color: var(--color-accent);
       border-radius: 1em;
-      border: 3px solid currentColor;
+      border: 3px solid var(--color-white);
       transition: border 0.1s ease-out;
     }
 

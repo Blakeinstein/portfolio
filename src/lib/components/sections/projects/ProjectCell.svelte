@@ -22,7 +22,7 @@
   <div class="info wf">
     <h2>{projectData.name}</h2>
     <p>{projectData.description}</p>
-    <span>Click to read more</span>
+    <span>Read more</span>
   </div>
 </a>
 
@@ -33,6 +33,11 @@
     position: relative;
     border-radius: 0.375rem;
     gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .info > span {
+    text-decoration: underline;
   }
 
   .img-wrapper {
@@ -74,6 +79,7 @@
     .project-item {
       display: grid;
       place-items: center;
+      overflow: hidden;
 
       .img-wrapper {
         width: calc(100% - var(--padding) * 2);
@@ -96,7 +102,6 @@
       }
 
       &:hover {
-        --padding: 4px;
 
         > .info {
           translate: 0 -10%;

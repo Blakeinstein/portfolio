@@ -7,17 +7,19 @@
   export let allProjects: ProjectMetaData[] = [];
 </script>
 
-<div class="blaine gradient-text">
-  <span>B</span>
-  <span>L</span>
-  <span>A</span>
-  <span>I</span>
-  <span>N</span>
-  <span>E</span>
-</div>
+<Section>
+  <div class="blaine gradient-text">
+    <span>B</span>
+    <span>L</span>
+    <span>A</span>
+    <span>I</span>
+    <span>N</span>
+    <span>E</span>
+  </div>
+  <SkillsGrid />
+</Section>
 
 <Section class="headline">
-  <SkillsGrid />
   <ProjectPreview {allProjects} />
 </Section>
 
