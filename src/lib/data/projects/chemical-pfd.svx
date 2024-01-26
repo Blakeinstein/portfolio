@@ -23,6 +23,7 @@ images:
     desc: Checmical PFD on mac.
   - link: /gallery/chemical-pfd/fossee.avif
     desc: FOSSEE Group at IIT Bombay.
+inverted: true
 ---
 
 ## Background and Reasoning

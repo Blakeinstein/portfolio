@@ -7,7 +7,7 @@
 	if (browser) {
     const blob = new Blobity({
 			licenseKey: "GPLv3",
-			color: '#0c0400',
+			color: '#c8d2dc',
 			opacity: 0.35,
 			tooltipPadding: 10,
 			size: 28,

@@ -1,11 +1,14 @@
 <script lang="ts">
 	import type { ProjectMetaData } from "$lib/data/ProjectData";
+  import classNames from "classnames";
 
   export let projectData: ProjectMetaData;
 </script>
 
 <a
-  class="project-item"
+  class={
+    classNames("project-item", { inverted: projectData.inverted })
+  }
   href="/projects/{projectData.slug}"
   style:grid-column={projectData.col}
   style:grid-row={projectData.row}
@@ -99,6 +102,10 @@
         position: absolute;
         bottom: 0;
         color: var(--color-main);
+      }
+
+      &.inverted > .info {
+        color: black;
       }
 
       &:hover {

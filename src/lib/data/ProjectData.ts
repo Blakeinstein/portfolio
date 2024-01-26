@@ -110,6 +110,7 @@ export type ProjectMetaData = {
   slug: string;
   images?: { link: string, href?: string, desc: string }[];
   featured?: boolean;
+  inverted?: boolean;
 };
 
 export const getProjects = async () => {
