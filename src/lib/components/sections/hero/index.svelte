@@ -7,7 +7,7 @@
   export let allProjects: ProjectMetaData[] = [];
 </script>
 
-<Section class="col head">
+<Section class="col align-center" head>
   <div class="blaine gradient-text">
     <span>B</span>
     <span>L</span>
@@ -46,9 +46,5 @@
     span {
       font-size: 1.25em;
     }
-  }
-
-  :global(.head) {
-    align-items: center;
   }
 </style>

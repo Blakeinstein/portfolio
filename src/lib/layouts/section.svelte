@@ -1,9 +1,19 @@
 <script>
+  import classNames from "classnames";
+
 	let classses = "";
+	export let head = false;
 	export { classses as class }
 </script>
 
-<section class={"wf " + classses} data-lenis-scroll-snap-align="start">
+<section
+	class={classNames(
+		"wf", 
+		{"head": head},
+		classses)
+	}
+	data-lenis-scroll-snap-align="start"
+>
 	<slot />
 </section>
 
@@ -13,7 +23,9 @@
 		padding: 0.5rem 2rem;
 		scroll-snap-align: start;
 	}
-	section:nth-of-type(1) {
+
+
+	section.head {
 		min-height: calc(100dvh - 5rem);
 	}
 </style>

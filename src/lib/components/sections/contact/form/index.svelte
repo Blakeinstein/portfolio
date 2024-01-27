@@ -28,7 +28,7 @@
     }
   }
 </script>
-<Section class="grid-center">
+<Section class="grid-center" head>
   <div class="col inner-contact wf">
     <div class="col">
       <Title noArrow>MAKE CONTACT</Title>

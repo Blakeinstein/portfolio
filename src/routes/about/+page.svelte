@@ -6,11 +6,11 @@
 	let seoProps = {
 		breadcrumbs: [
 			{
-				name: 'home',
-				slug: ''
+				name: 'About',
+				slug: 'about'
 			}
 		],
-		title: 'Home',
+		title: 'About',
 		slug: ''
 	};
 </script>

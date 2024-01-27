@@ -3,7 +3,7 @@
   import Section from "$lib/layouts/section.svelte";
 	import Title from "$lib/components/elements/atoms/Title.svelte";
 </script>
-<Section class="col about">
+<Section class="col about" head>
   <Image src="/dp.png" alt="hero image" class="about-image"/>
   <div class="col gap">
     <Title noArrow>

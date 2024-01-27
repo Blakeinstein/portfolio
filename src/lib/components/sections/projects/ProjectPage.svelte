@@ -13,7 +13,7 @@
   export let allProjects: ProjectMetaData[];
 </script>
 
-<Section class="grid-center">
+<Section class="grid-center head">
   <div
     class="col wf"
   >
