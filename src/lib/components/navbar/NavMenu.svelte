@@ -11,7 +11,7 @@
   <Link href="/projects" {current}>Projects</Link>
   <Link href="/contact" {current}>Contact</Link>
   <a
-    class="nav-external"
+    class="nav-external grid-center"
     href="https://github.com/blakeinstein"
     target="_blank"
     rel="noopener noreferrer"

@@ -39,7 +39,7 @@
     <div class="content">
       <div>
         <picture>
-          <img src="https://i.gifer.com/3AyY.gif" alt="fancy gif" height="100%" width="100%"/>
+          <img src="/anim.webp" alt="fancy gif" height="100%" width="100%"/>
         </picture>
       </div>
       <div style="background-color: #a9dad7" class="inverted">
@@ -172,12 +172,18 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      
       > h2, h3 {
         font-weight: 200;
+        margin: 0.5rem;
       }
 
       > h2 {
         font-size: 3rem;
+      }
+
+      > p {
+        flex-grow: 1;
       }
       &.inverted {
         color: var(--color-bg-primary);
@@ -191,8 +197,8 @@
       &::after {
         content: "";
         position: absolute;
-        top: 1rem;
-        right: 1rem;
+        top: 0.25rem;
+        right: 0.25rem;
         width: 1rem;
         height: 1rem;
         border-width: 2px 2px 0 0;
@@ -211,17 +217,18 @@
       }
     }
 
-    .icon-gallery {
-      margin-top: 0.25rem;
-      display: grid;
-      grid-template-rows: repeat(2, 1fr);
-      grid-auto-flow: column;
-      gap: 1rem;
-      max-width: 80%;
-      > :global(.icon) {
-        filter: drop-shadow(0px 0px 1px currentColor);
-      }
-    }
+  }
+}
+
+.icon-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0.5rem;
+  justify-content: center;
+  align-content: center;
+  gap: 0.5rem;
+  > :global(.icon) {
+    filter: drop-shadow(0px 0px 1px currentColor);
   }
 }
 
@@ -244,5 +251,22 @@
     }
   }
 
+  .content {
+    > div {
+      > h3 {
+        font-size: 2rem;
+      }
+    }
+    .icon-gallery {
+      gap: 1rem;
+      max-width: 60%;
+      align-content: flex-start;
+
+      > :global(.icon) {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+    }
+  }
 }
 </style>

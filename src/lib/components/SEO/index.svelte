@@ -115,6 +115,9 @@
 	<link rel="manifest" href="/site.webmanifest">
 	<meta name="msapplication-TileColor" content="#0A0B0D">
 	<meta name="theme-color" content="#0A0B0D">
+	<link rel="preconnect" href="https://api.fontshare.com">
+	<link rel="preconnect" href="https://cdn.fontshare.com">
+	<link rel="preconnect" href="https://api.iconify.design">
 </svelte:head>
 <Twitter {...twitterProps} />
 <OpenGraph {...openGraphProps} />

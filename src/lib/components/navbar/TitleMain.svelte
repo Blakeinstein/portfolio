@@ -17,8 +17,8 @@
 
   .title-main {
     color: var(--color-main);
-    font-size: 1.875em;
-    line-height: 2.25em;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
     display: block;
     font-weight: 900;
   }
