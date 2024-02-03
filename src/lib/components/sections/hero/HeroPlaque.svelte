@@ -5,15 +5,14 @@
   import Icon from "@iconify/svelte";
   import SkillsGrid from "./SkillsGrid.svelte";
   import PortfolioCircle from "./PortfolioCircle.svelte";
+  import Avatar from "./Avatar.svelte";
 
 </script>
 <Section class="col gap plaque" head>
   <div class="col name-card">
     <span class="p-icon"><Icon icon="tabler:atom-2-filled"/> Portfolio</span>
     <div class="avatar">
-      <picture>
-        <img src="/logo.svg" width="200" height="200" alt="Blaine's Avatar" />
-      </picture>
+      <Avatar />
     </div>
     <div class="name-holder">
       <div class="name col">
@@ -134,7 +133,8 @@
   .avatar {
     margin-top: 4rem;
     margin-right: 1rem;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .name-holder {
