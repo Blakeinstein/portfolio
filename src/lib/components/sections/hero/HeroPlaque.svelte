@@ -9,7 +9,7 @@
 </script>
 <Section class="col gap plaque" head>
   <div class="col name-card">
-    <span class="p-icon">🌟 Portfolio</span>
+    <span class="p-icon"><Icon icon="tabler:atom-2-filled"/> Portfolio</span>
     <div class="avatar">
       <picture>
         <img src="/logo.svg" width="200" height="200" alt="Blaine's Avatar" />
@@ -37,11 +37,11 @@
     </div>
     <NavMenu />
     <div class="content">
-      <div>
+      <a href="https://www.youtube.com/watch?v=S8s9uzPIqQ4" target="_blank" data-blobity-tooltip="Yuki installs gentoo (PS I do not share the views on the video)" class="inverted">
         <picture>
           <img src="/anim.webp" alt="fancy gif" height="100%" width="100%"/>
         </picture>
-      </div>
+      </a>
       <a
         style="background-color: #a9dad7"
         class="inverted"
@@ -49,12 +49,16 @@
         target="_blank"
         data-blobity-tooltip="Resume"
       >
-        <h2>5</h2>
-        <p>Years of experience</p>
+        <span class="col align-center">
+          <h2>5</h2>
+          <p>Years of experience</p>
+        </span>
       </a>
       <a style="background-color: #7d63a8" href="/projects">
-        <h2>10+</h2>
-        <p>Projects</p>
+        <span>
+          <h2>10+</h2>
+          <p>Projects</p>
+        </span>
       </a>
       <div style="background-color: #e15f5d" class="inverted">
         <h3>DevOps</h3>
@@ -103,6 +107,9 @@
 
   .p-icon {
     position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     top: 0rem;
     left: 0rem;
     padding: 0.5rem;
@@ -175,17 +182,24 @@
       color: white;
       border: 1px solid var(--color-white);
       display: flex;
+      padding: 0.5rem;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       
-      > h2, h3 {
+      p {
+        text-align: center;
+      }
+      h3 {
         font-weight: 200;
-        margin: 0.5rem;
       }
 
-      > h2 {
-        font-size: 3rem;
+      > span {
+        justify-content: center;
+        > h2 {
+          font-size: 3rem;
+          line-height: 3rem;
+        }
       }
 
       > p {
@@ -213,8 +227,9 @@
       }
     }
 
-    >div:first-of-type {
+    >a:first-of-type {
       grid-area: 1 / 1 / 3 / 3;
+      padding: 0;
       img {
         object-fit: cover;
         min-width: 100%;
@@ -229,7 +244,7 @@
 .icon-gallery {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 0.5rem;
+  padding: 0.25rem;
   justify-content: center;
   align-content: center;
   gap: 0.5rem;
@@ -266,7 +281,7 @@
     .icon-gallery {
       gap: 1rem;
       max-width: 60%;
-      align-content: flex-start;
+      align-self: center;
 
       > :global(.icon) {
         width: 1.75rem;
