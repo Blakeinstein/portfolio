@@ -14,7 +14,7 @@
   img {
     z-index: 5;
     scale: -1.25 1.25;
-    border-radius: 500px;
+    border-radius: 50%;
     translate: 0 -10%;
   }
   

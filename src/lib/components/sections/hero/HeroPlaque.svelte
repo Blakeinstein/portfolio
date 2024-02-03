@@ -167,15 +167,13 @@
 }
 
 .info-card {
-  flex-grow: 1;
   padding-top: 2rem;
   
   .content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    flex-grow: 1;
     width: 100%;
+    flex-grow: 1;
 
     > div, > a {
       background-color: var(--color-bg-secondary);
@@ -257,10 +255,11 @@
   :global(.plaque) {
     flex-direction: row;
     padding: 5rem !important;
+    justify-content: center;
   }
 
   .name-card {
-    min-width: 35vw;
+    min-width: 60vmin;
 
     .name-holder {
       padding: 1rem 3rem;
