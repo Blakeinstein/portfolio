@@ -4,13 +4,14 @@
   export let buttonType: HTMLButtonElement["type"] = "button";
   let classes = "";
   export let invert = false;
+  export let noBorder = false;
   export { classes as class };
   export let href: string | undefined = undefined;
 </script>
 
 <svelte:element this={href ? 'a' : 'button'}
   type={buttonType}
-  class={classNames({"inverted": invert}, classes)}
+  class={classNames({"inverted": invert, "no-border": noBorder}, classes)}
   {href}
 >
   <slot/>
@@ -27,7 +28,6 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    border: 2px solid var(--content-color);
     color: var(--content-color);
     background-color: transparent;
     padding: 0.5rem 1rem;
@@ -44,5 +44,9 @@
     &:active {
       scale: 0.9;
     }
+  }
+
+  button:not(.no-border) {
+    border: 2px solid var(--content-color);
   }
 </style>

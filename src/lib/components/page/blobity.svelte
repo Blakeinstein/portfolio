@@ -7,16 +7,15 @@
 	if (browser) {
     const blob = new Blobity({
 			licenseKey: "GPLv3",
-			color: '#c8d2dc',
-			opacity: 0.35,
+			color: '#ffffff',
+			opacity: 0.4,
 			tooltipPadding: 10,
-			size: 28,
-			dotColor: '#333333',
-			font: 'Red Hat Display',
-			fontColor: '#ffffff',
-			fontSize: 28,
-			focusableElements: 'h1, a, .checkbox, input::before, button, input, textarea, select, .header, .ellipses-orbit, [data-blobity-tooltip], .card',
-			mode: 'slow',
+			size: 18,
+			dotColor: '#fff',
+			font: 'Archivo',
+			fontColor: '#000000',
+			fontSize: 18,
+			focusableElements: 'h1, a, .checkbox, input::before, button, input, textarea, select, .header, .card, .icon'
 		});
 		blobityInstance.set(blob);
 
