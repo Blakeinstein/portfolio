@@ -42,10 +42,16 @@
           <img src="/anim.webp" alt="fancy gif" height="100%" width="100%"/>
         </picture>
       </div>
-      <div style="background-color: #a9dad7" class="inverted">
+      <a
+        style="background-color: #a9dad7"
+        class="inverted"
+        href="https://www.linkedin.com/in/blakeinstein/overlay/1635555032529/single-media-viewer/?profileId=ACoAABp1dWoBSssauXlzfQVH3dgs4E2drMNqbmE"
+        target="_blank"
+        data-blobity-tooltip="Resume"
+      >
         <h2>5</h2>
         <p>Years of experience</p>
-      </div>
+      </a>
       <a style="background-color: #7d63a8" href="/projects">
         <h2>10+</h2>
         <p>Projects</p>
