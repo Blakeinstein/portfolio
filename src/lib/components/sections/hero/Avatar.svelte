@@ -1,7 +1,5 @@
 <div>
-  <picture>
-    <img src="/avatar.svg" width="100%" height="100%" alt="Blaine's Avatar" />
-  </picture>
+  <img src="/avatar.svg" width="100%" height="100%" alt="Blaine's Avatar" />
 </div>
 
 <style>
