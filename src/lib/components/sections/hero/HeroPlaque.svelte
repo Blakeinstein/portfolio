@@ -38,7 +38,7 @@
     <div class="content">
       <a href="https://www.youtube.com/watch?v=S8s9uzPIqQ4" target="_blank" data-blobity-tooltip="Yuki installs gentoo (PS I do not share the views on the video)" class="inverted">
         <picture>
-          <img src="/anim.webp" alt="fancy gif" height="100%" width="100%"/>
+          <img src="/anim.webp" alt="fancy gif" />
         </picture>
       </a>
       <a
@@ -232,6 +232,8 @@
         object-fit: cover;
         min-width: 100%;
         min-height: 100%;
+        width: 100%;
+        height: 100%;
         border-radius: 0;
       }
     }

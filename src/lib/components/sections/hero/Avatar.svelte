@@ -1,5 +1,5 @@
 <div>
-  <img src="/avatar.svg" width="100%" height="100%" alt="Blaine's Avatar" />
+  <img src="/avatar.svg" alt="Blaine's Avatar" />
 </div>
 
 <style>
@@ -11,6 +11,8 @@
   
   img {
     z-index: 5;
+    width: 100%;
+    height: 100%;
     scale: -1.25 1.25;
     border-radius: 50%;
     translate: 0 -10%;
