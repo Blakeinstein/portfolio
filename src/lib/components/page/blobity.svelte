@@ -12,7 +12,7 @@
 			tooltipPadding: 10,
 			size: 18,
 			dotColor: '#fff',
-			font: 'Archivo',
+			font: 'Outfit',
 			fontColor: '#000000',
 			fontSize: 18,
 			focusableElements: 'h1, a, .checkbox, input::before, button, input, textarea, select, .header, .card, .icon'

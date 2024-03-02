@@ -96,6 +96,21 @@ export const TechConstants: Record<string, ProjectTech> = {
     icon: 'simple-icons:zyte',
     color: '#b02cce'
   },
+  'vuejs': {
+    name: 'VueJS',
+    icon: 'simple-icons:vuedotjs',
+    color: '#42b883'
+  },
+  'spring': {
+    name: 'Spring',
+    icon: 'simple-icons:spring',
+    color: '#6db33f'
+  },
+  'graphql': {
+    name: 'GraphQL',
+    icon: 'simple-icons:graphql',
+    color: '#e535ab'
+  }
 }
 
 export type ProjectMetaData = {

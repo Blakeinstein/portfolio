@@ -17,7 +17,10 @@ import ExpItem from "./ExpItem.svelte";
         position="Research Aide" 
         duration="Mar 2023 - present"
       >
-        <em>Built a social media platform for the ASU Heal lab, to be used by death investigators to collaborate on cases.</em>
+        <em>
+          Built a social media platform for the ASU Heal lab, to be used by death investigators to collaborate on cases.
+          <a href="/projects/elderabuse">Find more about the project here.</a>
+        </em>
         <br>
         <span>
           <strong>Tech used:</strong> VueJs, TypeScript, SpringBoot, Java, GraphQl, Neo4j and more.

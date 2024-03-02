@@ -5,19 +5,19 @@
   export let project: ProjectMetaData;
 </script>
 
-<div class="card" style:background-image={`url(${project.thumbnail})`}>
-  <a class="card-body" href="/projects/{project.slug}" data-blobity-magnetic="false">
+<a class="card" style:background-image={`url(${project.thumbnail})`} href="/projects/{project.slug}">
+  <div class="card-body" data-blobity-magnetic="false">
     <h3>{project.name}</h3>
     <p>{project.description}</p>
-  </a>
-</div>
+  </div>
+</a>
 
 <style lang="postcss">
 .card {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 80vmin;
+  height: 40vh;
   padding: 1rem;
   background-position: center;
   background-size: cover;
