@@ -37,7 +37,7 @@
   </div>
 </div>
 
-<style>
+<style lang="postcss">
   .more {
     max-width: 80%;
 

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Button from "$lib/components/elements/atoms/Button.svelte";
   import type { ProjectMetaData } from "$lib/data/ProjectData";
 
   export let project: ProjectMetaData;
