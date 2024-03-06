@@ -3,7 +3,7 @@
 	import Backdrop from '$lib/components/elements/backdrop/index.svelte';
 </script>
 
-<background class="">
+<background>
 	<slot name="background">
 		<Backdrop />
 	</slot>
@@ -15,6 +15,7 @@
 
 <style>
 	background {
+		view-transition-name: backdrop;
 		position: fixed;
 		inset: 0;
 		pointer-events: none;

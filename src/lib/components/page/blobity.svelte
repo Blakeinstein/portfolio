@@ -22,3 +22,13 @@
 		blob['canvas'].style.zIndex = 0;
 	}
 </script>
+
+<style>
+	:global(html>canvas) {
+		view-transition-name: blobity;
+	}
+
+	::view-transition-group(blobity) {
+		animation: none;
+	}
+</style>
