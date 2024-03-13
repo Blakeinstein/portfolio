@@ -4,6 +4,9 @@
 	import Title from "$lib/components/elements/atoms/Title.svelte";
 </script>
 <Section class="col about" head>
+  <div class="image-container">
+
+  </div>
   <Image src="/dp.png" alt="hero image" class="about-image"/>
   <div class="col gap">
     <Title noArrow>
@@ -25,7 +28,7 @@
   </div>
 </Section>
 
-<style>
+<style lang="postcss">
   b {
     color: var(--color-main);
   }
@@ -39,6 +42,11 @@
     margin: 1rem;
     max-height: 90vh;
     width: auto;
+    border: 5px solid var(--color-white);
+    box-shadow: 0 0 15px var(--color-white);
+    filter:  brightness(110%) contrast(116%) grayscale(0%) hue-rotate(342deg) invert(0%) opacity(100%) saturate(84%) sepia(0%);
+    mix-blend-mode: none;
+    transform-style: preserve-3d;
   }
 
   p {

@@ -8,7 +8,7 @@
 
 
 <div class="card col gap">
-  <header>
+  <header class="col gap">
     <div class="col wf">
       <hr class="wf" />
       <span class="project-date">{projectData.year || "20XX"}</span>
@@ -106,7 +106,7 @@
   }
 
   .project-title {
-    font-size: 4.5rem;
+    font-size: 4rem;
     line-height: 1;
     color: var(--color-white);
     margin-top: -1rem;
