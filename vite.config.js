@@ -8,7 +8,8 @@ const config = {
 	plugins: [
 		sveltekit(),
 		partytownVite({
-      dest: join(process.cwd(), '.svelte-kit/output/client/~partytown')
+      // @ts-expect-error as per docs
+      dest: join(__dirname, 'dist', '~partytown')
     })
 	]
 };
