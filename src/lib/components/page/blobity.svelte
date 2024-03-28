@@ -15,7 +15,7 @@
 			font: 'Outfit',
 			fontColor: '#000000',
 			fontSize: 18,
-			focusableElements: 'h1, a, .checkbox, input::before, button, input, textarea, select, .header, .card, .icon'
+			focusableElements: 'h1, a, .checkbox, input::before, button, input, textarea, select, .header, .card'
 		});
 		blobityInstance.set(blob);
 
