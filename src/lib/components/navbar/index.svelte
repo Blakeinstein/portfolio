@@ -1,9 +1,9 @@
 <script>
   import NavMenu from "./NavMenu.svelte";
   import TitleMain from "./TitleMain.svelte";
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   
-  $: current = $page.url.pathname?.split("/")?.[1];
+  let current = $derived(page.url.pathname?.split("/")?.[1]);
 </script>
 
 <nav>

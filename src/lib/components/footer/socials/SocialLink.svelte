@@ -1,12 +1,7 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 
-  export let tooltipContent = "";
-  export let href = "";
-  export let icon = "";
-  export let custom: string | undefined = undefined;
-  export let background = "theme('colors.zinc.500')";
-  export let dummy = false;
+  let { tooltipContent = "", href = "", icon = "", custom = undefined, background = "theme('colors.zinc.500')", dummy = false }: { tooltipContent?: string; href?: string; icon?: string; custom?: string; background?: string; dummy?: boolean } = $props();
 </script>
 
 {#if dummy}

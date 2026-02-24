@@ -1,9 +1,9 @@
-<script async script lang="ts">
+<script lang="ts">
   import { TechConstants, type ProjectMetaData } from "$lib/data/ProjectData";
   import Icon from "@iconify/svelte";
   import Lightbox from "$lib/components/elements/lightbox/index.svelte";
 
-  export let projectData: ProjectMetaData;
+  let { projectData }: { projectData: ProjectMetaData } = $props();
 </script>
 
 

@@ -1,20 +1,22 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { inview, type Options } from 'svelte-inview';
 
-	let isInView: boolean;
-	export let options: Options = { unobserveOnEnter: true, rootMargin: '-20%' };
+	let { options = { unobserveOnEnter: true, rootMargin: '-20%' }, children }: { options?: Options; children?: Snippet } = $props();
+
+	let isInView: boolean = $state(false);
 </script>
 
 <div
 	use:inview={options}
-	on:inview_change={({ detail }) => {
+	oninview_change={({ detail }) => {
 		isInView = detail.inView;
 	}}
 >
 	{#if isInView}
 		<div in:fade class="box">
-			<slot />
+			{@render children?.()}
 		</div>
 	{/if}
 </div>

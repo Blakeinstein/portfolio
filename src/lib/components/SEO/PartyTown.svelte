@@ -10,5 +10,5 @@
 		};
 	</script>
   {@html '<script>' + partytownSnippet() + '</script>'}
-  <script type="text/partytown" src="https://plausible.blaine.vip/js/script.js" />
+  <script type="text/partytown" src="https://plausible.blaine.vip/js/script.js"></script>
 </svelte:head>

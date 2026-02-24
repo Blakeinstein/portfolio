@@ -1,17 +1,13 @@
 <script lang="ts">
   import type { HTMLInputTypeAttribute } from "svelte/elements";
 
-  export let name: string;
-  export let type: HTMLInputTypeAttribute | "TextArea";
-  export let placeholder = "";
-  let classes = "";
-  export { classes as class };
+  let { name, type, placeholder = "", class: classes = "" }: { name: string; type: HTMLInputTypeAttribute | "TextArea"; placeholder?: string; class?: string } = $props();
 </script>
 
 <label class={"col " + classes}>
   {name}
   {#if type === "TextArea"}
-    <textarea name={name.toLowerCase()} required {placeholder}/>
+    <textarea name={name.toLowerCase()} required {placeholder}></textarea>
   {:else}
     <input {type} name={name.toLowerCase()} required {placeholder}>
   {/if}

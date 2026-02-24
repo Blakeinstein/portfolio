@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { ProjectMetaData } from "$lib/data/ProjectData";
 
-  export let project: ProjectMetaData;
+  let { project }: { project: ProjectMetaData } = $props();
 </script>
 
 <a class="card" style:background-image={`url(${project.thumbnail})`} href="/projects/{project.slug}">

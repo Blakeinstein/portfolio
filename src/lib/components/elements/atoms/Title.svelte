@@ -1,19 +1,14 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   import classnames from "classnames";
 
-  let classes = "";
-  export let size: "sm" | "md" | "lg" = "md";
-  export let noArrow = false;
-  export { classes as class };
+  let { size = "md", noArrow = false, class: classesProp = "", children }: { size?: "sm" | "md" | "lg"; noArrow?: boolean; class?: string; children?: Snippet } = $props();
 
-  $: classes = classnames('header', size, classes,
-  {
-    'arrow': !noArrow,
-  });
+  let classes = $derived(classnames('header', size, classesProp, { 'arrow': !noArrow }));
 </script>
 
 <h1 class={classes}>
-  <slot />
+  {@render children?.()}
 </h1>
 
 <style>

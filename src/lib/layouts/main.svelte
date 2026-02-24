@@ -1,16 +1,21 @@
-<script>
+<script lang="ts">
+	import type { Snippet } from 'svelte';
 	import Navbar from "$lib/components/navbar/index.svelte";
 	import Backdrop from '$lib/components/elements/backdrop/index.svelte';
+
+	let { background, children }: { background?: Snippet; children?: Snippet } = $props();
 </script>
 
 <background>
-	<slot name="background">
+	{#if background}
+		{@render background()}
+	{:else}
 		<Backdrop />
-	</slot>
+	{/if}
 </background>
 <Navbar />
 <main>
-	<slot />
+	{@render children?.()}
 </main>
 
 <style>

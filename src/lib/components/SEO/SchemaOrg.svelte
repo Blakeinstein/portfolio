@@ -2,30 +2,49 @@
 	import type { ImageResource, Optional } from '$lib/types/data';
 	import type { BreadcrumbMeta, EntityMeta } from '$lib/types/seo';
 	import hash from 'object-hash';
-	export let article = false;
-	export let author: string;
+	let {
+		article = false,
+		author,
+		breadcrumbs,
+		datePublished,
+		lastUpdated,
+		featuredImage,
+		metadescription,
+		siteLanguage,
+		siteTitle,
+		siteTitleAlt,
+		siteUrl,
+		title,
+		url,
+		githubPage,
+		linkedinProfile,
+		twitterUsername,
+		entity,
+		entityMeta = null,
+	}: {
+		article?: boolean;
+		author: string;
+		breadcrumbs: Optional<BreadcrumbMeta[]>;
+		datePublished: string;
+		lastUpdated: string;
+		featuredImage: ImageResource;
+		metadescription: string;
+		siteLanguage: string;
+		siteTitle: string;
+		siteTitleAlt: string;
+		siteUrl: string;
+		title: string;
+		url: string;
+		githubPage: string;
+		linkedinProfile: string;
+		twitterUsername: string;
+		entity: string;
+		entityMeta?: Optional<EntityMeta>;
+	} = $props();
 
-	export let breadcrumbs: Optional<BreadcrumbMeta[]>;
-	export let datePublished: string;
-	export let lastUpdated: string;
-	export let featuredImage: ImageResource;
-	export let metadescription: string;
-	export let siteLanguage: string;
-	export let siteTitle: string;
-	export let siteTitleAlt: string;
-	export let siteUrl: string;
-	export let title: string;
-	export let url: string;
-	export let githubPage: string;
-	export let linkedinProfile: string;
-	export let twitterUsername: string;
-	export let entity: string;
+	let entityHash = $derived(hash({ author }, { algorithm: 'md5' }));
 
-	export let entityMeta: Optional<EntityMeta> = null;
-
-	const entityHash = hash({ author }, { algorithm: 'md5' });
-
-	const schemaOrgEntity =
+	let schemaOrgEntity = $derived(
 		entityMeta !== null
 			? {
 					'@type': ['Person', 'Organization'],
@@ -49,9 +68,10 @@
 						`https://linkedin.com/in/${linkedinProfile}`
 					]
       }
-			: null;
+			: null
+	);
 
-	const schemaOrgWebsite = {
+	let schemaOrgWebsite = $derived({
 		'@type': 'WebSite',
 		'@id': `${siteUrl}/#website`,
 		url: siteUrl,
@@ -68,9 +88,9 @@
 			}
 		],
 		inLanguage: siteLanguage
-	};
+	});
 
-	const schemaOrgImageObject = {
+	let schemaOrgImageObject = $derived({
 		'@type': 'ImageObject',
 		'@id': `${url}#primaryimage`,
 		inLanguage: siteLanguage,
@@ -79,9 +99,9 @@
 		width: featuredImage.width,
 		height: featuredImage.height,
 		caption: featuredImage.caption
-	};
+	});
 
-	const schemaOrgBreadcrumbList = {
+	let schemaOrgBreadcrumbList = $derived({
 		'@type': 'BreadcrumbList',
 		'@id': `${url}#breadcrumb`,
 		itemListElement: breadcrumbs?.map((element, index) => ({
@@ -94,9 +114,9 @@
 				name: element.name
 			}
 		}))
-	};
+	});
 
-	const schemaOrgWebPage = {
+	let schemaOrgWebPage = $derived({
 		'@type': 'WebPage',
 		'@id': `${url}#webpage`,
 		url,
@@ -123,37 +143,34 @@
 				target: [url]
 			}
 		]
-	};
+	});
 
-	let schemaOrgArticle = null;
-	if (article) {
-		schemaOrgArticle = {
-			'@type': 'Article',
-			'@id': `${url}#article`,
-			isPartOf: {
-				'@id': `${url}#webpage`
-			},
-			author: {
-				'@id': `${siteUrl}/#/schema/person/${entityHash}`
-			},
-			headline: title,
-			datePublished,
-			dateModified: lastUpdated,
-			mainEntityOfPage: {
-				'@id': `${url}#webpage`
-			},
-			publisher: {
-				'@id': `${siteUrl}/#/schema/person/${entityHash}`
-			},
-			image: {
-				'@id': `${url}#primaryimage`
-			},
-			articleSection: ['blog'],
-			inLanguage: siteLanguage
-		};
-	}
+	let schemaOrgArticle = $derived(article ? {
+		'@type': 'Article',
+		'@id': `${url}#article`,
+		isPartOf: {
+			'@id': `${url}#webpage`
+		},
+		author: {
+			'@id': `${siteUrl}/#/schema/person/${entityHash}`
+		},
+		headline: title,
+		datePublished,
+		dateModified: lastUpdated,
+		mainEntityOfPage: {
+			'@id': `${url}#webpage`
+		},
+		publisher: {
+			'@id': `${siteUrl}/#/schema/person/${entityHash}`
+		},
+		image: {
+			'@id': `${url}#primaryimage`
+		},
+		articleSection: ['blog'],
+		inLanguage: siteLanguage
+	} : null);
 
-	const schemaOrgPublisher = {
+	let schemaOrgPublisher = $derived({
 		'@type': ['Person', 'Organization'],
 		'@id': `${siteUrl}/#/schema/person/${entityHash}`,
 		name: entity,
@@ -175,9 +192,9 @@
 			`https://github.com/${githubPage}`,
 			`https://linkedin.com/in/${linkedinProfile}`
 		]
-	};
+	});
 
-	const schemaOrgArray = [
+	let schemaOrgArray = $derived([
 		schemaOrgEntity,
 		schemaOrgWebsite,
 		schemaOrgImageObject,
@@ -185,17 +202,17 @@
 		schemaOrgBreadcrumbList,
 		...(article ? [schemaOrgArticle] : []),
 		schemaOrgPublisher
-	];
-	const schemaOrgObject = {
+	]);
+	let schemaOrgObject = $derived({
 		'@context': 'https://schema.org',
 		'@graph': schemaOrgArray
-	};
-	let jsonLdString = JSON.stringify(schemaOrgObject);
-	let jsonLdScript = `
+	});
+	let jsonLdString = $derived(JSON.stringify(schemaOrgObject));
+	let jsonLdScript = $derived(`
 		<script type="application/ld+json">
 			${jsonLdString}
 		${'<'}/script>
-	`;
+	`);
 </script>
 
 <svelte:head>

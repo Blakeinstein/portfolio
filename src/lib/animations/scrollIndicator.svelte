@@ -1,6 +1,5 @@
 <script lang="ts">
-  let classes = "";
-	export { classes as class };
+  let { class: classes = "" }: { class?: string } = $props();
 </script>
 
 <div class={`scroll-indicator ${classes}`}>

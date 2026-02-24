@@ -19,48 +19,63 @@
 		twitterUsername
 	} = website;
 
-	export let article = false;
-	export let breadcrumbs: BreadcrumbMeta[] = [];
-	export let entityMeta = null;
-	export let lastUpdated: string = Date.now().toString();
-	export let datePublished: string = Date.now().toString();
-	export let metadescription = 'Portfolio';
-	export let slug: string;
-	export let timeToRead = 0;
-	export let title: string = siteTitle;
-	// export let ogSquareImageSrc = '$lib/assets/home/home-open-graph-square.jpg';
-	export let ogSquareImageSrc = '/logo.svg';
-	// export let ogImageSrc = '$lib/assets/home/home-open-graph.jpg';
-	export let ogImageSrc = '/logo.svg';
-	// export let twitterImageSrc = '$lib/assets/home/home-twitter.jpg';
-	export let twitterImageSrc = '/logo.svg';
-	// export let featuredImageSrc = '$lib/assets/home/home.jpg';
-	export let featuredImageSrc = '/logo.svg';
-
 	const defaultAlt = 'some unoriginal picture';
 
-	export let featuredImage: ImageResource = {
-		url: featuredImageSrc,
-		alt: defaultAlt,
-		width: 672,
-		height: 448,
-		caption: 'Home page'
-	};
-	export let ogImage: ImageResource = {
-		url: ogImageSrc,
-		alt: defaultAlt
-	};
-	export let ogSquareImage: ImageResource = {
-		url: ogSquareImageSrc,
-		alt: defaultAlt
-	};
-	export let twitterImage: ImageResource = {
-		url: twitterImageSrc,
-		alt: defaultAlt
-	};
-	const url = `${siteUrl}/${slug}`;
-	const pageTitle = `${siteTitle} ${VERTICAL_LINE_ENTITY} ${title}`;
-	const openGraphProps = {
+	let {
+		article = false,
+		breadcrumbs = [] as BreadcrumbMeta[],
+		entityMeta = null,
+		lastUpdated = Date.now().toString(),
+		datePublished = Date.now().toString(),
+		metadescription = 'Portfolio',
+		slug,
+		timeToRead = 0,
+		title = siteTitle,
+		ogSquareImageSrc = '/logo.svg',
+		ogImageSrc = '/logo.svg',
+		twitterImageSrc = '/logo.svg',
+		featuredImageSrc = '/logo.svg',
+		featuredImage = {
+			url: featuredImageSrc,
+			alt: defaultAlt,
+			width: 672,
+			height: 448,
+			caption: 'Home page'
+		} as ImageResource,
+		ogImage = {
+			url: ogImageSrc,
+			alt: defaultAlt
+		} as ImageResource,
+		ogSquareImage = {
+			url: ogSquareImageSrc,
+			alt: defaultAlt
+		} as ImageResource,
+		twitterImage = {
+			url: twitterImageSrc,
+			alt: defaultAlt
+		} as ImageResource,
+	}: {
+		article?: boolean;
+		breadcrumbs?: BreadcrumbMeta[];
+		entityMeta?: null;
+		lastUpdated?: string;
+		datePublished?: string;
+		metadescription?: string;
+		slug: string;
+		timeToRead?: number;
+		title?: string;
+		ogSquareImageSrc?: string;
+		ogImageSrc?: string;
+		twitterImageSrc?: string;
+		featuredImageSrc?: string;
+		featuredImage?: ImageResource;
+		ogImage?: ImageResource;
+		ogSquareImage?: ImageResource;
+		twitterImage?: ImageResource;
+	} = $props();
+	let url = $derived(`${siteUrl}/${slug}`);
+	let pageTitle = $derived(`${siteTitle} ${VERTICAL_LINE_ENTITY} ${title}`);
+	let openGraphProps = $derived({
 		article,
 		datePublished,
 		lastUpdated,
@@ -72,8 +87,8 @@
 		siteTitle,
 		url,
 		...(article ? { datePublished, lastUpdated } : {})
-	};
-	const schemaOrgProps = {
+	});
+	let schemaOrgProps = $derived({
 		article,
 		author,
 		breadcrumbs,
@@ -92,14 +107,14 @@
 		githubPage,
 		linkedinProfile,
 		twitterUsername
-	};
-	const twitterProps = {
+	});
+	let twitterProps = $derived({
 		article,
 		author,
 		twitterUsername,
 		image: twitterImage,
 		timeToRead
-	};
+	});
 </script>
 
 <svelte:head>

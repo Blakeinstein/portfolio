@@ -4,6 +4,8 @@
   import Section from "$lib/layouts/section.svelte";
   import type { ProjectMetaData } from "$lib/data/ProjectData";
 
+  let { data }: { data: { allProjects: ProjectMetaData[] } } = $props();
+
 	let seoProps = {
 		breadcrumbs: [
 			{
@@ -14,10 +16,6 @@
 		title: 'Projects',
 		slug: 'projects'
 	};
-
-  export let data: {
-    allProjects: ProjectMetaData[];
-  }
 </script>
 
 <SEO {...seoProps} />

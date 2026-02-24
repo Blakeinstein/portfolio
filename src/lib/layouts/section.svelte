@@ -1,9 +1,8 @@
-<script>
+<script lang="ts">
+  import type { Snippet } from 'svelte';
   import classNames from "classnames";
 
-	let classses = "";
-	export let head = false;
-	export { classses as class }
+	let { head = false, class: classses = "", children }: { head?: boolean; class?: string; children?: Snippet } = $props();
 </script>
 
 <section
@@ -14,7 +13,7 @@
 	}
 	data-lenis-scroll-snap-align="start"
 >
-	<slot />
+	{@render children?.()}
 </section>
 
 <style>

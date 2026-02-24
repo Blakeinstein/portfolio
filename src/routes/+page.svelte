@@ -4,6 +4,8 @@
 	import Hero from '$lib/components/sections/hero/index.svelte';
   import type { ProjectMetaData } from '$lib/data/ProjectData';
 
+  let { data }: { data: { allProjects: ProjectMetaData[] } } = $props();
+
 	let seoProps = {
 		breadcrumbs: [
 			{
@@ -14,10 +16,6 @@
 		title: 'Home',
 		slug: ''
 	};
-
-  export let data: {
-    allProjects: ProjectMetaData[];
-  }
 </script>
 
 <SEO {...seoProps} />

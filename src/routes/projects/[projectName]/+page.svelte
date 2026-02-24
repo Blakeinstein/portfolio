@@ -2,15 +2,15 @@
 	import SEO from '$lib/components/SEO/index.svelte';
   import ProjectPage from "$lib/components/sections/projects/ProjectPage.svelte";
   import type { ProjectMetaData } from "$lib/data/ProjectData";
-  import type { SvelteComponent } from "svelte";
+  import type { Component } from "svelte";
 
-  export let data: {
-    content: typeof SvelteComponent
+  let { data }: { data: {
+    content: Component
     projectData: ProjectMetaData
     allProjects: ProjectMetaData[]
-  };
+  } } = $props();
 
-	let seoProps = {
+	let seoProps = $derived({
 		breadcrumbs: [
 			{
 				name: data.projectData.name,
@@ -19,11 +19,11 @@
 		],
 		title: data.projectData.name,
     slug: data.projectData.slug
-	};
+	});
 </script>
 
 <SEO {...seoProps} />
 
 <ProjectPage projectData={data.projectData} allProjects={data.allProjects}>
-  <svelte:component this={data.content} />
+  <data.content />
 </ProjectPage>

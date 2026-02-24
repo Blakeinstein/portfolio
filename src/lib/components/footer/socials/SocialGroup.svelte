@@ -2,7 +2,7 @@
   import type { SocialInfo } from "$lib/data/SocialData";
 	import Link from "./SocialLink.svelte";
 
-  export let socials: SocialInfo[];
+  let { socials }: { socials: SocialInfo[] } = $props();
 </script>
 
 {#each socials as social}

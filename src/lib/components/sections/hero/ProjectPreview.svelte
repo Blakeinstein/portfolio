@@ -5,9 +5,9 @@
   import PreviewCard from "./PreviewCard.svelte";
   import Marquee from "$lib/animations/marquee.svelte";
 
-  export let allProjects: ProjectMetaData[] = [];
+  let { allProjects = [] }: { allProjects?: ProjectMetaData[] } = $props();
 
-  $: featuredProjects = allProjects.filter(project => project.featured)
+  let featuredProjects = $derived(allProjects.filter(project => project.featured));
 </script>
 
 <div class="featured-mq col gap">

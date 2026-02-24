@@ -1,11 +1,9 @@
 <script lang="ts">
-  export let href: string;
-  export let current: string;
-  let classes = "";
+  import type { Snippet } from 'svelte';
 
-  export { classes as class };
+  let { href, current, class: classes = "", children }: { href: string; current: string; class?: string; children?: Snippet } = $props();
 
-  $: active = href.split("/")?.[1] === current;
+  let active = $derived(href.split("/")?.[1] === current);
 </script>
 
 <a
@@ -13,7 +11,7 @@
   class={classes}
   aria-current={active? "page" : undefined}
 >
-  <slot />  
+  {@render children?.()}  
 </a>
 
 <style lang="postcss">

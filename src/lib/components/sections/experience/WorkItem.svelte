@@ -1,16 +1,14 @@
 <script lang="ts">
 	import classNames from "classnames";
+  import type { Snippet } from 'svelte';
 
-  export let company: string;
-  export let companyUrl: string;
-  export let position: string;
-  export let duration: string;
+  let { company, companyUrl, position, duration, children }: { company: string; companyUrl: string; position: string; duration: string; children?: Snippet } = $props();
 </script>
 
 <div class="col">
   <div class={
     classNames("work-title", {
-      "border-b-[1px]": $$slots.default
+      "border-b-[1px]": children
     })
   }>
     <a href={companyUrl} class="underline" target="_blank" rel="noopener noreferrer">
@@ -23,9 +21,9 @@
     </em>
     <h5>{duration}</h5>
   </div>
-  {#if $$slots.default}
+  {#if children}
   <p>
-    <slot />
+    {@render children?.()}
   </p>
   {/if}
 </div>

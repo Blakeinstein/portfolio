@@ -46,7 +46,7 @@
           {/if}
         </div>
       {:else}
-        <form class="col gap wf" on:submit|preventDefault={sendEmail}>
+        <form class="col gap wf" onsubmit={(e) => { e.preventDefault(); sendEmail(e); }}>
           <div class="row">
             <Input name="Name" placeholder="Your Name" type="text"/>
             <Input name="Email" placeholder="Email address" type="email"/>

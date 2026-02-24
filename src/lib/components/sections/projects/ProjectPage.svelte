@@ -7,10 +7,10 @@
   import Section from "$lib/layouts/section.svelte";
   import ProjectMiniMap from "./ProjectMiniMap.svelte";
   import { expoInOut } from "svelte/easing";
+  import type { Snippet } from 'svelte';
   import ProjectPoster from "./ProjectPoster.svelte";
 
-  export let projectData: ProjectMetaData;
-  export let allProjects: ProjectMetaData[];
+  let { projectData, allProjects, children }: { projectData: ProjectMetaData; allProjects: ProjectMetaData[]; children?: Snippet } = $props();
 </script>
 
 <Section class="grid-center head">
@@ -34,11 +34,13 @@
         class="desc-box"
         in:fly={{ y: 80, opacity: 0, duration: 1200, delay: 0, easing: expoInOut }}
       >
-        <slot>
+        {#if children}
+          {@render children()}
+        {:else}
           <p>
             {projectData.description}
           </p>
-        </slot>
+        {/if}
       </div>
     </div>
   </div>

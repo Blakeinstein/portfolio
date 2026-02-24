@@ -1,16 +1,18 @@
 <script lang="ts">
 	import type { ImageResource, Optional } from '$lib/types/data';
 
-	export let article = false;
-	export let datePublished: string;
-	export let lastUpdated: string;
-	export let image: Optional<ImageResource>;
-	export let squareImage: Optional<ImageResource>;
-	export let metadescription: string;
-	export let ogLanguage: string;
-	export let pageTitle: string;
-	export let siteTitle: string;
-	export let url: string;
+	let { article = false, datePublished, lastUpdated, image, squareImage, metadescription, ogLanguage, pageTitle, siteTitle, url }: {
+		article?: boolean;
+		datePublished: string;
+		lastUpdated: string;
+		image: Optional<ImageResource>;
+		squareImage: Optional<ImageResource>;
+		metadescription: string;
+		ogLanguage: string;
+		pageTitle: string;
+		siteTitle: string;
+		url: string;
+	} = $props();
 </script>
 
 <svelte:head>

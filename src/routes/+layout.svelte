@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { onNavigate } from '$app/navigation'
 
 	import PartyTown from '$lib/components/SEO/PartyTown.svelte';
@@ -7,6 +8,8 @@
 	import Lenis from '$lib/components/page/lenis.svelte';
 
 	import '../app.postcss';
+
+	let { children }: { children?: Snippet } = $props();
 
 	onNavigate((navigation) => {
 		// @ts-expect-error - Typescript doesn't know about startViewTransition
@@ -27,5 +30,5 @@
 <PartyTown />
 
 <MainLayout>
-		<slot />
+		{@render children?.()}
 </MainLayout>

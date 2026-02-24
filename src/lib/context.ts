@@ -1,4 +1,4 @@
-import type Lenis from '@studio-freight/lenis';
+import type Lenis from 'lenis';
 import type Blobity from 'blobity';
 import { writable } from 'svelte/store';
 

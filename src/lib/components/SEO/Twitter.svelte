@@ -1,11 +1,13 @@
 <script lang="ts">
 	import type { ImageResource, Optional } from '$lib/types/data';
 
-	export let article = false;
-	export let author: string;
-	export let twitterUsername: string;
-	export let image: Optional<ImageResource>;
-	export let timeToRead = 0;
+	let { article = false, author, twitterUsername, image, timeToRead = 0 }: {
+		article?: boolean;
+		author: string;
+		twitterUsername: string;
+		image: Optional<ImageResource>;
+		timeToRead?: number;
+	} = $props();
 
 	/*
 	 * When there is an equivalent og tag present, Twitter takes that so check OpenGraph before

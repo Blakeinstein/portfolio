@@ -2,7 +2,7 @@
 	import type { ProjectMetaData } from "$lib/data/ProjectData";
   import classNames from "classnames";
 
-  export let projectData: ProjectMetaData;
+  let { projectData }: { projectData: ProjectMetaData } = $props();
 </script>
 
 <a

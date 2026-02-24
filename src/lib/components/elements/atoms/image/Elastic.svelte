@@ -3,17 +3,10 @@
   import { elasticInOut } from "svelte/easing";
 
   let el: HTMLImageElement;
-  export let src: string;
-  export let alt: string;
 
-  export let height: string | undefined = undefined;
-  export let width: string | undefined = undefined;
+  let { src, alt, height = undefined, width = undefined, class: classes = "" }: { src: string; alt: string; height?: string; width?: string; class?: string } = $props();
 
-  let classes = "";
-
-  export { classes as class };
-
-  $: scrollProgress = elasticInOut($scrollVelocity) * $scrollVelocity * 4 ;
+  let scrollProgress = $derived(elasticInOut($scrollVelocity) * $scrollVelocity * 4);
 </script>
 
 <picture>

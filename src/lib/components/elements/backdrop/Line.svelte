@@ -1,7 +1,5 @@
 <script lang="ts">
-  export let top = "0%";
-  export let left = "0%";
-  export let vertical = false;
+  let { top = "0%", left = "0%", vertical = false }: { top?: string; left?: string; vertical?: boolean } = $props();
 </script>
 
 <hr

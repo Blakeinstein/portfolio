@@ -3,7 +3,7 @@
 import type { ProjectMetaData } from "$lib/data/ProjectData";
 	import ProjectCell from "./ProjectCell.svelte";
 
-  export let allProjects: ProjectMetaData[];
+  let { allProjects }: { allProjects: ProjectMetaData[] } = $props();
 </script>
 
 <div class="col">

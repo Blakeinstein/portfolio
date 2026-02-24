@@ -4,7 +4,7 @@
   import type { ProjectMetaData } from "$lib/data/ProjectData";
   import HeroPlaque from "./HeroPlaque.svelte";
 
-  export let allProjects: ProjectMetaData[] = [];
+  let { allProjects = [] }: { allProjects?: ProjectMetaData[] } = $props();
 </script>
 
 <HeroPlaque />

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Lenis from "@studio-freight/lenis";
+  import Lenis from "lenis";
 	import { get } from "svelte/store";
   
 	import { browser } from "$app/environment";

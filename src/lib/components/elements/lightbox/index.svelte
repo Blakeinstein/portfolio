@@ -3,8 +3,7 @@
   import type { ImageType } from "./types";
   import { browser } from "$app/environment";
 
-  export let images: ImageType[];
-  export let activeImage = -1;
+  let { images, activeImage = $bindable(-1) }: { images: ImageType[]; activeImage?: number } = $props();
 
   let dialog: HTMLDialogElement;
 
@@ -36,14 +35,14 @@
     document.addEventListener("keydown", eventListener);
   }
 
-  $: toggleDialog(activeImage);
+  $effect(() => { toggleDialog(activeImage); });
 </script>
 
 <div class="lightbox-container">
   {#each images as image, index}
     <button
       class="lightbox-image"
-      on:click={() => activeImage = index}
+      onclick={() => activeImage = index}
       aria-haspopup="dialog"
       data-blobity-magnetic="false"
     >
@@ -61,7 +60,7 @@
         {/if}
         <button
           type="submit"
-          on:click={() => activeImage = -1}
+          onclick={() => activeImage = -1}
         >
           <Icon class="icon" icon="material-symbols:close" />
         </button>
@@ -71,7 +70,7 @@
           <button
             type="button"
             disabled={activeImage <= 0}
-            on:click={() => activeImage--}
+            onclick={() => activeImage--}
             class="seek"
           >
             <Icon class="icon" icon="akar-icons:arrow-left" />
@@ -84,7 +83,7 @@
           <button
             type="button"
             disabled={activeImage >= (images.length - 1)}
-            on:click={() => activeImage++}
+            onclick={() => activeImage++}
             class="seek"
           >
             <Icon class="icon" icon="akar-icons:arrow-right" />
@@ -113,7 +112,7 @@
     display: flex;
     gap: 0.5rem;
     overflow-x: scroll;
-    padding: 0.25rem 0;;
+    padding: 0.25rem 0;
   }
 
   .lightbox-image {

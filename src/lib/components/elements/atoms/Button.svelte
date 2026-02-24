@@ -1,12 +1,8 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   import classNames from "classnames";
 
-  export let buttonType: HTMLButtonElement["type"] = "button";
-  let classes = "";
-  export let invert = false;
-  export let noBorder = false;
-  export { classes as class };
-  export let href: string | undefined = undefined;
+  let { buttonType = "button", invert = false, noBorder = false, class: classes = "", href = undefined, children }: { buttonType?: HTMLButtonElement["type"]; invert?: boolean; noBorder?: boolean; class?: string; href?: string; children?: Snippet } = $props();
 </script>
 
 <svelte:element this={href ? 'a' : 'button'}
@@ -14,7 +10,7 @@
   class={classNames({"inverted": invert, "no-border": noBorder}, classes)}
   {href}
 >
-  <slot/>
+  {@render children?.()}
 </svelte:element> 
 
 <style lang="postcss">

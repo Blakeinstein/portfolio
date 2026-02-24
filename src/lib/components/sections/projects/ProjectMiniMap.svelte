@@ -3,8 +3,7 @@
   import { expoInOut } from "svelte/easing";
   import { fly } from "svelte/transition";
 
-  export let active: string;
-  export let allProjects: ProjectMetaData[];
+  let { active, allProjects }: { active: string; allProjects: ProjectMetaData[] } = $props();
 </script>
 
 <div

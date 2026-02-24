@@ -1,14 +1,8 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   import classNames from "classnames";
 
-  export let pauseOnHover = false;
-
-  let classes = "";
-  export let speed = "20s";
-  export let gap = "1rem";
-  export {
-    classes as class,
-  };
+  let { pauseOnHover = false, speed = "20s", gap = "1rem", class: classes = "", children }: { pauseOnHover?: boolean; speed?: string; gap?: string; class?: string; children?: Snippet } = $props();
 </script>
 
 <div
@@ -23,10 +17,10 @@
   style:--gap={gap}
 >
   <div>
-    <slot />
+    {@render children?.()}
   </div>
   <div aria-hidden="true">
-    <slot />
+    {@render children?.()}
   </div>
 </div>
 
