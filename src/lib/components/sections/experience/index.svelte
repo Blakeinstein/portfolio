@@ -12,55 +12,89 @@ import ExpItem from "./ExpItem.svelte";
     <Title size="sm">Work Experience</Title>
     <div class="col gap"> 
       <WorkItem 
-        company="Arizona State University"
-        companyUrl="https://entrepreneurship.asu.edu/programs/edson-entrepreneurship-innovation-at-healab/"
-        position="Research Aide" 
-        duration="Mar 2023 - present"
+        company="TrueFoundry (CVS Health Account)"
+        companyUrl="https://truefoundry.com"
+        position="AI Software Forward Deployed Engineer" 
+        duration="Jul. 2024 – Present · San Francisco, CA (Remote)"
       >
-        <em>
-          Built a social media platform for the ASU Heal lab, to be used by death investigators to collaborate on cases.
-          <a href="/projects/elderabuse">Find more about the project here.</a>
-        </em>
-        <br>
-        <span>
-          <strong>Tech used:</strong> VueJs, TypeScript, SpringBoot, Java, GraphQl, Neo4j and more.
-        </span>
+        <ul>
+          <li>Owned end-to-end deployment of multi-modal agentic AI systems for CVS Health pharmacy operations, architecting multi-level LLM platforms with Qwen 3, Llama 4, and Gemini 2.0, reducing model usage costs by 80% and inference times to 33ms via rule-based heuristics and prompt engineering.</li>
+          <li>Led client-facing integration of AI agents into production environments, serving as primary stakeholder contact to scope requirements, prototype features with AI-assisted coding, and ensure seamless API handoffs with tech teams, automating millions of monthly prescription refills.</li>
+          <li>Designed and deployed autonomous agent-browser framework for appointment scheduling across third-party platforms like Zocdoc, generalizing into company-wide accelerator, handling dynamic tool calls and semantic caching to improve reliability and naturalness.</li>
+          <li>Coordinated with platform team to implement observability, deduplication, and human-in-the-loop guardrails for insurance card processing and outbound dialers, stabilizing systems and capturing best practices in internal playbooks.</li>
+          <li>Built scalable multi-agent systems for retail IVR, MinuteClinic scheduling, and Health 100 aggregator, migrating to H100 infrastructure and integrating provider APIs with entity extraction prompts for accurate results.</li>
+        </ul>
+      </WorkItem>
+      <WorkItem 
+        company="Arizona State University"
+        companyUrl="https://www.asu.edu/"
+        position="Research Assistant" 
+        duration="Mar. 2023 – Jun. 2024 · Tempe, AZ"
+      >
+        <ul>
+          <li>Co-led end-to-end development and deployment of DOJ-sponsored Bone Atlas platform for forensic analysis of 3D bone models, designing GraphQL APIs, spatial annotation tools, and collaborative study explorer to enable researchers to identify abuse indicators.</li>
+          <li>Spearheaded multi-modal 3D annotation system integrating frontend visualization with backend data relationships, training data pipelines for future ML models, and migrating databases from Neo4j to MongoDB while maintaining performance.</li>
+          <li>Owned infrastructure setup including CI/CD pipelines and automated deployments to lab servers, ensuring smooth integration and scalability for cross-functional teams of forensics experts and investigators.</li>
+        </ul>
       </WorkItem>
       <WorkItem 
         company="TrueFoundry"
         companyUrl="https://truefoundry.com"
-        position="Software Developer" 
-        duration="May 2021 - July 2022"
+        position="Software Engineer" 
+        duration="May 2021 – Jul. 2022 · Remote"
       >
-        <em>Worked on a platform to enable ML engineers to iterate faster, simplifying their path to productionizing their models.</em>
-        <br>
-        <span>
-          <strong>Tech used:</strong> React, TypeScript, NextJS, OpenAPI, Docker, Kubernetes, Terraform, CDKTF and more.
-        </span>
+        <ul>
+          <li>Engineered schema-driven development engine using OpenAPI specs to auto-generate frontend and backend code, accelerating developer velocity by 60% and enabling rapid prototyping of ML features.</li>
+          <li>Developed ML observability infrastructure for data aggregation and model comparison, allowing customers to iterate 3x faster on experiments with distributed inference frameworks.</li>
+          <li>Implemented IaC deployment flows with Terraform and CDK across AWS/GCP, automating multi-cloud model serving and integrating with client environments for production readiness.</li>
+        </ul>
       </WorkItem>
     </div>
   </Fade>
 
-<!-- Programming languages -->
+<!-- Skills -->
   <Fade>
-    <Title size="sm">Programming Languages</Title>
+    <Title size="sm">Skills</Title>
     <div class="col gap">
-      <ExpItem skill="Web Frameworks" note="React, Vue, Svelte, Angular, Solid, Alpine...." years={5}>
-        I have had my roots in web development, and take pride in my expertise in the domain. I am very flexible with the frameworks I use, and I am always looking to learn more. I have used React, Vue, Svelte, Angular, Solid, Alpine, and more. I am currently using Svelte for my personal projects, and I have professional experience in writing production grade React and VueJs (both 2 and 3).
+      <ExpItem skill="AI/ML Frameworks">
+        LangChain, LangGraph, PyTorch, vLLM, Ray, LLMs, prompt engineering, agentic AI, RAG, multi-tier LLM routing.
       </ExpItem>
-      <ExpItem skill="TypeScript / JavaScript" years={5}>
-        I've used TypeScript and JavaScript for everything from web development to native software. I've used it in both hobby and professional settings. I honestly don't know how many lines of code I've written in this language. I love it, but I'm also looking to branch out. 
-        <span class="text-zinc-800">I prefer TypeScript over JavaScript.</span>
+      <ExpItem skill="Languages">
+        Python, TypeScript, JavaScript, Rust, C++.
       </ExpItem>
-      <ExpItem skill="Rust" years={3}>
-        I've used rust for everything from native software to web servers, but only in hobby projects. I've never used it in a professional setting but I would love to.
-      </ExpItem> 
-      <ExpItem skill="C++"years={2}>
-        I started using C++ in college, and my primary use-case for it has always been competitive programming. I'd much rather prefer to use Rust for actual software.
+      <ExpItem skill="Backend">
+        Node.js, GraphQL, Express, FastAPI, Flask, REST APIs, Spring Boot.
       </ExpItem>
-      <ExpItem skill="Java" years={2}>
-        My primary uses for Java was an OO programming course in college, and the entirety of my Master's degree. I have professional experience in working with Spring and Spring Boot.
+      <ExpItem skill="Frontend">
+        React, Svelte, Vue.js, Next.js, Three.js, WebGL.
       </ExpItem>
+      <ExpItem skill="Cloud &amp; DevOps">
+        AWS, Docker, Kubernetes, Terraform, CDK, CI/CD, GitHub Actions.
+      </ExpItem>
+      <ExpItem skill="Databases">
+        MongoDB, Neo4j, PostgreSQL.
+      </ExpItem>
+    </div>
+  </Fade>
+
+  <Fade>
+    <Title size="sm">Education</Title>
+    <div class="col gap education">
+      <div class="edu-item">
+        <h3 class="edu-school">Arizona State University</h3>
+        <p class="edu-line">
+          <span>Master of Science in Computer Science</span>
+          <span class="edu-dates">Aug. 2022 – May 2024</span>
+        </p>
+        <p class="edu-place">Tempe, AZ</p>
+      </div>
+      <div class="edu-item">
+        <h3 class="edu-school">National Institute of Technology Delhi</h3>
+        <p class="edu-line">
+          <span>Bachelor of Technology in Computer Science</span>
+          <span class="edu-dates">Aug. 2018 – May 2022</span>
+        </p>
+      </div>
     </div>
   </Fade>
 </Section>
@@ -72,5 +106,45 @@ import ExpItem from "./ExpItem.svelte";
 
   :global(.lgap) {
     gap: 2rem;
+  }
+
+  .education {
+    max-width: 64rem;
+  }
+
+  .edu-item {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-white);
+  }
+
+  .edu-item:last-child {
+    border-bottom: none;
+  }
+
+  .edu-school {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--color-main);
+    font-weight: 600;
+  }
+
+  .edu-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    justify-content: space-between;
+    font-style: italic;
+    margin-top: 0.25rem;
+  }
+
+  .edu-dates {
+    font-size: 1.1rem;
+    white-space: nowrap;
+  }
+
+  .edu-place {
+    margin-top: 0.15rem;
+    color: var(--color-accent);
+    font-size: 0.95rem;
   }
 </style>

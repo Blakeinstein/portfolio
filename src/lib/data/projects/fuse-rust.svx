@@ -1,9 +1,9 @@
 ---
 name: Fuse-Rust
-year: 2021
+year: 2023
 featured: true
-description: A fuzzy search library for the rust ecosystem, ideal for building friendly
-  search bars.
+description: Open-source fuzzy search for Rust (bitap, multithreaded query, multibyte characters) with
+  a native GUI demo, for the Rust ecosystem.
 thumbnail: /mockups/fuse-rust.avif
 techs:
 - rust

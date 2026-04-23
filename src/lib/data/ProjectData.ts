@@ -110,6 +110,41 @@ export const TechConstants: Record<string, ProjectTech> = {
     name: 'GraphQL',
     icon: 'simple-icons:graphql',
     color: '#e535ab'
+  },
+  'langchain': {
+    name: 'LangChain',
+    icon: 'simple-icons:langchain',
+    color: '#1C3C3C'
+  },
+  'streamlit': {
+    name: 'Streamlit',
+    icon: 'simple-icons:streamlit',
+    color: '#ff4b4b'
+  },
+  'gradio': {
+    name: 'Gradio',
+    icon: 'simple-icons:gradio',
+    color: '#f97316'
+  },
+  'bun': {
+    name: 'Bun',
+    icon: 'simple-icons:bun',
+    color: '#000000'
+  },
+  'sqlite': {
+    name: 'SQLite',
+    icon: 'simple-icons:sqlite',
+    color: '#003B57'
+  },
+  'mastra': {
+    name: 'Mastra',
+    icon: 'mdi:robot-happy-outline',
+    color: '#4f46e5'
+  },
+  'cdp': {
+    name: 'Chrome DevTools Protocol',
+    icon: 'logos:chrome',
+    color: '#4285f4'
   }
 }
 
@@ -126,6 +161,8 @@ export type ProjectMetaData = {
   images?: { link: string, href?: string, desc: string }[];
   featured?: boolean;
   inverted?: boolean;
+  /** Omitted from listings and project index; direct URL returns 404 */
+  hidden?: boolean;
 };
 
 export const getProjects = async () => {
@@ -137,6 +174,7 @@ export const getProjects = async () => {
     const slug = path.split('/').at(-1)?.replace('.svx', '');
     if (file && typeof file === 'object' && 'metadata' in file && slug) {
 			const metadata = file.metadata as Omit<ProjectMetaData, 'slug'>
+			if (metadata.hidden) continue;
 			const post = { ...metadata, slug } satisfies ProjectMetaData
 			projects.push(post)
 		}

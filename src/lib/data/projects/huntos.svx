@@ -1,0 +1,48 @@
+---
+name: HuntOS
+year: 2026
+description: Local-first, agent-driven job application platform — SvelteKit, Mastra agents,
+  CDP browser automation, SQLite, and self-hosted models (Ollama / LM Studio).
+thumbnail: /gallery/huntos/landing.avif
+techs:
+  - sveltekit
+  - bun
+  - mastra
+  - cdp
+  - sqlite
+col: 4
+row: 3
+featured: true
+links:
+  - icon: entypo-social:github
+    href: https://github.com/Blakeinstein/HuntOS
+    type: GitHub
+  - icon: simple-icons:devdotto
+    href: https://dev.to/blainesensei/huntos-an-automated-job-application-tool-and-my-experience-vibe-coding-1ie
+    type: "Write-up on DEV"
+images:
+  - link: /gallery/huntos/application.avif
+    desc: Application pipeline and UI.
+  - link: /gallery/huntos/roadmap.avif
+    desc: Roadmap and planning.
+---
+
+## What it is
+I built **HuntOS** as a *local-first* “career command center”: it automates the tedious parts of a job search so you can focus on interviews. I wrote a [longer story on DEV](https://dev.to/blainesensei/huntos-an-automated-job-application-tool-and-my-experience-vibe-coding-1ie) about the *vibe-coding* / agent-driven workflow I used (design-first specs, Zed agents, Claude 3.5/Opus) and roughly **4 days of focused work** in that narrative.
+
+## Capabilities
+- **Job discovery** — Scraping from boards such as LinkedIn, Greenhouse, and others, with filters for preferences (location, comp, role type, etc.).
+- **Tailored resumes** — Agent-generated **Markdown and PDF** resumes per job and template.
+- **Browser automation** — **Chrome DevTools Protocol (CDP)** drives real Chrome: navigates to forms, fills, and submits (with a dedicated Chrome instance you log into for sites like LinkedIn).
+- **Pipeline** — A **Kanban**-style view to track applications end to end.
+- **Audit trail** — **Screenshots and logs** of agent steps for transparency and debugging.
+- **Model routing** — Cheaper models for easy tasks, heavier models for hard reasoning; support for **Ollama** and **LM Studio** to keep the stack self-hostable and cost-aware.
+- **Storage** — **SQLite** for a fully local data layer (no required cloud DB).
+
+## Stack & license
+- **Bun** runtime, **SvelteKit** UI, **Mastra** for AI agents, **CDP** for automation, **SQLite** for persistence.  
+- I license HuntOS under the **GNU General Public License v3.0 (GPL-3.0)**. I chose it on purpose: I want the project to stay **by individuals, for individuals**—I don't want someone to take my work, wrap it, and **spin up a business** selling it or charging for what should stay a community tool. GPLv3 is strong copyleft: if you distribute a modified version, the same freedoms (and obligations) follow. If you need something different for a serious commercial use, talk to me or use something else; don't treat the repo as a product starter kit.
+
+## Notes from shipping
+- In testing I saw on the order of a **~65% successful submission rate**; I still hit rough edges on login-only flows, strict validation, and the occasional model quirk (e.g. typing the wrong value shape into a field). The [DEV post](https://dev.to/blainesensei/huntos-an-automated-job-application-tool-and-my-experience-vibe-coding-1ie) goes into that honestly.  
+- Source: [Blakeinstein / HuntOS on GitHub](https://github.com/Blakeinstein/HuntOS).

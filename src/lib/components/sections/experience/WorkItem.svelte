@@ -22,9 +22,9 @@
     <h5>{duration}</h5>
   </div>
   {#if children}
-  <p>
+  <div class="work-body">
     {@render children?.()}
-  </p>
+  </div>
   {/if}
 </div>
 
@@ -39,6 +39,21 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.5rem;
     padding-bottom: 0.5rem;
+  }
+
+  .work-body {
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .work-body :global(ul) {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+    list-style: disc;
+  }
+
+  .work-body :global(li) {
+    margin: 0.25rem 0;
   }
 
   a {

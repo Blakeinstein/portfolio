@@ -1,7 +1,8 @@
 ---
 name: Bloop
-year: 2020
-description: A cross-platform simple hackable scratchpad built with Rust and Tauri.
+year: 2024
+description: Cross-platform developer scratchpad for text manipulation and macros, with
+  50+ GitHub stars, Rust/Tauri, and AceEditor with context-free grammars for syntax highlighting (2021–2024).
 thumbnail: /mockups/bloop.avif
 techs:
   - svelte

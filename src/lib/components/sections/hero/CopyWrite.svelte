@@ -1,12 +1,11 @@
 <script lang="ts">
   let statements = [
-    "A Full Stack Developer.",
-    "A DevOps expert.",
-    "A software developer.",
-    "A tech enthusiast.",
+    "An AI/ML engineer.",
+    "A forward deployed engineer.",
+    "A full stack developer.",
+    "A DevOps practitioner.",
     "A problem solver.",
     "A team player.",
-    "A leader.",
     "Kenough.",
   ];
 

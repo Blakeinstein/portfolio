@@ -17,7 +17,7 @@
       <Socials />
       <div class="greetings">
         <div>Handmade and programmed with 🫶🏾</div>
-        <div>© 2023 Rishikesh Anand</div>
+        <div>© 2026 Rishikesh Anand</div>
       </div>
     </div>
   </Section>

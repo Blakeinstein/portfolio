@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
 
-  let { skill, years, note = undefined, children }: { skill: string; years: number; note?: string; children?: Snippet } = $props();
+  let { skill, years = undefined, note = undefined, children }: { skill: string; years?: number; note?: string; children?: Snippet } = $props();
 </script>
 
 <div class="exp-item">
@@ -21,7 +21,9 @@
       {@render children?.()}
     </p>
     {/if}
+    {#if years !== undefined}
     <h4>{years} years</h4>
+    {/if}
   </div>
 </div>
 

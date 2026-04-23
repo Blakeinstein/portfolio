@@ -44,13 +44,13 @@
       <a
         style="background-color: #a9dad7"
         class="inverted"
-        href="https://www.linkedin.com/in/blakeinstein/overlay/1635555032529/single-media-viewer/?profileId=ACoAABp1dWoBSssauXlzfQVH3dgs4E2drMNqbmE"
+        href="https://www.linkedin.com/in/blakeinstein/overlay/1776982858674/single-media-viewer/?profileId=ACoAABp1dWoBSssauXlzfQVH3dgs4E2drMNqbmE&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_single_media_viewer%3BnYuTMvJnRJm918p8ZUlj9w%3D%3D"
         target="_blank"
         data-blobity-tooltip="Resume"
       >
         <span class="col align-center">
-          <h2>5</h2>
-          <p>Years of experience</p>
+          <h2>6+</h2>
+          <p>Years in industry</p>
         </span>
       </a>
       <a style="background-color: #7d63a8" href="/projects">

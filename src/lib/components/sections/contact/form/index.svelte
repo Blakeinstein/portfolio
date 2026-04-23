@@ -5,7 +5,7 @@
   import Button from "$lib/components/elements/atoms/Button.svelte";
   import Title from "$lib/components/elements/atoms/Title.svelte";
 	import type { FormEventHandler } from 'svelte/elements';
-	import Oath from './Oath.svelte';
+  import Oath from './Oath.svelte';
 	import Input from './Input.svelte';
 
   let submitted = false;

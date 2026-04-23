@@ -22,7 +22,7 @@
   </a>
   <a
     class="nav-external grid-center"
-    href="https://www.linkedin.com/in/blakeinstein/overlay/1635555032529/single-media-viewer/?profileId=ACoAABp1dWoBSssauXlzfQVH3dgs4E2drMNqbmE"
+    href="https://www.linkedin.com/in/blakeinstein/overlay/1776982858674/single-media-viewer/?profileId=ACoAABp1dWoBSssauXlzfQVH3dgs4E2drMNqbmE&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_single_media_viewer%3BnYuTMvJnRJm918p8ZUlj9w%3D%3D"
     target="_blank"
     rel="noopener noreferrer"
     data-blobity-tooltip="Resume"

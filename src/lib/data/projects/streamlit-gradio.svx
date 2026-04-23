@@ -1,0 +1,17 @@
+---
+name: Streamlit-Gradio
+hidden: true
+year: 2023
+description: PyPI package to auto-generate UIs for ML models across 20+ I/O types, for faster
+  AI app prototyping.
+thumbnail: /mockups/remit-tracker.avif
+techs:
+  - python
+  - streamlit
+  - gradio
+col: 2
+row: 2
+---
+
+## Overview
+A PyPI package that generates Streamlit and Gradio UIs from ML model signatures, supporting 20+ input and output types so teams can ship prototypes of AI applications faster.
